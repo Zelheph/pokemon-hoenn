@@ -2,6 +2,7 @@ extends SceneTree
 
 const WORLD_PATH: String = "res://data/world.json"
 const MAPS_PATH: String = "res://data/maps/"
+const STAMPS_PATH: String = "res://data/building_stamps.json"
 const EXTERIOR_TILESET_PATH: String = "res://assets/tilesets/emerald_exterior.tres"
 const INTERIOR_TILESET_PATH: String = "res://assets/tilesets/emerald_interior.tres"
 const SCENES_PATH: String = "res://scenes/hoenn/"
@@ -9,8 +10,15 @@ const BLOCKED: Array[String] = ["T", "R", "B", "H", "W", "w"]
 const TILE_SIZE: int = 16
 var _edges: Array = []
 var _nodes: Dictionary = {}
+var _plans: Dictionary = {}
+var _stamps: Dictionary = {}
+var _selected_zones: Array[String] = []
 
 func _initialize() -> void:
+	for argument: String in OS.get_cmdline_user_args():
+		if argument.begins_with("--zones="):
+			for zone_id: String in argument.trim_prefix("--zones=").split(","):
+				if not zone_id.is_empty(): _selected_zones.append(zone_id)
 	_generate_all()
 	quit()
 
@@ -21,6 +29,14 @@ func _generate_all() -> void:
 		return
 	var manifest: Dictionary = JSON.parse_string(file.get_as_text()) as Dictionary
 	_edges = manifest["edges"]
+	var stamps_file := FileAccess.open(STAMPS_PATH, FileAccess.READ)
+	if stamps_file == null:
+		push_error("Catalogue de stamps introuvable : " + STAMPS_PATH)
+		return
+	var stamps_data: Dictionary = JSON.parse_string(stamps_file.get_as_text()) as Dictionary
+	for stamp_value: Variant in stamps_data["stamps"]:
+		var stamp: Dictionary = stamp_value
+		_stamps[str(stamp["id"])] = stamp
 	for node_value: Variant in manifest["nodes"]:
 		var node_data: Dictionary = node_value
 		_nodes[str(node_data["id"])] = node_data
@@ -30,8 +46,13 @@ func _generate_all() -> void:
 		if plan_file == null:
 			push_error("Plan absent : %s" % node_data["id"])
 			continue
-		_build_zone(node_data, JSON.parse_string(plan_file.get_as_text()) as Dictionary)
-	print("Génération terminée : %d zones et %d liaisons." % [_nodes.size(), _edges.size()])
+		var plan: Dictionary = JSON.parse_string(plan_file.get_as_text()) as Dictionary
+		_plans[str(node_data["id"])] = plan
+	for node_data: Dictionary in _nodes.values():
+		var node_id := str(node_data["id"])
+		if _plans.has(node_id) and (_selected_zones.is_empty() or _selected_zones.has(node_id)):
+			_build_zone(node_data, _plans[node_id])
+	print("Génération terminée : %d zones demandées sur %d, %d liaisons dans le graphe." % [(_nodes.size() if _selected_zones.is_empty() else _selected_zones.size()), _nodes.size(), _edges.size()])
 
 func _build_zone(data: Dictionary, plan: Dictionary) -> void:
 	var size: Array = plan["size"]
@@ -64,6 +85,7 @@ func _build_zone(data: Dictionary, plan: Dictionary) -> void:
 			if tile_id.size() == 3:
 				layer.set_cell(Vector2i(x,y), int(tile_id[0]), Vector2i(int(tile_id[1]), int(tile_id[2])))
 			if BLOCKED.has(symbol): _add_blocker(blockers, root, Vector2i(x,y))
+	_add_building_stamps(layer, blockers, root, plan)
 
 	_add_actor(root, plan["sign"], "sign")
 	for value: Variant in plan["npcs"]: _add_actor(root, value, "npc")
@@ -81,7 +103,10 @@ func _build_zone(data: Dictionary, plan: Dictionary) -> void:
 	player.collision_layer = 1
 	player.collision_mask = 1
 	var start: Vector2i = Vector2i(width / 2, height / 2)
-	if str(data["kind"]) == "town": start.y += 3
+	if plan.has("spawn"):
+		var spawn: Array = plan["spawn"]
+		start = Vector2i(int(spawn[0]), int(spawn[1]))
+	elif str(data["kind"]) == "town": start.y += 3
 	player.position = _cell_center(start)
 	root.add_child(player)
 	var player_collision: CollisionShape2D = CollisionShape2D.new()
@@ -142,6 +167,29 @@ func _add_blocker(parent: Node, scene_root: Node, cell: Vector2i) -> void:
 	parent.add_child(shape_node)
 	shape_node.owner = scene_root
 
+func _add_building_stamps(layer: TileMapLayer, blockers: StaticBody2D, root: Node2D, plan: Dictionary) -> void:
+	for building_value: Variant in plan.get("buildings", []):
+		var building: Dictionary = building_value
+		var stamp_id := str(building["stamp"])
+		if not _stamps.has(stamp_id):
+			push_error("Stamp inconnu : " + stamp_id)
+			continue
+		var stamp: Dictionary = _stamps[stamp_id]
+		var position_data: Array = building["position"]
+		var origin := Vector2i(int(position_data[0]), int(position_data[1]))
+		var source_id := 10 + int(stamp["band"]) - 1
+		for tile_value: Variant in stamp["tiles"]:
+			var tile: Dictionary = tile_value
+			var offset_data: Array = tile["offset"]
+			var atlas_data: Array = tile["atlas"]
+			var offset := Vector2i(int(offset_data[0]), int(offset_data[1]))
+			var atlas_cell := Vector2i(int(atlas_data[0]), int(atlas_data[1]))
+			var tile_source_id := 30 if str(stamp.get("roof_variant", "")) == "band_01_rival_roof" and str(tile["role"]) == "roof" else source_id
+			layer.set_cell(origin + offset, tile_source_id, atlas_cell)
+		for solid_value: Variant in stamp["solid_cells"]:
+			var solid_data: Array = solid_value
+			_add_blocker(blockers, root, origin + Vector2i(int(solid_data[0]), int(solid_data[1])))
+
 func _add_actor(root: Node2D, actor_data: Dictionary, kind: String) -> void:
 	var actor: Node2D = Node2D.new()
 	var actor_name: String = str(actor_data.get("name", kind.capitalize()))
@@ -185,7 +233,22 @@ func _add_transition(root: Node2D, data: Dictionary, plan: Dictionary, target_id
 	var arrival: Vector2i = _arrival_cell(target_id, str(data["id"]), edge)
 	var area: Area2D = Area2D.new()
 	area.name = "Transition_" + target_id
-	area.position = _cell_center(here)
+	var area_size := Vector2(14,14)
+	var area_offset := Vector2.ZERO
+	if str(edge["kind"]) == "door":
+		var building: Dictionary = _building_for_interior(plan, target_id)
+		if not building.is_empty():
+			var stamp: Dictionary = _stamps[str(building["stamp"])]
+			var door: Dictionary = stamp["door"]
+			var size_data: Array = door.get("area_size", [14,14])
+			var offset_data: Array = door.get("area_offset_px", [0,0])
+			area_size = Vector2(float(size_data[0]), float(size_data[1]))
+			area_offset = Vector2(float(offset_data[0]), float(offset_data[1]))
+	elif plan.get("portals", {}).has(target_id):
+		var portal: Dictionary = plan["portals"][target_id]
+		var size_data: Array = portal.get("area_size", [14,14])
+		area_size = Vector2(float(size_data[0]), float(size_data[1]))
+	area.position = _cell_center(here) + area_offset
 	area.collision_layer = 0
 	area.collision_mask = 1
 	area.add_to_group("zone_transition")
@@ -196,7 +259,7 @@ func _add_transition(root: Node2D, data: Dictionary, plan: Dictionary, target_id
 	area.owner = root
 	var collision: CollisionShape2D = CollisionShape2D.new()
 	var rect: RectangleShape2D = RectangleShape2D.new()
-	rect.size = Vector2(14,14)
+	rect.size = area_size
 	collision.shape = rect
 	area.add_child(collision)
 	collision.owner = root
@@ -204,7 +267,18 @@ func _add_transition(root: Node2D, data: Dictionary, plan: Dictionary, target_id
 func _portal_cell(node_id: String, neighbor_id: String, edge: Dictionary, plan: Dictionary) -> Vector2i:
 	var node_data: Dictionary = _nodes[node_id]
 	var width: int = int(plan["size"][0]); var height: int = int(plan["size"][1])
+	var portals: Dictionary = plan.get("portals", {})
+	if portals.has(neighbor_id):
+		var portal: Dictionary = portals[neighbor_id]
+		var portal_cell: Array = portal["cell"]
+		return Vector2i(int(portal_cell[0]), int(portal_cell[1]))
 	if str(edge["kind"]) == "door":
+		var building: Dictionary = _building_for_interior(plan, neighbor_id)
+		if not building.is_empty():
+			var stamp: Dictionary = _stamps[str(building["stamp"])]
+			var position_data: Array = building["position"]
+			var door_data: Array = stamp["door"]["position"]
+			return Vector2i(int(position_data[0]) + int(door_data[0]), int(position_data[1]) + int(door_data[1]))
 		if str(node_data["kind"]) != "town": return Vector2i(width/2,height-2)
 		var door_index: int = 0
 		for value: Variant in _edges:
@@ -227,6 +301,22 @@ func _portal_cell(node_id: String, neighbor_id: String, edge: Dictionary, plan: 
 func _arrival_cell(target_id: String, source_id: String, edge: Dictionary) -> Vector2i:
 	var target: Dictionary = _nodes[target_id]
 	var width: int = int(target["size"][0]); var height: int = int(target["size"][1])
+	if str(edge["kind"]) == "door" and str(target["kind"]) == "town" and _plans.has(target_id):
+		var target_plan: Dictionary = _plans[target_id]
+		var building: Dictionary = _building_for_interior(target_plan, source_id)
+		if not building.is_empty():
+			var stamp: Dictionary = _stamps[str(building["stamp"])]
+			var origin_data: Array = building["position"]
+			var approach_data: Array = stamp["door"]["approach"]
+			return Vector2i(int(origin_data[0]) + int(approach_data[0]), int(origin_data[1]) + int(approach_data[1]))
+	if _plans.has(target_id):
+		var target_plan: Dictionary = _plans[target_id]
+		var portals: Dictionary = target_plan.get("portals", {})
+		if portals.has(source_id):
+			var portal: Dictionary = portals[source_id]
+			if portal.has("arrival_cell"):
+				var arrival_data: Array = portal["arrival_cell"]
+				return Vector2i(int(arrival_data[0]), int(arrival_data[1]))
 	if str(edge["kind"]) == "door":
 		if str(target["kind"]) != "town": return Vector2i(width/2,height-3)
 		var door_index: int = 0
@@ -256,6 +346,13 @@ func _neighbor_index(node_id: String, neighbor_id: String) -> int:
 		elif str(edge["b"]) == node_id: neighbors.append(str(edge["a"]))
 	neighbors.sort()
 	return maxi(0, neighbors.find(neighbor_id))
+
+func _building_for_interior(plan: Dictionary, interior_id: String) -> Dictionary:
+	for building_value: Variant in plan.get("buildings", []):
+		var building: Dictionary = building_value
+		if str(building.get("interior_id", "")) == interior_id:
+			return building
+	return {}
 
 func _cell_center(cell: Vector2i) -> Vector2:
 	return Vector2((cell.x+0.5)*TILE_SIZE,(cell.y+0.5)*TILE_SIZE)

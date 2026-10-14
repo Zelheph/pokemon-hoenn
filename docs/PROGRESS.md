@@ -35,6 +35,14 @@
 ## Validation effectuée
 - Godot 4.7.2 : `--headless --path . --import`, contrôle syntaxique du générateur et du validateur, génération des 154 scènes, validation des 154 couches remplies et des transitions, puis lancement headless du projet.
 
+## Reprise des façades de la zone de test — terminée
+- La planche extérieure est séparée en 11 bandes autonomes de 128 px (8×69 tuiles de 16 px) ; aperçu ×4 quadrillé et coordonnées locales dans `docs/atlas/bande_*.png`.
+- `data/building_stamps.json` décrit deux petites maisons jumelles (toit du rival recoloré) et le grand laboratoire, cellule par cellule, avec position de porte, approche, cellules solides et traversables. Aperçus ×8 dans `docs/atlas/stamps/`.
+- Le générateur crée les sources d’atlas distinctes pour chaque bande et pose les stamps sans franchir leurs limites. Les portes sont des Area2D vers les intérieurs; Bourg-en-Vol ne garde qu’une sortie nord vers la Route 101. Route 101 et Rosyères ont les ouvertures réciproques au nord/sud.
+- Les scènes Bourg-en-Vol, Route 101 et Rosyères ont été régénérées. `docs/atlas/bourg_en_vol.png` donne le rendu complet de la carte (30×20 cases, 960×640 px).
+- Vérifications terminées avec Godot 4.7.2 : import headless, contrôle syntaxique des scripts, validation des 154 scènes/322 transitions et chargement du projet sans erreur.
+- Crédit ajouté dans `docs/CREDITS.md`. La maison du héros et celle du rival sont des stamps composites; les grands blocs officiels de Centres, boutiques et arènes sont réservés à un catalogue ultérieur.
+
 ## Étapes restantes
 - Étape 4 : sous-étapes du Pokédex complet à définir et données officielles à sourcer.
 - Étape 5 : combats et tests unitaires.

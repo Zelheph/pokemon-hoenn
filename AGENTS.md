@@ -12,6 +12,7 @@ Pixel-art : viewport 480x320, mise à l'échelle entière, filtre Nearest, grill
   - godot --headless --path . --check-only --script <fichier.gd> pour les scripts
   - godot --headless --path . --quit pour vérifier que le projet se charge sans erreur
   Si le binaire s'appelle autrement (godot4, Godot_v4...), trouve-le et note-le ici.
+- Sur cette machine, Godot 4.7.2 est fourni par Flatpak : utiliser `flatpak run org.godotengine.Godot`.
 - Corrige toutes les erreurs et warnings avant de conclure une tâche.
 - Typage statique partout, signaux plutôt que références directes, commentaires en français.
 - Données du jeu en JSON ou Resources, jamais codées en dur dans la logique.

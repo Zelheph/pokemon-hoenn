@@ -19,9 +19,12 @@ Source inspectée : `/home/zeleph/Téléchargements` (fichiers non liés ignoré
 | sprites | `assets/sprites/pokemon/258.png` | PNG 96×96 px | Sprite frontal Mudkip (source sprites-latest) ; sprite individuel, transparent |
 | tilesets | `assets/tilesets/emerald_exterior_tileset.png` | PNG 1408×1104 px | Planche extérieure Émeraude ; grille vérifiée 88×69 cases de 16×16 px |
 | tilesets | `assets/tilesets/emerald_exterior.tres` | TileSet atlas 88×69, région 16×16 px | 11 coordonnées de terrain utilisées par les cartes, découpées depuis la planche PNG d’origine |
+| tilesets | `assets/tilesets/bands/band_01.png` à `band_11.png` | PNG, chacune 128×1104 px | Bandes indépendantes, chacune 8×69 cases de 16×16 px |
+| tilesets (variante) | `assets/tilesets/bands/band_01_rival_roof.png` | PNG, 128×1104 px | Copie recolorée des seules cellules de toit du stamp rival |
 | tilesets | `assets/tilesets/emerald_interior_tilesets.png` | PNG 3072×1024 px | Planches intérieures Émeraude ; grille vérifiée 192×64 cases de 16×16 px |
 | tilesets | `assets/tilesets/emerald_interior.tres` | TileSet atlas 192×64, région 16×16 px | 7 coordonnées utilisées pour sols, murs et grottes |
 | tilesets (placeholder) | `assets/tilesets/placeholder_sky.svg` | SVG 16×16 px | Tuile de ciel pour le Grand Ciel, absente des planches fournies |
+
 | ui | `assets/ui/bag_reference.png` | PNG 664×264 px | Référence UI sac |
 | ui | `assets/ui/battle_introductions_reference.png` | PNG 522×349 px | Référence UI combat |
 | ui | `assets/ui/box_system_reference.png` | PNG 680×1216 px | Référence UI PC/boîtes |
@@ -32,6 +35,12 @@ Source inspectée : `/home/zeleph/Téléchargements` (fichiers non liés ignoré
 | ui | `assets/ui/pokemon_menu_reference.png` | PNG 840×480 px | Référence menu Pokémon |
 | ui | `assets/ui/route_icons_reference.png` | PNG 547×348 px | Icônes routes |
 | ui | `assets/ui/stat_effects_reference.png` | PNG 328×88 px | Icônes effets de stats |
+
+## Exterior Tileset : bandes et bâtiments
+
+La planche extérieure 1408×1104 est découpée en 11 bandes verticales indépendantes de 128×1104 px (8×69 cases de 16×16). La planche source reste intacte. Les images zoomées avec grille et coordonnées sont dans `docs/atlas/bande_01.png` à `bande_11.png`. Les cases bleu marine uniformes sont vides et exclues du catalogue.
+
+Les bâtiments de Bourg-en-Vol sont assemblés en stamps enregistrés dans `data/building_stamps.json`, avec chaque case référencée dans la bande correspondante, ainsi que les cellules solides, la porte et son approche. Les bandes sont des sources d’atlas TileSet séparées (source_id 10 à 20); le toit recoloré de la maison rivale utilise la source_id 30. Les aperçus ×8 annotés sont dans `docs/atlas/stamps/`. Ces trois assemblages sont des compositions à partir des tuiles fournies, pas des façades déjà présentes en un seul bloc.
 
 ## Taille des cases et identifiants de terrain
 
