@@ -1,0 +1,229 @@
+[gd_scene format=4]
+
+[ext_resource type="Script" path="res://scripts/hoenn/MapZone.gd" id="1_lxh83"]
+[ext_resource type="Texture2D" path="res://assets/tilesets/placeholder_hoenn_terrain.svg" id="2_6xp5q"]
+[ext_resource type="Script" path="res://scripts/player/WorldActor.gd" id="3_f2u8h"]
+[ext_resource type="Script" path="res://scripts/player/Player.gd" id="4_p4k3y"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iqxy1"]
+texture = ExtResource("2_6xp5q")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1oqf3"]
+sources/0 = SubResource("TileSetAtlasSource_iqxy1")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gll3q"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wguqs"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vj27w"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2n3y"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyuwi"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5nx8"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfqus"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2c2go"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5vwk"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvdf3"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxbk1"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpx6f"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31lvo"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyin8"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45583"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_slxsi"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ymyx"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtgk8"]
+size = Vector2(10, 10)
+
+[node name="nenucrique_interieur_05" type="Node2D" unique_id=324390488]
+script = ExtResource("1_lxh83")
+zone_id = &"nenucrique_interieur_05"
+zone_name = "Centre de Concours"
+
+[node name="Terrain" type="TileMapLayer" parent="." unique_id=599343320]
+tile_map_data = PackedByteArray("AAAAAAAAAAADAAEAAAABAAAAAAADAAEAAAACAAAAAAADAAEAAAADAAAAAAADAAEAAAAEAAAAAAADAAEAAAAFAAAAAAADAAEAAAAGAAAAAAADAAEAAAAHAAAAAAADAAEAAAAIAAAAAAADAAEAAAAJAAAAAAADAAEAAAAKAAAAAAADAAEAAAALAAAAAAADAAEAAAAMAAAAAAADAAEAAAANAAAAAAADAAEAAAAOAAAAAAADAAEAAAAPAAAAAAADAAEAAAAQAAAAAAADAAEAAAARAAAAAAADAAEAAAASAAAAAAADAAEAAAATAAAAAAADAAEAAAAAAAEAAAADAAEAAAABAAEAAAADAAEAAAACAAEAAAADAAEAAAADAAEAAAADAAEAAAAEAAEAAAADAAEAAAAFAAEAAAADAAEAAAAGAAEAAAADAAEAAAAHAAEAAAADAAEAAAAIAAEAAAADAAEAAAAJAAEAAAADAAEAAAAKAAEAAAADAAEAAAALAAEAAAADAAEAAAAMAAEAAAADAAEAAAANAAEAAAADAAEAAAAOAAEAAAADAAEAAAAPAAEAAAADAAEAAAAQAAEAAAADAAEAAAARAAEAAAADAAEAAAASAAEAAAADAAEAAAATAAEAAAADAAEAAAAAAAIAAAADAAEAAAABAAIAAAADAAEAAAACAAIAAAADAAEAAAADAAIAAAADAAEAAAAEAAIAAAADAAEAAAAFAAIAAAADAAEAAAAGAAIAAAADAAEAAAAHAAIAAAADAAEAAAAIAAIAAAADAAEAAAAJAAIAAAADAAEAAAAKAAIAAAADAAEAAAALAAIAAAADAAEAAAAMAAIAAAADAAEAAAANAAIAAAADAAEAAAAOAAIAAAADAAEAAAAPAAIAAAADAAEAAAAQAAIAAAADAAEAAAARAAIAAAADAAEAAAASAAIAAAADAAEAAAATAAIAAAADAAEAAAAAAAMAAAADAAEAAAABAAMAAAADAAEAAAACAAMAAAADAAEAAAADAAMAAAAEAAEAAAAEAAMAAAADAAEAAAAFAAMAAAADAAEAAAAGAAMAAAADAAEAAAAHAAMAAAADAAEAAAAIAAMAAAADAAEAAAAJAAMAAAADAAEAAAAKAAMAAAADAAEAAAALAAMAAAADAAEAAAAMAAMAAAADAAEAAAANAAMAAAAEAAEAAAAOAAMAAAADAAEAAAAPAAMAAAADAAEAAAAQAAMAAAADAAEAAAARAAMAAAADAAEAAAASAAMAAAADAAEAAAATAAMAAAADAAEAAAAAAAQAAAADAAEAAAABAAQAAAADAAEAAAACAAQAAAADAAEAAAADAAQAAAADAAEAAAAEAAQAAAADAAEAAAAFAAQAAAADAAEAAAAGAAQAAAADAAEAAAAHAAQAAAADAAEAAAAIAAQAAAAEAAEAAAAJAAQAAAADAAEAAAAKAAQAAAADAAEAAAALAAQAAAADAAEAAAAMAAQAAAADAAEAAAANAAQAAAADAAEAAAAOAAQAAAADAAEAAAAPAAQAAAADAAEAAAAQAAQAAAADAAEAAAARAAQAAAADAAEAAAASAAQAAAADAAEAAAATAAQAAAADAAEAAAAAAAUAAAADAAEAAAABAAUAAAADAAEAAAACAAUAAAADAAEAAAADAAUAAAAEAAEAAAAEAAUAAAADAAEAAAAFAAUAAAADAAEAAAAGAAUAAAADAAEAAAAHAAUAAAADAAEAAAAIAAUAAAADAAEAAAAJAAUAAAADAAEAAAAKAAUAAAADAAEAAAALAAUAAAADAAEAAAAMAAUAAAADAAEAAAANAAUAAAAEAAEAAAAOAAUAAAADAAEAAAAPAAUAAAADAAEAAAAQAAUAAAADAAEAAAARAAUAAAADAAEAAAASAAUAAAADAAEAAAATAAUAAAADAAEAAAAAAAYAAAADAAEAAAABAAYAAAADAAEAAAACAAYAAAADAAEAAAADAAYAAAADAAEAAAAEAAYAAAADAAEAAAAFAAYAAAADAAEAAAAGAAYAAAADAAEAAAAHAAYAAAADAAEAAAAIAAYAAAAEAAEAAAAJAAYAAAADAAEAAAAKAAYAAAADAAEAAAALAAYAAAADAAEAAAAMAAYAAAADAAEAAAANAAYAAAADAAEAAAAOAAYAAAADAAEAAAAPAAYAAAADAAEAAAAQAAYAAAADAAEAAAARAAYAAAADAAEAAAASAAYAAAADAAEAAAATAAYAAAADAAEAAAAAAAcAAAADAAEAAAABAAcAAAADAAEAAAACAAcAAAADAAEAAAADAAcAAAAEAAEAAAAEAAcAAAADAAEAAAAFAAcAAAADAAEAAAAGAAcAAAADAAEAAAAHAAcAAAADAAEAAAAIAAcAAAADAAEAAAAJAAcAAAADAAEAAAAKAAcAAAADAAEAAAALAAcAAAADAAEAAAAMAAcAAAADAAEAAAANAAcAAAAEAAEAAAAOAAcAAAADAAEAAAAPAAcAAAADAAEAAAAQAAcAAAADAAEAAAARAAcAAAADAAEAAAASAAcAAAADAAEAAAATAAcAAAADAAEAAAAAAAgAAAADAAEAAAABAAgAAAADAAEAAAACAAgAAAADAAEAAAADAAgAAAADAAEAAAAEAAgAAAADAAEAAAAFAAgAAAADAAEAAAAGAAgAAAADAAEAAAAHAAgAAAADAAEAAAAIAAgAAAAEAAEAAAAJAAgAAAADAAEAAAAKAAgAAAADAAEAAAALAAgAAAADAAEAAAAMAAgAAAADAAEAAAANAAgAAAADAAEAAAAOAAgAAAADAAEAAAAPAAgAAAADAAEAAAAQAAgAAAADAAEAAAARAAgAAAADAAEAAAASAAgAAAADAAEAAAATAAgAAAADAAEAAAAAAAkAAAADAAEAAAABAAkAAAADAAEAAAACAAkAAAADAAEAAAADAAkAAAAEAAEAAAAEAAkAAAADAAEAAAAFAAkAAAADAAEAAAAGAAkAAAADAAEAAAAHAAkAAAADAAEAAAAIAAkAAAADAAEAAAAJAAkAAAADAAEAAAAKAAkAAAADAAEAAAALAAkAAAADAAEAAAAMAAkAAAADAAEAAAANAAkAAAAEAAEAAAAOAAkAAAADAAEAAAAPAAkAAAADAAEAAAAQAAkAAAADAAEAAAARAAkAAAADAAEAAAASAAkAAAADAAEAAAATAAkAAAADAAEAAAAAAAoAAAADAAEAAAABAAoAAAADAAEAAAACAAoAAAADAAEAAAADAAoAAAADAAEAAAAEAAoAAAADAAEAAAAFAAoAAAADAAEAAAAGAAoAAAADAAEAAAAHAAoAAAADAAEAAAAIAAoAAAAEAAEAAAAJAAoAAAADAAEAAAAKAAoAAAADAAEAAAALAAoAAAADAAEAAAAMAAoAAAADAAEAAAANAAoAAAADAAEAAAAOAAoAAAADAAEAAAAPAAoAAAADAAEAAAAQAAoAAAADAAEAAAARAAoAAAADAAEAAAASAAoAAAADAAEAAAATAAoAAAADAAEAAAAAAAsAAAADAAEAAAABAAsAAAADAAEAAAACAAsAAAADAAEAAAADAAsAAAADAAEAAAAEAAsAAAADAAEAAAAFAAsAAAADAAEAAAAGAAsAAAADAAEAAAAHAAsAAAADAAEAAAAIAAsAAAADAAEAAAAJAAsAAAADAAEAAAAKAAsAAAADAAEAAAALAAsAAAADAAEAAAAMAAsAAAADAAEAAAANAAsAAAADAAEAAAAOAAsAAAADAAEAAAAPAAsAAAADAAEAAAAQAAsAAAADAAEAAAARAAsAAAADAAEAAAASAAsAAAADAAEAAAATAAsAAAADAAEAAAAAAAwAAAADAAEAAAABAAwAAAADAAEAAAACAAwAAAADAAEAAAADAAwAAAADAAEAAAAEAAwAAAADAAEAAAAFAAwAAAADAAEAAAAGAAwAAAADAAEAAAAHAAwAAAADAAEAAAAIAAwAAAADAAEAAAAJAAwAAAADAAEAAAAKAAwAAAADAAEAAAALAAwAAAADAAEAAAAMAAwAAAADAAEAAAANAAwAAAADAAEAAAAOAAwAAAADAAEAAAAPAAwAAAADAAEAAAAQAAwAAAADAAEAAAARAAwAAAADAAEAAAASAAwAAAADAAEAAAATAAwAAAADAAEAAAAAAA0AAAADAAEAAAABAA0AAAADAAEAAAACAA0AAAADAAEAAAADAA0AAAADAAEAAAAEAA0AAAADAAEAAAAFAA0AAAADAAEAAAAGAA0AAAADAAEAAAAHAA0AAAADAAEAAAAIAA0AAAACAAAAAAAJAA0AAAACAAAAAAAKAA0AAAACAAAAAAALAA0AAAACAAAAAAAMAA0AAAACAAAAAAANAA0AAAADAAEAAAAOAA0AAAADAAEAAAAPAA0AAAADAAEAAAAQAA0AAAADAAEAAAARAA0AAAADAAEAAAASAA0AAAADAAEAAAATAA0AAAADAAEAAAA=")
+tile_set = SubResource("TileSet_1oqf3")
+
+[node name="TerrainCollisions" type="StaticBody2D" parent="." unique_id=1099384771]
+
+[node name="@CollisionShape2D@15833" type="CollisionShape2D" parent="TerrainCollisions" unique_id=976754429]
+position = Vector2(56, 56)
+shape = SubResource("RectangleShape2D_gll3q")
+
+[node name="@CollisionShape2D@15834" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1221947647]
+position = Vector2(216, 56)
+shape = SubResource("RectangleShape2D_wguqs")
+
+[node name="@CollisionShape2D@15835" type="CollisionShape2D" parent="TerrainCollisions" unique_id=872736101]
+position = Vector2(136, 72)
+shape = SubResource("RectangleShape2D_vj27w")
+
+[node name="@CollisionShape2D@15836" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1090560059]
+position = Vector2(56, 88)
+shape = SubResource("RectangleShape2D_u2n3y")
+
+[node name="@CollisionShape2D@15837" type="CollisionShape2D" parent="TerrainCollisions" unique_id=207243725]
+position = Vector2(216, 88)
+shape = SubResource("RectangleShape2D_uyuwi")
+
+[node name="@CollisionShape2D@15838" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1048309340]
+position = Vector2(136, 104)
+shape = SubResource("RectangleShape2D_x5nx8")
+
+[node name="@CollisionShape2D@15839" type="CollisionShape2D" parent="TerrainCollisions" unique_id=855688641]
+position = Vector2(56, 120)
+shape = SubResource("RectangleShape2D_hfqus")
+
+[node name="@CollisionShape2D@15840" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1837779563]
+position = Vector2(216, 120)
+shape = SubResource("RectangleShape2D_2c2go")
+
+[node name="@CollisionShape2D@15841" type="CollisionShape2D" parent="TerrainCollisions" unique_id=29702414]
+position = Vector2(136, 136)
+shape = SubResource("RectangleShape2D_u5vwk")
+
+[node name="@CollisionShape2D@15842" type="CollisionShape2D" parent="TerrainCollisions" unique_id=902209736]
+position = Vector2(56, 152)
+shape = SubResource("RectangleShape2D_jvdf3")
+
+[node name="@CollisionShape2D@15843" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1421060014]
+position = Vector2(216, 152)
+shape = SubResource("RectangleShape2D_sxbk1")
+
+[node name="@CollisionShape2D@15844" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1478612937]
+position = Vector2(136, 168)
+shape = SubResource("RectangleShape2D_lpx6f")
+
+[node name="Sign_Sign" type="Node2D" parent="." unique_id=1797048110]
+position = Vector2(168, 88)
+script = ExtResource("3_f2u8h")
+actor_kind = "sign"
+
+[node name="Interaction" type="Area2D" parent="Sign_Sign" unique_id=1638468537]
+collision_layer = 2
+collision_mask = 0
+metadata/dialogue = "Centre de Concours — prenez le temps d'explorer."
+
+[node name="@CollisionShape2D@15845" type="CollisionShape2D" parent="Sign_Sign/Interaction" unique_id=2026105497]
+shape = SubResource("RectangleShape2D_31lvo")
+
+[node name="NPC_Voyageur" type="Node2D" parent="." unique_id=291431114]
+position = Vector2(200, 104)
+script = ExtResource("3_f2u8h")
+
+[node name="Interaction" type="Area2D" parent="NPC_Voyageur" unique_id=326039362]
+collision_layer = 2
+collision_mask = 0
+metadata/dialogue = "Bienvenue dans la zone : Centre de Concours."
+
+[node name="@CollisionShape2D@15846" type="CollisionShape2D" parent="NPC_Voyageur/Interaction" unique_id=470240967]
+shape = SubResource("RectangleShape2D_kyin8")
+
+[node name="BlockingBody" type="StaticBody2D" parent="NPC_Voyageur" unique_id=442152595]
+
+[node name="@CollisionShape2D@15847" type="CollisionShape2D" parent="NPC_Voyageur/BlockingBody" unique_id=1368579552]
+shape = SubResource("RectangleShape2D_45583")
+
+[node name="Item_Objet trouvé" type="Node2D" parent="." unique_id=1422322225]
+position = Vector2(136, 136)
+script = ExtResource("3_f2u8h")
+actor_kind = "item"
+
+[node name="Interaction" type="Area2D" parent="Item_Objet trouvé" unique_id=264334384]
+collision_layer = 2
+collision_mask = 0
+metadata/dialogue = "Tu as trouvé un objet. (Système d'inventaire à venir.)"
+
+[node name="@CollisionShape2D@15848" type="CollisionShape2D" parent="Item_Objet trouvé/Interaction" unique_id=1378572479]
+shape = SubResource("RectangleShape2D_slxsi")
+
+[node name="Transition_nenucrique" type="Area2D" parent="." unique_id=459502884]
+position = Vector2(168, 200)
+collision_layer = 0
+metadata/target_scene = "res://scenes/hoenn/nenucrique.tscn"
+metadata/arrival_cell = Vector2i(13, 14)
+metadata/transition_kind = "door"
+
+[node name="@CollisionShape2D@15849" type="CollisionShape2D" parent="Transition_nenucrique" unique_id=1617304466]
+shape = SubResource("RectangleShape2D_1ymyx")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=2069255685]
+position = Vector2(168, 120)
+script = ExtResource("4_p4k3y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1981388296]
+shape = SubResource("RectangleShape2D_dtgk8")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1295701091]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=458692552]
+
+[node name="Title" type="Label" parent="HUD" unique_id=686194184]
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 8.0
+offset_bottom = 5.0
+theme_override_font_sizes/font_size = 12
+text = "Centre de Concours"
+
+[node name="Controls" type="Label" parent="HUD" unique_id=939805491]
+offset_left = 8.0
+offset_top = 21.0
+offset_right = 8.0
+offset_bottom = 21.0
+theme_override_font_sizes/font_size = 9
+text = "Flèches / WASD · Maj courir · E interagir"
+
+[node name="Dialogue" type="Label" parent="HUD" unique_id=145431450]
+visible = false
+offset_left = 8.0
+offset_top = 286.0
+offset_right = 472.0
+offset_bottom = 312.0
+theme_override_font_sizes/font_size = 11

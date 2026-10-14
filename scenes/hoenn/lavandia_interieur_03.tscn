@@ -1,0 +1,229 @@
+[gd_scene format=4]
+
+[ext_resource type="Script" path="res://scripts/hoenn/MapZone.gd" id="1_d7snv"]
+[ext_resource type="Texture2D" path="res://assets/tilesets/placeholder_hoenn_terrain.svg" id="2_3ahab"]
+[ext_resource type="Script" path="res://scripts/player/WorldActor.gd" id="3_epj6j"]
+[ext_resource type="Script" path="res://scripts/player/Player.gd" id="4_04e57"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iqxy1"]
+texture = ExtResource("2_3ahab")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1oqf3"]
+sources/0 = SubResource("TileSetAtlasSource_iqxy1")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0opc7"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbw0j"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ncjr"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8f5q"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqawt"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j64ky"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6wfc"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_therl"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxflj"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhe6y"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pc7c"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5mon"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnfpm"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bc5ow"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ue5th"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttcwk"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5tci0"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mno5i"]
+size = Vector2(10, 10)
+
+[node name="lavandia_interieur_03" type="Node2D" unique_id=932857778]
+script = ExtResource("1_d7snv")
+zone_id = &"lavandia_interieur_03"
+zone_name = "Cycles Rodolphe"
+
+[node name="Terrain" type="TileMapLayer" parent="." unique_id=554409637]
+tile_map_data = PackedByteArray("AAAAAAAAAAADAAEAAAABAAAAAAADAAEAAAACAAAAAAADAAEAAAADAAAAAAADAAEAAAAEAAAAAAADAAEAAAAFAAAAAAADAAEAAAAGAAAAAAADAAEAAAAHAAAAAAADAAEAAAAIAAAAAAADAAEAAAAJAAAAAAADAAEAAAAKAAAAAAADAAEAAAALAAAAAAADAAEAAAAMAAAAAAADAAEAAAANAAAAAAADAAEAAAAOAAAAAAADAAEAAAAPAAAAAAADAAEAAAAQAAAAAAADAAEAAAARAAAAAAADAAEAAAASAAAAAAADAAEAAAATAAAAAAADAAEAAAAAAAEAAAADAAEAAAABAAEAAAADAAEAAAACAAEAAAADAAEAAAADAAEAAAADAAEAAAAEAAEAAAADAAEAAAAFAAEAAAADAAEAAAAGAAEAAAADAAEAAAAHAAEAAAADAAEAAAAIAAEAAAADAAEAAAAJAAEAAAADAAEAAAAKAAEAAAADAAEAAAALAAEAAAADAAEAAAAMAAEAAAADAAEAAAANAAEAAAADAAEAAAAOAAEAAAADAAEAAAAPAAEAAAADAAEAAAAQAAEAAAADAAEAAAARAAEAAAADAAEAAAASAAEAAAADAAEAAAATAAEAAAADAAEAAAAAAAIAAAADAAEAAAABAAIAAAADAAEAAAACAAIAAAADAAEAAAADAAIAAAADAAEAAAAEAAIAAAADAAEAAAAFAAIAAAADAAEAAAAGAAIAAAADAAEAAAAHAAIAAAADAAEAAAAIAAIAAAADAAEAAAAJAAIAAAADAAEAAAAKAAIAAAADAAEAAAALAAIAAAADAAEAAAAMAAIAAAADAAEAAAANAAIAAAADAAEAAAAOAAIAAAADAAEAAAAPAAIAAAADAAEAAAAQAAIAAAADAAEAAAARAAIAAAADAAEAAAASAAIAAAADAAEAAAATAAIAAAADAAEAAAAAAAMAAAADAAEAAAABAAMAAAADAAEAAAACAAMAAAADAAEAAAADAAMAAAAEAAEAAAAEAAMAAAADAAEAAAAFAAMAAAADAAEAAAAGAAMAAAADAAEAAAAHAAMAAAADAAEAAAAIAAMAAAADAAEAAAAJAAMAAAADAAEAAAAKAAMAAAADAAEAAAALAAMAAAADAAEAAAAMAAMAAAADAAEAAAANAAMAAAAEAAEAAAAOAAMAAAADAAEAAAAPAAMAAAADAAEAAAAQAAMAAAADAAEAAAARAAMAAAADAAEAAAASAAMAAAADAAEAAAATAAMAAAADAAEAAAAAAAQAAAADAAEAAAABAAQAAAADAAEAAAACAAQAAAADAAEAAAADAAQAAAADAAEAAAAEAAQAAAADAAEAAAAFAAQAAAADAAEAAAAGAAQAAAADAAEAAAAHAAQAAAADAAEAAAAIAAQAAAAEAAEAAAAJAAQAAAADAAEAAAAKAAQAAAADAAEAAAALAAQAAAADAAEAAAAMAAQAAAADAAEAAAANAAQAAAADAAEAAAAOAAQAAAADAAEAAAAPAAQAAAADAAEAAAAQAAQAAAADAAEAAAARAAQAAAADAAEAAAASAAQAAAADAAEAAAATAAQAAAADAAEAAAAAAAUAAAADAAEAAAABAAUAAAADAAEAAAACAAUAAAADAAEAAAADAAUAAAAEAAEAAAAEAAUAAAADAAEAAAAFAAUAAAADAAEAAAAGAAUAAAADAAEAAAAHAAUAAAADAAEAAAAIAAUAAAADAAEAAAAJAAUAAAADAAEAAAAKAAUAAAADAAEAAAALAAUAAAADAAEAAAAMAAUAAAADAAEAAAANAAUAAAAEAAEAAAAOAAUAAAADAAEAAAAPAAUAAAADAAEAAAAQAAUAAAADAAEAAAARAAUAAAADAAEAAAASAAUAAAADAAEAAAATAAUAAAADAAEAAAAAAAYAAAADAAEAAAABAAYAAAADAAEAAAACAAYAAAADAAEAAAADAAYAAAADAAEAAAAEAAYAAAADAAEAAAAFAAYAAAADAAEAAAAGAAYAAAADAAEAAAAHAAYAAAADAAEAAAAIAAYAAAAEAAEAAAAJAAYAAAADAAEAAAAKAAYAAAADAAEAAAALAAYAAAADAAEAAAAMAAYAAAADAAEAAAANAAYAAAADAAEAAAAOAAYAAAADAAEAAAAPAAYAAAADAAEAAAAQAAYAAAADAAEAAAARAAYAAAADAAEAAAASAAYAAAADAAEAAAATAAYAAAADAAEAAAAAAAcAAAADAAEAAAABAAcAAAADAAEAAAACAAcAAAADAAEAAAADAAcAAAAEAAEAAAAEAAcAAAADAAEAAAAFAAcAAAADAAEAAAAGAAcAAAADAAEAAAAHAAcAAAADAAEAAAAIAAcAAAADAAEAAAAJAAcAAAADAAEAAAAKAAcAAAADAAEAAAALAAcAAAADAAEAAAAMAAcAAAADAAEAAAANAAcAAAAEAAEAAAAOAAcAAAADAAEAAAAPAAcAAAADAAEAAAAQAAcAAAADAAEAAAARAAcAAAADAAEAAAASAAcAAAADAAEAAAATAAcAAAADAAEAAAAAAAgAAAADAAEAAAABAAgAAAADAAEAAAACAAgAAAADAAEAAAADAAgAAAADAAEAAAAEAAgAAAADAAEAAAAFAAgAAAADAAEAAAAGAAgAAAADAAEAAAAHAAgAAAADAAEAAAAIAAgAAAAEAAEAAAAJAAgAAAADAAEAAAAKAAgAAAADAAEAAAALAAgAAAADAAEAAAAMAAgAAAADAAEAAAANAAgAAAADAAEAAAAOAAgAAAADAAEAAAAPAAgAAAADAAEAAAAQAAgAAAADAAEAAAARAAgAAAADAAEAAAASAAgAAAADAAEAAAATAAgAAAADAAEAAAAAAAkAAAADAAEAAAABAAkAAAADAAEAAAACAAkAAAADAAEAAAADAAkAAAAEAAEAAAAEAAkAAAADAAEAAAAFAAkAAAADAAEAAAAGAAkAAAADAAEAAAAHAAkAAAADAAEAAAAIAAkAAAADAAEAAAAJAAkAAAADAAEAAAAKAAkAAAADAAEAAAALAAkAAAADAAEAAAAMAAkAAAADAAEAAAANAAkAAAAEAAEAAAAOAAkAAAADAAEAAAAPAAkAAAADAAEAAAAQAAkAAAADAAEAAAARAAkAAAADAAEAAAASAAkAAAADAAEAAAATAAkAAAADAAEAAAAAAAoAAAADAAEAAAABAAoAAAADAAEAAAACAAoAAAADAAEAAAADAAoAAAADAAEAAAAEAAoAAAADAAEAAAAFAAoAAAADAAEAAAAGAAoAAAADAAEAAAAHAAoAAAADAAEAAAAIAAoAAAAEAAEAAAAJAAoAAAADAAEAAAAKAAoAAAADAAEAAAALAAoAAAADAAEAAAAMAAoAAAADAAEAAAANAAoAAAADAAEAAAAOAAoAAAADAAEAAAAPAAoAAAADAAEAAAAQAAoAAAADAAEAAAARAAoAAAADAAEAAAASAAoAAAADAAEAAAATAAoAAAADAAEAAAAAAAsAAAADAAEAAAABAAsAAAADAAEAAAACAAsAAAADAAEAAAADAAsAAAADAAEAAAAEAAsAAAADAAEAAAAFAAsAAAADAAEAAAAGAAsAAAADAAEAAAAHAAsAAAADAAEAAAAIAAsAAAADAAEAAAAJAAsAAAADAAEAAAAKAAsAAAADAAEAAAALAAsAAAADAAEAAAAMAAsAAAADAAEAAAANAAsAAAADAAEAAAAOAAsAAAADAAEAAAAPAAsAAAADAAEAAAAQAAsAAAADAAEAAAARAAsAAAADAAEAAAASAAsAAAADAAEAAAATAAsAAAADAAEAAAAAAAwAAAADAAEAAAABAAwAAAADAAEAAAACAAwAAAADAAEAAAADAAwAAAADAAEAAAAEAAwAAAADAAEAAAAFAAwAAAADAAEAAAAGAAwAAAADAAEAAAAHAAwAAAADAAEAAAAIAAwAAAADAAEAAAAJAAwAAAADAAEAAAAKAAwAAAADAAEAAAALAAwAAAADAAEAAAAMAAwAAAADAAEAAAANAAwAAAADAAEAAAAOAAwAAAADAAEAAAAPAAwAAAADAAEAAAAQAAwAAAADAAEAAAARAAwAAAADAAEAAAASAAwAAAADAAEAAAATAAwAAAADAAEAAAAAAA0AAAADAAEAAAABAA0AAAADAAEAAAACAA0AAAADAAEAAAADAA0AAAADAAEAAAAEAA0AAAADAAEAAAAFAA0AAAADAAEAAAAGAA0AAAADAAEAAAAHAA0AAAADAAEAAAAIAA0AAAACAAAAAAAJAA0AAAACAAAAAAAKAA0AAAACAAAAAAALAA0AAAACAAAAAAAMAA0AAAACAAAAAAANAA0AAAADAAEAAAAOAA0AAAADAAEAAAAPAA0AAAADAAEAAAAQAA0AAAADAAEAAAARAA0AAAADAAEAAAASAA0AAAADAAEAAAATAA0AAAADAAEAAAA=")
+tile_set = SubResource("TileSet_1oqf3")
+
+[node name="TerrainCollisions" type="StaticBody2D" parent="." unique_id=96056953]
+
+[node name="@CollisionShape2D@15527" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1619132216]
+position = Vector2(56, 56)
+shape = SubResource("RectangleShape2D_0opc7")
+
+[node name="@CollisionShape2D@15528" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1673608079]
+position = Vector2(216, 56)
+shape = SubResource("RectangleShape2D_lbw0j")
+
+[node name="@CollisionShape2D@15529" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1750913248]
+position = Vector2(136, 72)
+shape = SubResource("RectangleShape2D_0ncjr")
+
+[node name="@CollisionShape2D@15530" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1372318914]
+position = Vector2(56, 88)
+shape = SubResource("RectangleShape2D_l8f5q")
+
+[node name="@CollisionShape2D@15531" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1836985838]
+position = Vector2(216, 88)
+shape = SubResource("RectangleShape2D_gqawt")
+
+[node name="@CollisionShape2D@15532" type="CollisionShape2D" parent="TerrainCollisions" unique_id=50110544]
+position = Vector2(136, 104)
+shape = SubResource("RectangleShape2D_j64ky")
+
+[node name="@CollisionShape2D@15533" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1279845007]
+position = Vector2(56, 120)
+shape = SubResource("RectangleShape2D_w6wfc")
+
+[node name="@CollisionShape2D@15534" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1394266422]
+position = Vector2(216, 120)
+shape = SubResource("RectangleShape2D_therl")
+
+[node name="@CollisionShape2D@15535" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1383284148]
+position = Vector2(136, 136)
+shape = SubResource("RectangleShape2D_vxflj")
+
+[node name="@CollisionShape2D@15536" type="CollisionShape2D" parent="TerrainCollisions" unique_id=571994582]
+position = Vector2(56, 152)
+shape = SubResource("RectangleShape2D_lhe6y")
+
+[node name="@CollisionShape2D@15537" type="CollisionShape2D" parent="TerrainCollisions" unique_id=340529536]
+position = Vector2(216, 152)
+shape = SubResource("RectangleShape2D_7pc7c")
+
+[node name="@CollisionShape2D@15538" type="CollisionShape2D" parent="TerrainCollisions" unique_id=203622346]
+position = Vector2(136, 168)
+shape = SubResource("RectangleShape2D_p5mon")
+
+[node name="Sign_Sign" type="Node2D" parent="." unique_id=46936067]
+position = Vector2(168, 88)
+script = ExtResource("3_epj6j")
+actor_kind = "sign"
+
+[node name="Interaction" type="Area2D" parent="Sign_Sign" unique_id=1120245005]
+collision_layer = 2
+collision_mask = 0
+metadata/dialogue = "Cycles Rodolphe — prenez le temps d'explorer."
+
+[node name="@CollisionShape2D@15539" type="CollisionShape2D" parent="Sign_Sign/Interaction" unique_id=1530386835]
+shape = SubResource("RectangleShape2D_rnfpm")
+
+[node name="NPC_Voyageur" type="Node2D" parent="." unique_id=480665042]
+position = Vector2(200, 104)
+script = ExtResource("3_epj6j")
+
+[node name="Interaction" type="Area2D" parent="NPC_Voyageur" unique_id=935342711]
+collision_layer = 2
+collision_mask = 0
+metadata/dialogue = "Bienvenue dans la zone : Cycles Rodolphe."
+
+[node name="@CollisionShape2D@15540" type="CollisionShape2D" parent="NPC_Voyageur/Interaction" unique_id=928040048]
+shape = SubResource("RectangleShape2D_bc5ow")
+
+[node name="BlockingBody" type="StaticBody2D" parent="NPC_Voyageur" unique_id=1205587995]
+
+[node name="@CollisionShape2D@15541" type="CollisionShape2D" parent="NPC_Voyageur/BlockingBody" unique_id=12898532]
+shape = SubResource("RectangleShape2D_ue5th")
+
+[node name="Item_Objet trouvé" type="Node2D" parent="." unique_id=812689664]
+position = Vector2(136, 136)
+script = ExtResource("3_epj6j")
+actor_kind = "item"
+
+[node name="Interaction" type="Area2D" parent="Item_Objet trouvé" unique_id=812969851]
+collision_layer = 2
+collision_mask = 0
+metadata/dialogue = "Tu as trouvé un objet. (Système d'inventaire à venir.)"
+
+[node name="@CollisionShape2D@15542" type="CollisionShape2D" parent="Item_Objet trouvé/Interaction" unique_id=1046826965]
+shape = SubResource("RectangleShape2D_ttcwk")
+
+[node name="Transition_lavandia" type="Area2D" parent="." unique_id=1766868884]
+position = Vector2(168, 200)
+collision_layer = 0
+metadata/target_scene = "res://scenes/hoenn/lavandia.tscn"
+metadata/arrival_cell = Vector2i(21, 7)
+metadata/transition_kind = "door"
+
+[node name="@CollisionShape2D@15543" type="CollisionShape2D" parent="Transition_lavandia" unique_id=425782880]
+shape = SubResource("RectangleShape2D_5tci0")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=633753337]
+position = Vector2(168, 120)
+script = ExtResource("4_04e57")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=319892736]
+shape = SubResource("RectangleShape2D_mno5i")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1262346655]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1846900913]
+
+[node name="Title" type="Label" parent="HUD" unique_id=149589695]
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 8.0
+offset_bottom = 5.0
+theme_override_font_sizes/font_size = 12
+text = "Cycles Rodolphe"
+
+[node name="Controls" type="Label" parent="HUD" unique_id=2006603683]
+offset_left = 8.0
+offset_top = 21.0
+offset_right = 8.0
+offset_bottom = 21.0
+theme_override_font_sizes/font_size = 9
+text = "Flèches / WASD · Maj courir · E interagir"
+
+[node name="Dialogue" type="Label" parent="HUD" unique_id=399372256]
+visible = false
+offset_left = 8.0
+offset_top = 286.0
+offset_right = 472.0
+offset_bottom = 312.0
+theme_override_font_sizes/font_size = 11

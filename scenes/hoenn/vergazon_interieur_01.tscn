@@ -1,0 +1,229 @@
+[gd_scene format=4]
+
+[ext_resource type="Script" path="res://scripts/hoenn/MapZone.gd" id="1_gju2f"]
+[ext_resource type="Texture2D" path="res://assets/tilesets/placeholder_hoenn_terrain.svg" id="2_5a5e8"]
+[ext_resource type="Script" path="res://scripts/player/WorldActor.gd" id="3_ko7ad"]
+[ext_resource type="Script" path="res://scripts/player/Player.gd" id="4_3lf45"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iqxy1"]
+texture = ExtResource("2_5a5e8")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1oqf3"]
+sources/0 = SubResource("TileSetAtlasSource_iqxy1")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljwty"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5rsv"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80fhh"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmmte"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t56np"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgwdi"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eebkd"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_olc7m"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14roa"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2jt0"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_guh36"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gy3ty"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsiij"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eruis"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lj2sn"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0hc3"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqg4p"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ivix"]
+size = Vector2(10, 10)
+
+[node name="vergazon_interieur_01" type="Node2D" unique_id=2060079199]
+script = ExtResource("1_gju2f")
+zone_id = &"vergazon_interieur_01"
+zone_name = "Centre Pokémon"
+
+[node name="Terrain" type="TileMapLayer" parent="." unique_id=691767966]
+tile_map_data = PackedByteArray("AAAAAAAAAAADAAEAAAABAAAAAAADAAEAAAACAAAAAAADAAEAAAADAAAAAAADAAEAAAAEAAAAAAADAAEAAAAFAAAAAAADAAEAAAAGAAAAAAADAAEAAAAHAAAAAAADAAEAAAAIAAAAAAADAAEAAAAJAAAAAAADAAEAAAAKAAAAAAADAAEAAAALAAAAAAADAAEAAAAMAAAAAAADAAEAAAANAAAAAAADAAEAAAAOAAAAAAADAAEAAAAPAAAAAAADAAEAAAAQAAAAAAADAAEAAAARAAAAAAADAAEAAAASAAAAAAADAAEAAAATAAAAAAADAAEAAAAAAAEAAAADAAEAAAABAAEAAAADAAEAAAACAAEAAAADAAEAAAADAAEAAAADAAEAAAAEAAEAAAADAAEAAAAFAAEAAAADAAEAAAAGAAEAAAADAAEAAAAHAAEAAAADAAEAAAAIAAEAAAADAAEAAAAJAAEAAAADAAEAAAAKAAEAAAADAAEAAAALAAEAAAADAAEAAAAMAAEAAAADAAEAAAANAAEAAAADAAEAAAAOAAEAAAADAAEAAAAPAAEAAAADAAEAAAAQAAEAAAADAAEAAAARAAEAAAADAAEAAAASAAEAAAADAAEAAAATAAEAAAADAAEAAAAAAAIAAAADAAEAAAABAAIAAAADAAEAAAACAAIAAAADAAEAAAADAAIAAAADAAEAAAAEAAIAAAADAAEAAAAFAAIAAAADAAEAAAAGAAIAAAADAAEAAAAHAAIAAAADAAEAAAAIAAIAAAADAAEAAAAJAAIAAAADAAEAAAAKAAIAAAADAAEAAAALAAIAAAADAAEAAAAMAAIAAAADAAEAAAANAAIAAAADAAEAAAAOAAIAAAADAAEAAAAPAAIAAAADAAEAAAAQAAIAAAADAAEAAAARAAIAAAADAAEAAAASAAIAAAADAAEAAAATAAIAAAADAAEAAAAAAAMAAAADAAEAAAABAAMAAAADAAEAAAACAAMAAAADAAEAAAADAAMAAAAEAAEAAAAEAAMAAAADAAEAAAAFAAMAAAADAAEAAAAGAAMAAAADAAEAAAAHAAMAAAADAAEAAAAIAAMAAAADAAEAAAAJAAMAAAADAAEAAAAKAAMAAAADAAEAAAALAAMAAAADAAEAAAAMAAMAAAADAAEAAAANAAMAAAAEAAEAAAAOAAMAAAADAAEAAAAPAAMAAAADAAEAAAAQAAMAAAADAAEAAAARAAMAAAADAAEAAAASAAMAAAADAAEAAAATAAMAAAADAAEAAAAAAAQAAAADAAEAAAABAAQAAAADAAEAAAACAAQAAAADAAEAAAADAAQAAAADAAEAAAAEAAQAAAADAAEAAAAFAAQAAAADAAEAAAAGAAQAAAADAAEAAAAHAAQAAAADAAEAAAAIAAQAAAAEAAEAAAAJAAQAAAADAAEAAAAKAAQAAAADAAEAAAALAAQAAAADAAEAAAAMAAQAAAADAAEAAAANAAQAAAADAAEAAAAOAAQAAAADAAEAAAAPAAQAAAADAAEAAAAQAAQAAAADAAEAAAARAAQAAAADAAEAAAASAAQAAAADAAEAAAATAAQAAAADAAEAAAAAAAUAAAADAAEAAAABAAUAAAADAAEAAAACAAUAAAADAAEAAAADAAUAAAAEAAEAAAAEAAUAAAADAAEAAAAFAAUAAAADAAEAAAAGAAUAAAADAAEAAAAHAAUAAAADAAEAAAAIAAUAAAADAAEAAAAJAAUAAAADAAEAAAAKAAUAAAADAAEAAAALAAUAAAADAAEAAAAMAAUAAAADAAEAAAANAAUAAAAEAAEAAAAOAAUAAAADAAEAAAAPAAUAAAADAAEAAAAQAAUAAAADAAEAAAARAAUAAAADAAEAAAASAAUAAAADAAEAAAATAAUAAAADAAEAAAAAAAYAAAADAAEAAAABAAYAAAADAAEAAAACAAYAAAADAAEAAAADAAYAAAADAAEAAAAEAAYAAAADAAEAAAAFAAYAAAADAAEAAAAGAAYAAAADAAEAAAAHAAYAAAADAAEAAAAIAAYAAAAEAAEAAAAJAAYAAAADAAEAAAAKAAYAAAADAAEAAAALAAYAAAADAAEAAAAMAAYAAAADAAEAAAANAAYAAAADAAEAAAAOAAYAAAADAAEAAAAPAAYAAAADAAEAAAAQAAYAAAADAAEAAAARAAYAAAADAAEAAAASAAYAAAADAAEAAAATAAYAAAADAAEAAAAAAAcAAAADAAEAAAABAAcAAAADAAEAAAACAAcAAAADAAEAAAADAAcAAAAEAAEAAAAEAAcAAAADAAEAAAAFAAcAAAADAAEAAAAGAAcAAAADAAEAAAAHAAcAAAADAAEAAAAIAAcAAAADAAEAAAAJAAcAAAADAAEAAAAKAAcAAAADAAEAAAALAAcAAAADAAEAAAAMAAcAAAADAAEAAAANAAcAAAAEAAEAAAAOAAcAAAADAAEAAAAPAAcAAAADAAEAAAAQAAcAAAADAAEAAAARAAcAAAADAAEAAAASAAcAAAADAAEAAAATAAcAAAADAAEAAAAAAAgAAAADAAEAAAABAAgAAAADAAEAAAACAAgAAAADAAEAAAADAAgAAAADAAEAAAAEAAgAAAADAAEAAAAFAAgAAAADAAEAAAAGAAgAAAADAAEAAAAHAAgAAAADAAEAAAAIAAgAAAAEAAEAAAAJAAgAAAADAAEAAAAKAAgAAAADAAEAAAALAAgAAAADAAEAAAAMAAgAAAADAAEAAAANAAgAAAADAAEAAAAOAAgAAAADAAEAAAAPAAgAAAADAAEAAAAQAAgAAAADAAEAAAARAAgAAAADAAEAAAASAAgAAAADAAEAAAATAAgAAAADAAEAAAAAAAkAAAADAAEAAAABAAkAAAADAAEAAAACAAkAAAADAAEAAAADAAkAAAAEAAEAAAAEAAkAAAADAAEAAAAFAAkAAAADAAEAAAAGAAkAAAADAAEAAAAHAAkAAAADAAEAAAAIAAkAAAADAAEAAAAJAAkAAAADAAEAAAAKAAkAAAADAAEAAAALAAkAAAADAAEAAAAMAAkAAAADAAEAAAANAAkAAAAEAAEAAAAOAAkAAAADAAEAAAAPAAkAAAADAAEAAAAQAAkAAAADAAEAAAARAAkAAAADAAEAAAASAAkAAAADAAEAAAATAAkAAAADAAEAAAAAAAoAAAADAAEAAAABAAoAAAADAAEAAAACAAoAAAADAAEAAAADAAoAAAADAAEAAAAEAAoAAAADAAEAAAAFAAoAAAADAAEAAAAGAAoAAAADAAEAAAAHAAoAAAADAAEAAAAIAAoAAAAEAAEAAAAJAAoAAAADAAEAAAAKAAoAAAADAAEAAAALAAoAAAADAAEAAAAMAAoAAAADAAEAAAANAAoAAAADAAEAAAAOAAoAAAADAAEAAAAPAAoAAAADAAEAAAAQAAoAAAADAAEAAAARAAoAAAADAAEAAAASAAoAAAADAAEAAAATAAoAAAADAAEAAAAAAAsAAAADAAEAAAABAAsAAAADAAEAAAACAAsAAAADAAEAAAADAAsAAAADAAEAAAAEAAsAAAADAAEAAAAFAAsAAAADAAEAAAAGAAsAAAADAAEAAAAHAAsAAAADAAEAAAAIAAsAAAADAAEAAAAJAAsAAAADAAEAAAAKAAsAAAADAAEAAAALAAsAAAADAAEAAAAMAAsAAAADAAEAAAANAAsAAAADAAEAAAAOAAsAAAADAAEAAAAPAAsAAAADAAEAAAAQAAsAAAADAAEAAAARAAsAAAADAAEAAAASAAsAAAADAAEAAAATAAsAAAADAAEAAAAAAAwAAAADAAEAAAABAAwAAAADAAEAAAACAAwAAAADAAEAAAADAAwAAAADAAEAAAAEAAwAAAADAAEAAAAFAAwAAAADAAEAAAAGAAwAAAADAAEAAAAHAAwAAAADAAEAAAAIAAwAAAADAAEAAAAJAAwAAAADAAEAAAAKAAwAAAADAAEAAAALAAwAAAADAAEAAAAMAAwAAAADAAEAAAANAAwAAAADAAEAAAAOAAwAAAADAAEAAAAPAAwAAAADAAEAAAAQAAwAAAADAAEAAAARAAwAAAADAAEAAAASAAwAAAADAAEAAAATAAwAAAADAAEAAAAAAA0AAAADAAEAAAABAA0AAAADAAEAAAACAA0AAAADAAEAAAADAA0AAAADAAEAAAAEAA0AAAADAAEAAAAFAA0AAAADAAEAAAAGAA0AAAADAAEAAAAHAA0AAAADAAEAAAAIAA0AAAACAAAAAAAJAA0AAAACAAAAAAAKAA0AAAACAAAAAAALAA0AAAACAAAAAAAMAA0AAAACAAAAAAANAA0AAAADAAEAAAAOAA0AAAADAAEAAAAPAA0AAAADAAEAAAAQAA0AAAADAAEAAAARAA0AAAADAAEAAAASAA0AAAADAAEAAAATAA0AAAADAAEAAAA=")
+tile_set = SubResource("TileSet_1oqf3")
+
+[node name="TerrainCollisions" type="StaticBody2D" parent="." unique_id=906753344]
+
+[node name="@CollisionShape2D@15561" type="CollisionShape2D" parent="TerrainCollisions" unique_id=376057298]
+position = Vector2(56, 56)
+shape = SubResource("RectangleShape2D_ljwty")
+
+[node name="@CollisionShape2D@15562" type="CollisionShape2D" parent="TerrainCollisions" unique_id=984272647]
+position = Vector2(216, 56)
+shape = SubResource("RectangleShape2D_f5rsv")
+
+[node name="@CollisionShape2D@15563" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2063008742]
+position = Vector2(136, 72)
+shape = SubResource("RectangleShape2D_80fhh")
+
+[node name="@CollisionShape2D@15564" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1412598408]
+position = Vector2(56, 88)
+shape = SubResource("RectangleShape2D_fmmte")
+
+[node name="@CollisionShape2D@15565" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1246001393]
+position = Vector2(216, 88)
+shape = SubResource("RectangleShape2D_t56np")
+
+[node name="@CollisionShape2D@15566" type="CollisionShape2D" parent="TerrainCollisions" unique_id=959855101]
+position = Vector2(136, 104)
+shape = SubResource("RectangleShape2D_fgwdi")
+
+[node name="@CollisionShape2D@15567" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1857333175]
+position = Vector2(56, 120)
+shape = SubResource("RectangleShape2D_eebkd")
+
+[node name="@CollisionShape2D@15568" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1487083837]
+position = Vector2(216, 120)
+shape = SubResource("RectangleShape2D_olc7m")
+
+[node name="@CollisionShape2D@15569" type="CollisionShape2D" parent="TerrainCollisions" unique_id=69465287]
+position = Vector2(136, 136)
+shape = SubResource("RectangleShape2D_14roa")
+
+[node name="@CollisionShape2D@15570" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1363728245]
+position = Vector2(56, 152)
+shape = SubResource("RectangleShape2D_d2jt0")
+
+[node name="@CollisionShape2D@15571" type="CollisionShape2D" parent="TerrainCollisions" unique_id=225905561]
+position = Vector2(216, 152)
+shape = SubResource("RectangleShape2D_guh36")
+
+[node name="@CollisionShape2D@15572" type="CollisionShape2D" parent="TerrainCollisions" unique_id=72916957]
+position = Vector2(136, 168)
+shape = SubResource("RectangleShape2D_gy3ty")
+
+[node name="Sign_Sign" type="Node2D" parent="." unique_id=1452239107]
+position = Vector2(168, 88)
+script = ExtResource("3_ko7ad")
+actor_kind = "sign"
+
+[node name="Interaction" type="Area2D" parent="Sign_Sign" unique_id=918481580]
+collision_layer = 2
+collision_mask = 0
+metadata/dialogue = "Centre Pokémon — prenez le temps d'explorer."
+
+[node name="@CollisionShape2D@15573" type="CollisionShape2D" parent="Sign_Sign/Interaction" unique_id=776841425]
+shape = SubResource("RectangleShape2D_lsiij")
+
+[node name="NPC_Voyageur" type="Node2D" parent="." unique_id=905148195]
+position = Vector2(200, 104)
+script = ExtResource("3_ko7ad")
+
+[node name="Interaction" type="Area2D" parent="NPC_Voyageur" unique_id=339590381]
+collision_layer = 2
+collision_mask = 0
+metadata/dialogue = "Bienvenue dans la zone : Centre Pokémon."
+
+[node name="@CollisionShape2D@15574" type="CollisionShape2D" parent="NPC_Voyageur/Interaction" unique_id=1425362991]
+shape = SubResource("RectangleShape2D_eruis")
+
+[node name="BlockingBody" type="StaticBody2D" parent="NPC_Voyageur" unique_id=935984814]
+
+[node name="@CollisionShape2D@15575" type="CollisionShape2D" parent="NPC_Voyageur/BlockingBody" unique_id=80410955]
+shape = SubResource("RectangleShape2D_lj2sn")
+
+[node name="Item_Objet trouvé" type="Node2D" parent="." unique_id=1778755001]
+position = Vector2(136, 136)
+script = ExtResource("3_ko7ad")
+actor_kind = "item"
+
+[node name="Interaction" type="Area2D" parent="Item_Objet trouvé" unique_id=1587500889]
+collision_layer = 2
+collision_mask = 0
+metadata/dialogue = "Tu as trouvé un objet. (Système d'inventaire à venir.)"
+
+[node name="@CollisionShape2D@15576" type="CollisionShape2D" parent="Item_Objet trouvé/Interaction" unique_id=1571382621]
+shape = SubResource("RectangleShape2D_j0hc3")
+
+[node name="Transition_vergazon" type="Area2D" parent="." unique_id=675416009]
+position = Vector2(168, 200)
+collision_layer = 0
+metadata/target_scene = "res://scenes/hoenn/vergazon.tscn"
+metadata/arrival_cell = Vector2i(5, 7)
+metadata/transition_kind = "door"
+
+[node name="@CollisionShape2D@15577" type="CollisionShape2D" parent="Transition_vergazon" unique_id=1483005431]
+shape = SubResource("RectangleShape2D_iqg4p")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=324002231]
+position = Vector2(168, 120)
+script = ExtResource("4_3lf45")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=965585134]
+shape = SubResource("RectangleShape2D_0ivix")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1664423476]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=6143447]
+
+[node name="Title" type="Label" parent="HUD" unique_id=944358076]
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 8.0
+offset_bottom = 5.0
+theme_override_font_sizes/font_size = 12
+text = "Centre Pokémon"
+
+[node name="Controls" type="Label" parent="HUD" unique_id=541640829]
+offset_left = 8.0
+offset_top = 21.0
+offset_right = 8.0
+offset_bottom = 21.0
+theme_override_font_sizes/font_size = 9
+text = "Flèches / WASD · Maj courir · E interagir"
+
+[node name="Dialogue" type="Label" parent="HUD" unique_id=969267569]
+visible = false
+offset_left = 8.0
+offset_top = 286.0
+offset_right = 472.0
+offset_bottom = 312.0
+theme_override_font_sizes/font_size = 11

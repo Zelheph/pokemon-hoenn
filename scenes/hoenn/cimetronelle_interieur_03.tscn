@@ -1,0 +1,229 @@
+[gd_scene format=4]
+
+[ext_resource type="Script" path="res://scripts/hoenn/MapZone.gd" id="1_ayj2l"]
+[ext_resource type="Texture2D" path="res://assets/tilesets/placeholder_hoenn_terrain.svg" id="2_hcmf6"]
+[ext_resource type="Script" path="res://scripts/player/WorldActor.gd" id="3_8yret"]
+[ext_resource type="Script" path="res://scripts/player/Player.gd" id="4_i1c0j"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iqxy1"]
+texture = ExtResource("2_hcmf6")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1oqf3"]
+sources/0 = SubResource("TileSetAtlasSource_iqxy1")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgo8c"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmu0j"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_teyxu"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fncxr"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnw2g"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jo1fg"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j53sw"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgoep"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcmy3"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dfpk"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86r3b"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4scp7"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5spkp"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nq1q"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jilk7"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r27tf"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aj4gr"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4msme"]
+size = Vector2(10, 10)
+
+[node name="cimetronelle_interieur_03" type="Node2D" unique_id=2114188628]
+script = ExtResource("1_ayj2l")
+zone_id = &"cimetronelle_interieur_03"
+zone_name = "Arène de Cimetronelle"
+
+[node name="Terrain" type="TileMapLayer" parent="." unique_id=56635214]
+tile_map_data = PackedByteArray("AAAAAAAAAAADAAEAAAABAAAAAAADAAEAAAACAAAAAAADAAEAAAADAAAAAAADAAEAAAAEAAAAAAADAAEAAAAFAAAAAAADAAEAAAAGAAAAAAADAAEAAAAHAAAAAAADAAEAAAAIAAAAAAADAAEAAAAJAAAAAAADAAEAAAAKAAAAAAADAAEAAAALAAAAAAADAAEAAAAMAAAAAAADAAEAAAANAAAAAAADAAEAAAAOAAAAAAADAAEAAAAPAAAAAAADAAEAAAAQAAAAAAADAAEAAAARAAAAAAADAAEAAAASAAAAAAADAAEAAAATAAAAAAADAAEAAAAAAAEAAAADAAEAAAABAAEAAAADAAEAAAACAAEAAAADAAEAAAADAAEAAAADAAEAAAAEAAEAAAADAAEAAAAFAAEAAAADAAEAAAAGAAEAAAADAAEAAAAHAAEAAAADAAEAAAAIAAEAAAADAAEAAAAJAAEAAAADAAEAAAAKAAEAAAADAAEAAAALAAEAAAADAAEAAAAMAAEAAAADAAEAAAANAAEAAAADAAEAAAAOAAEAAAADAAEAAAAPAAEAAAADAAEAAAAQAAEAAAADAAEAAAARAAEAAAADAAEAAAASAAEAAAADAAEAAAATAAEAAAADAAEAAAAAAAIAAAADAAEAAAABAAIAAAADAAEAAAACAAIAAAADAAEAAAADAAIAAAADAAEAAAAEAAIAAAADAAEAAAAFAAIAAAADAAEAAAAGAAIAAAADAAEAAAAHAAIAAAADAAEAAAAIAAIAAAADAAEAAAAJAAIAAAADAAEAAAAKAAIAAAADAAEAAAALAAIAAAADAAEAAAAMAAIAAAADAAEAAAANAAIAAAADAAEAAAAOAAIAAAADAAEAAAAPAAIAAAADAAEAAAAQAAIAAAADAAEAAAARAAIAAAADAAEAAAASAAIAAAADAAEAAAATAAIAAAADAAEAAAAAAAMAAAADAAEAAAABAAMAAAADAAEAAAACAAMAAAADAAEAAAADAAMAAAAEAAEAAAAEAAMAAAADAAEAAAAFAAMAAAADAAEAAAAGAAMAAAADAAEAAAAHAAMAAAADAAEAAAAIAAMAAAADAAEAAAAJAAMAAAADAAEAAAAKAAMAAAADAAEAAAALAAMAAAADAAEAAAAMAAMAAAADAAEAAAANAAMAAAAEAAEAAAAOAAMAAAADAAEAAAAPAAMAAAADAAEAAAAQAAMAAAADAAEAAAARAAMAAAADAAEAAAASAAMAAAADAAEAAAATAAMAAAADAAEAAAAAAAQAAAADAAEAAAABAAQAAAADAAEAAAACAAQAAAADAAEAAAADAAQAAAADAAEAAAAEAAQAAAADAAEAAAAFAAQAAAADAAEAAAAGAAQAAAADAAEAAAAHAAQAAAADAAEAAAAIAAQAAAAEAAEAAAAJAAQAAAADAAEAAAAKAAQAAAADAAEAAAALAAQAAAADAAEAAAAMAAQAAAADAAEAAAANAAQAAAADAAEAAAAOAAQAAAADAAEAAAAPAAQAAAADAAEAAAAQAAQAAAADAAEAAAARAAQAAAADAAEAAAASAAQAAAADAAEAAAATAAQAAAADAAEAAAAAAAUAAAADAAEAAAABAAUAAAADAAEAAAACAAUAAAADAAEAAAADAAUAAAAEAAEAAAAEAAUAAAADAAEAAAAFAAUAAAADAAEAAAAGAAUAAAADAAEAAAAHAAUAAAADAAEAAAAIAAUAAAADAAEAAAAJAAUAAAADAAEAAAAKAAUAAAADAAEAAAALAAUAAAADAAEAAAAMAAUAAAADAAEAAAANAAUAAAAEAAEAAAAOAAUAAAADAAEAAAAPAAUAAAADAAEAAAAQAAUAAAADAAEAAAARAAUAAAADAAEAAAASAAUAAAADAAEAAAATAAUAAAADAAEAAAAAAAYAAAADAAEAAAABAAYAAAADAAEAAAACAAYAAAADAAEAAAADAAYAAAADAAEAAAAEAAYAAAADAAEAAAAFAAYAAAADAAEAAAAGAAYAAAADAAEAAAAHAAYAAAADAAEAAAAIAAYAAAAEAAEAAAAJAAYAAAADAAEAAAAKAAYAAAADAAEAAAALAAYAAAADAAEAAAAMAAYAAAADAAEAAAANAAYAAAADAAEAAAAOAAYAAAADAAEAAAAPAAYAAAADAAEAAAAQAAYAAAADAAEAAAARAAYAAAADAAEAAAASAAYAAAADAAEAAAATAAYAAAADAAEAAAAAAAcAAAADAAEAAAABAAcAAAADAAEAAAACAAcAAAADAAEAAAADAAcAAAAEAAEAAAAEAAcAAAADAAEAAAAFAAcAAAADAAEAAAAGAAcAAAADAAEAAAAHAAcAAAADAAEAAAAIAAcAAAADAAEAAAAJAAcAAAADAAEAAAAKAAcAAAADAAEAAAALAAcAAAADAAEAAAAMAAcAAAADAAEAAAANAAcAAAAEAAEAAAAOAAcAAAADAAEAAAAPAAcAAAADAAEAAAAQAAcAAAADAAEAAAARAAcAAAADAAEAAAASAAcAAAADAAEAAAATAAcAAAADAAEAAAAAAAgAAAADAAEAAAABAAgAAAADAAEAAAACAAgAAAADAAEAAAADAAgAAAADAAEAAAAEAAgAAAADAAEAAAAFAAgAAAADAAEAAAAGAAgAAAADAAEAAAAHAAgAAAADAAEAAAAIAAgAAAAEAAEAAAAJAAgAAAADAAEAAAAKAAgAAAADAAEAAAALAAgAAAADAAEAAAAMAAgAAAADAAEAAAANAAgAAAADAAEAAAAOAAgAAAADAAEAAAAPAAgAAAADAAEAAAAQAAgAAAADAAEAAAARAAgAAAADAAEAAAASAAgAAAADAAEAAAATAAgAAAADAAEAAAAAAAkAAAADAAEAAAABAAkAAAADAAEAAAACAAkAAAADAAEAAAADAAkAAAAEAAEAAAAEAAkAAAADAAEAAAAFAAkAAAADAAEAAAAGAAkAAAADAAEAAAAHAAkAAAADAAEAAAAIAAkAAAADAAEAAAAJAAkAAAADAAEAAAAKAAkAAAADAAEAAAALAAkAAAADAAEAAAAMAAkAAAADAAEAAAANAAkAAAAEAAEAAAAOAAkAAAADAAEAAAAPAAkAAAADAAEAAAAQAAkAAAADAAEAAAARAAkAAAADAAEAAAASAAkAAAADAAEAAAATAAkAAAADAAEAAAAAAAoAAAADAAEAAAABAAoAAAADAAEAAAACAAoAAAADAAEAAAADAAoAAAADAAEAAAAEAAoAAAADAAEAAAAFAAoAAAADAAEAAAAGAAoAAAADAAEAAAAHAAoAAAADAAEAAAAIAAoAAAAEAAEAAAAJAAoAAAADAAEAAAAKAAoAAAADAAEAAAALAAoAAAADAAEAAAAMAAoAAAADAAEAAAANAAoAAAADAAEAAAAOAAoAAAADAAEAAAAPAAoAAAADAAEAAAAQAAoAAAADAAEAAAARAAoAAAADAAEAAAASAAoAAAADAAEAAAATAAoAAAADAAEAAAAAAAsAAAADAAEAAAABAAsAAAADAAEAAAACAAsAAAADAAEAAAADAAsAAAADAAEAAAAEAAsAAAADAAEAAAAFAAsAAAADAAEAAAAGAAsAAAADAAEAAAAHAAsAAAADAAEAAAAIAAsAAAADAAEAAAAJAAsAAAADAAEAAAAKAAsAAAADAAEAAAALAAsAAAADAAEAAAAMAAsAAAADAAEAAAANAAsAAAADAAEAAAAOAAsAAAADAAEAAAAPAAsAAAADAAEAAAAQAAsAAAADAAEAAAARAAsAAAADAAEAAAASAAsAAAADAAEAAAATAAsAAAADAAEAAAAAAAwAAAADAAEAAAABAAwAAAADAAEAAAACAAwAAAADAAEAAAADAAwAAAADAAEAAAAEAAwAAAADAAEAAAAFAAwAAAADAAEAAAAGAAwAAAADAAEAAAAHAAwAAAADAAEAAAAIAAwAAAADAAEAAAAJAAwAAAADAAEAAAAKAAwAAAADAAEAAAALAAwAAAADAAEAAAAMAAwAAAADAAEAAAANAAwAAAADAAEAAAAOAAwAAAADAAEAAAAPAAwAAAADAAEAAAAQAAwAAAADAAEAAAARAAwAAAADAAEAAAASAAwAAAADAAEAAAATAAwAAAADAAEAAAAAAA0AAAADAAEAAAABAA0AAAADAAEAAAACAA0AAAADAAEAAAADAA0AAAADAAEAAAAEAA0AAAADAAEAAAAFAA0AAAADAAEAAAAGAA0AAAADAAEAAAAHAA0AAAADAAEAAAAIAA0AAAACAAAAAAAJAA0AAAACAAAAAAAKAA0AAAACAAAAAAALAA0AAAACAAAAAAAMAA0AAAACAAAAAAANAA0AAAADAAEAAAAOAA0AAAADAAEAAAAPAA0AAAADAAEAAAAQAA0AAAADAAEAAAARAA0AAAADAAEAAAASAA0AAAADAAEAAAATAA0AAAADAAEAAAA=")
+tile_set = SubResource("TileSet_1oqf3")
+
+[node name="TerrainCollisions" type="StaticBody2D" parent="." unique_id=186225385]
+
+[node name="@CollisionShape2D@15748" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1942774752]
+position = Vector2(56, 56)
+shape = SubResource("RectangleShape2D_rgo8c")
+
+[node name="@CollisionShape2D@15749" type="CollisionShape2D" parent="TerrainCollisions" unique_id=238265695]
+position = Vector2(216, 56)
+shape = SubResource("RectangleShape2D_mmu0j")
+
+[node name="@CollisionShape2D@15750" type="CollisionShape2D" parent="TerrainCollisions" unique_id=293619495]
+position = Vector2(136, 72)
+shape = SubResource("RectangleShape2D_teyxu")
+
+[node name="@CollisionShape2D@15751" type="CollisionShape2D" parent="TerrainCollisions" unique_id=265724027]
+position = Vector2(56, 88)
+shape = SubResource("RectangleShape2D_fncxr")
+
+[node name="@CollisionShape2D@15752" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1991238954]
+position = Vector2(216, 88)
+shape = SubResource("RectangleShape2D_bnw2g")
+
+[node name="@CollisionShape2D@15753" type="CollisionShape2D" parent="TerrainCollisions" unique_id=418604523]
+position = Vector2(136, 104)
+shape = SubResource("RectangleShape2D_jo1fg")
+
+[node name="@CollisionShape2D@15754" type="CollisionShape2D" parent="TerrainCollisions" unique_id=379041518]
+position = Vector2(56, 120)
+shape = SubResource("RectangleShape2D_j53sw")
+
+[node name="@CollisionShape2D@15755" type="CollisionShape2D" parent="TerrainCollisions" unique_id=992954606]
+position = Vector2(216, 120)
+shape = SubResource("RectangleShape2D_dgoep")
+
+[node name="@CollisionShape2D@15756" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1831246039]
+position = Vector2(136, 136)
+shape = SubResource("RectangleShape2D_xcmy3")
+
+[node name="@CollisionShape2D@15757" type="CollisionShape2D" parent="TerrainCollisions" unique_id=229310043]
+position = Vector2(56, 152)
+shape = SubResource("RectangleShape2D_3dfpk")
+
+[node name="@CollisionShape2D@15758" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1737746226]
+position = Vector2(216, 152)
+shape = SubResource("RectangleShape2D_86r3b")
+
+[node name="@CollisionShape2D@15759" type="CollisionShape2D" parent="TerrainCollisions" unique_id=435104572]
+position = Vector2(136, 168)
+shape = SubResource("RectangleShape2D_4scp7")
+
+[node name="Sign_Sign" type="Node2D" parent="." unique_id=1722080346]
+position = Vector2(168, 88)
+script = ExtResource("3_8yret")
+actor_kind = "sign"
+
+[node name="Interaction" type="Area2D" parent="Sign_Sign" unique_id=853404547]
+collision_layer = 2
+collision_mask = 0
+metadata/dialogue = "Arène de Cimetronelle — prenez le temps d'explorer."
+
+[node name="@CollisionShape2D@15760" type="CollisionShape2D" parent="Sign_Sign/Interaction" unique_id=418659669]
+shape = SubResource("RectangleShape2D_5spkp")
+
+[node name="NPC_Voyageur" type="Node2D" parent="." unique_id=2121579036]
+position = Vector2(200, 104)
+script = ExtResource("3_8yret")
+
+[node name="Interaction" type="Area2D" parent="NPC_Voyageur" unique_id=1624260298]
+collision_layer = 2
+collision_mask = 0
+metadata/dialogue = "Bienvenue dans la zone : Arène de Cimetronelle."
+
+[node name="@CollisionShape2D@15761" type="CollisionShape2D" parent="NPC_Voyageur/Interaction" unique_id=141643178]
+shape = SubResource("RectangleShape2D_7nq1q")
+
+[node name="BlockingBody" type="StaticBody2D" parent="NPC_Voyageur" unique_id=425568326]
+
+[node name="@CollisionShape2D@15762" type="CollisionShape2D" parent="NPC_Voyageur/BlockingBody" unique_id=1280186569]
+shape = SubResource("RectangleShape2D_jilk7")
+
+[node name="Item_Objet trouvé" type="Node2D" parent="." unique_id=1700435111]
+position = Vector2(136, 136)
+script = ExtResource("3_8yret")
+actor_kind = "item"
+
+[node name="Interaction" type="Area2D" parent="Item_Objet trouvé" unique_id=135419993]
+collision_layer = 2
+collision_mask = 0
+metadata/dialogue = "Tu as trouvé un objet. (Système d'inventaire à venir.)"
+
+[node name="@CollisionShape2D@15763" type="CollisionShape2D" parent="Item_Objet trouvé/Interaction" unique_id=1843708531]
+shape = SubResource("RectangleShape2D_r27tf")
+
+[node name="Transition_cimetronelle" type="Area2D" parent="." unique_id=1392503513]
+position = Vector2(168, 200)
+collision_layer = 0
+metadata/target_scene = "res://scenes/hoenn/cimetronelle.tscn"
+metadata/arrival_cell = Vector2i(21, 7)
+metadata/transition_kind = "door"
+
+[node name="@CollisionShape2D@15764" type="CollisionShape2D" parent="Transition_cimetronelle" unique_id=971927994]
+shape = SubResource("RectangleShape2D_aj4gr")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=693557016]
+position = Vector2(168, 120)
+script = ExtResource("4_i1c0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=97303203]
+shape = SubResource("RectangleShape2D_4msme")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=241915186]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=348412396]
+
+[node name="Title" type="Label" parent="HUD" unique_id=1795886708]
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 8.0
+offset_bottom = 5.0
+theme_override_font_sizes/font_size = 12
+text = "Arène de Cimetronelle"
+
+[node name="Controls" type="Label" parent="HUD" unique_id=1338918182]
+offset_left = 8.0
+offset_top = 21.0
+offset_right = 8.0
+offset_bottom = 21.0
+theme_override_font_sizes/font_size = 9
+text = "Flèches / WASD · Maj courir · E interagir"
+
+[node name="Dialogue" type="Label" parent="HUD" unique_id=801475830]
+visible = false
+offset_left = 8.0
+offset_top = 286.0
+offset_right = 472.0
+offset_bottom = 312.0
+theme_override_font_sizes/font_size = 11

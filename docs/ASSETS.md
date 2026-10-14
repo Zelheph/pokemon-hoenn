@@ -32,13 +32,15 @@ Source inspectée : `/home/zeleph/Téléchargements` (fichiers non liés ignoré
 
 ## Taille des cases
 
-Le projet cible une grille de **16×16 px** conformément à `AGENTS.md`. Les planches de tuiles sont des images d’extraction avec annotations et ne sont pas garanties comme atlas homogènes : aucun découpage n’a été figé à cette étape. Les références de lieux ne sont pas utilisées comme textures de carte.
+Le projet cible une grille de **16×16 px** conformément à `AGENTS.md`. `placeholder_hoenn_terrain.svg` (SVG, 128×32 px, atlas 8×2 cases de 16×16 px) est un atlas provisoire dessiné pour assurer la génération stable des TileMapLayer. Les planches PNG fournies sont des images d’extraction avec annotations et ne sont pas encore découpées en atlas homogènes ; elles restent la référence visuelle prioritaire pour une prochaine passe artistique. Les références de lieux ne sont pas utilisées comme textures de carte.
 
 ## Sources examinées mais non copiées en bloc
 
 `sprites-latest/sprites/pokemon` contient plus de 92 000 fichiers pour environ 12 Go (variantes/formes et générations). Seuls les trois sprites de départ Hoenn ont été copiés pour le prototype ; le reste demeure disponible dans Téléchargements et sera sélectionné lorsque les données/écrans le nécessiteront.
 
 ## Manques identifiés
+
+- Tuiles de production adaptées aux scènes (l’atlas SVG actuel est provisoire ; les planches PNG fournies restent à découper et intégrer).
 
 - Sprite sheet joueur correctement découpé en frames 4 directions (présent comme source, mais cadrage à établir).
 - Sons et musiques de jeu : aucun fichier audio détecté parmi les assets examinés.

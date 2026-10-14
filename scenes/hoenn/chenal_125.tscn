@@ -1,0 +1,4077 @@
+[gd_scene format=4]
+
+[ext_resource type="Script" path="res://scripts/hoenn/MapZone.gd" id="1_xoxw7"]
+[ext_resource type="Texture2D" path="res://assets/tilesets/placeholder_hoenn_terrain.svg" id="2_u08kv"]
+[ext_resource type="Script" path="res://scripts/player/WorldActor.gd" id="3_he2ax"]
+[ext_resource type="Script" path="res://scripts/player/Player.gd" id="4_8rpjo"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iqxy1"]
+texture = ExtResource("2_u08kv")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1oqf3"]
+sources/0 = SubResource("TileSetAtlasSource_iqxy1")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75tne"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsiov"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pebi"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dcoq7"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23wya"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sho0g"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0o6nw"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvdxk"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j40nd"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gj1bf"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsa1f"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cbxw"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bvx2"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3jx5"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_owetc"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jisia"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gm8eb"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wx4vl"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmi84"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_og8na"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ng41g"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20s0n"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8e8an"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81e1l"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygtah"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bx4md"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pwbt"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edewv"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rojsd"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6scwm"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6al8r"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mg25"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tm8ts"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrjwx"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2y7ot"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvbqw"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mw17"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hukg"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0tj5"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hv713"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7kvuv"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_woe52"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pctfc"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rn5b8"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uj15c"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvns7"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1qow"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tf6r4"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mpdf"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpqu3"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hk602"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2l7t"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0y5vq"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rllmo"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wsu67"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8g7d2"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7kqi8"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tm4l"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqnce"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkx4o"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3p33x"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yay8m"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3h6bm"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xamvf"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pebuy"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4c0il"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_snry3"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bovd7"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3i3c"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7f7ou"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_whpqc"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxy3x"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iuuks"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihyuh"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8nfa"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yauqs"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1arst"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vecgo"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spv7x"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nat5m"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xyhul"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xoyox"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44qgx"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smlb2"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlqd2"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ev8xy"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxve3"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_725in"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_toudd"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbpav"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64r6j"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkd4g"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8y3ko"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqihl"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80ry0"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6y68d"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl215"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhikq"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8r2d"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5cmtd"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qwd2"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnsys"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wb55"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8lyj"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eyhd4"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvg2h"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ph1r2"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e74pt"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xl5as"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfad3"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_php3a"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_athah"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wyy5"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fw5v4"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lesyp"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ekgs"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3htnt"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fne72"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lulah"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hmtl"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8wsa"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gctr"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_buvq1"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8ijw"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7x8ly"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0k8cl"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ha8tj"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ceua1"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1lqu"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60o3k"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_151i0"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rst1f"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvoce"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aeqo5"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhydb"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvbnu"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rswdx"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jc82x"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6so2"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svgjb"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7ovm"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6yp5"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxgrc"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4echu"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lbvs"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wyd7w"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdv16"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66f1w"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6u3t"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3b7w"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udbbf"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ienao"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsly3"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1tb4h"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abfte"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0css"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0q17m"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o03r0"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sl4yu"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ek6wn"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt3ai"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rc0h"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mpyo"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85toe"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3exp3"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sw62g"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36atu"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_102bs"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0cntk"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_802jn"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpc8w"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2gb3n"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5y1xt"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xyumt"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3octu"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0c4on"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gh158"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_okqta"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwhrd"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8c1m"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v174q"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_erypo"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1l2b"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmjhs"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f17cw"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1pw8w"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21iua"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0qxw"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nv5go"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ivkg"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pveoa"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50n1p"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tu7ue"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ty2v0"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75s4q"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ech7h"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0v7tc"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a33rp"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wc57g"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ht5la"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgjdn"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrkfg"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4v7f2"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjs6t"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1513b"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35tty"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwcgk"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lb1pw"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fv1xo"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6eevc"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3m2u4"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rw2eo"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4opbx"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lt34v"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6x8r"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rdj7"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3n3fb"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g12lh"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2rme0"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjfc5"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gswrf"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ait00"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2py6"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6wgc"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3v8wx"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpexo"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4add"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n04ia"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcmfn"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pox5s"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppsx7"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wh74g"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p544u"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ie7es"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oodn4"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_617qf"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvtbl"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5nx1"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vuvd4"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pp2er"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wo6hk"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6b5ek"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3ynx"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lipwc"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arxyu"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcahr"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjfh0"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cw8p"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_maxy4"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cquh7"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y8juk"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lmof"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ted0f"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbmvt"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hjt5"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jju3b"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ceqk"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fh37b"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qger"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eh3cf"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fswg3"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2bd6d"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqfi5"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tq0s"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4n00p"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogejp"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54b4c"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvsbd"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nck20"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ss7ac"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elq21"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blflh"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v543a"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofpby"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmq07"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yky36"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vak25"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ff5hu"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3g838"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aynrl"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_an4vs"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5byg"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvk30"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27rlh"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58ul3"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16ece"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2cfl"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16i4s"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2fonw"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5et8b"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8khxx"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7a3r6"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3byu6"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8y0ot"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifqb1"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_av6sx"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmt0h"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqqox"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbbn6"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xlu6"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33md4"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2747"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5amtx"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56t0h"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nljdj"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csvvd"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y2e24"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oreg6"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jf53l"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0i0ox"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_402lg"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7t1wi"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0eg4"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0m62"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqyl0"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etlbf"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfvrd"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_py7al"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0hmo"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qkf5"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7m7ec"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxs6e"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3sju"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tivjw"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enn21"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yidb6"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ytu2f"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4arrg"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1imgp"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jlqn6"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbgq7"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vi5a"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ajba"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2ony"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26o75"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2dcc"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hb40w"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eggs6"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5drof"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q74rh"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ck2k0"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0tmx8"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hs0gl"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8jy7"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3fjw"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sa7q"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rrmx"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxpxt"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0okv6"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtmh7"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nma4t"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xveo"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86vil"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcvwa"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pymok"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elxhl"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xy8bc"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fshy8"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2swc"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rq7sb"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fi4ss"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cjmu"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vjv4w"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6p5k"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsx14"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ep3qq"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gf6fd"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l25ut"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svx66"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqrjf"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0njmq"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cew2g"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6ghc"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifal1"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88w8w"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3ffv"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybtt7"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsc62"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4f76"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a15n2"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sy4fs"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7vw6"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hta3"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8w68r"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04njq"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxufy"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qag2n"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1nrf0"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6an4n"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3xmn"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5k3s"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6tq7p"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyk0b"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ba2w7"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqswt"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_owmdw"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdyy0"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjhgw"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pm6up"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eeq0h"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwh2n"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmvib"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_es0ar"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ccxv"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfbxu"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cabhp"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t636n"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8uuj"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cck1s"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3dgh"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltm2p"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2mur"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0jbg"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_migco"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkbo6"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uav4y"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yyyb0"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icj0w"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drygp"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obrfe"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_774gn"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2yjhh"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2gv7"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sy51e"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vq85p"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ssp1"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l231e"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irfko"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vg1b"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qc2vv"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cv7h8"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vfi7"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mvun"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y84rg"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_072ca"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xu6ed"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrgdv"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_igcy8"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wu7a"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gm7ex"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ijbb"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wf5k"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mq2nb"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ye0qf"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50k2d"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sfo1l"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpd2u"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ks6ve"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ae76d"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gaiu"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sumau"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyqve"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23t24"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lii3u"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gm4ch"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3avw"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ga7n6"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukfip"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7yw4"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wt3ye"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0q6be"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q32fl"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vo1fp"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3kts"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cr13w"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i517k"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykpc0"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mx76m"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rudkt"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vjvn7"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipy6h"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2h4yl"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gpua"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pxto"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2fc1"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hd5m8"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nouct"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41weu"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04nwi"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2si2m"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wa30j"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ey2ob"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t5ew2"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klbj5"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4u72g"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffgm2"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cp76h"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n63sw"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxvhx"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2iq5u"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_itfur"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahutp"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntsa4"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_suugf"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uauev"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15mwk"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgstx"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tld2n"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m40dt"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkyjr"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0m0q"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uetcr"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b56wp"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3l5x"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgob6"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_riq74"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8criu"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhikj"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttg42"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0qp1"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnoyc"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8qqo"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3prl7"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m20jn"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wy7i6"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4usx"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pts8n"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjgto"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7hs0"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2d7p"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebbcy"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sl74r"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vqle"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4g7gv"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_602f8"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yelru"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6tb2"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k44s5"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73d6b"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oudq8"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yu2kr"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gug7"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25da1"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gu6qx"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbt16"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uuqff"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1u2j"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3mtn"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q8pf7"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_444wk"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2y2if"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhyq0"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48i62"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kk6o5"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_magwh"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bolof"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgoen"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8400o"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywl2m"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pigxl"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxf8h"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1end"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecuk2"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtg8a"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4nsl"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6852"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncsxe"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25mfr"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58q7w"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7ion"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0gu0"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vveyf"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4duha"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjr6y"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlcbe"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5sps"]
+size = Vector2(10, 10)
+
+[node name="chenal_125" type="Node2D" unique_id=812479590]
+script = ExtResource("1_xoxw7")
+zone_id = &"chenal_125"
+zone_name = "Chenal 125"
+
+[node name="Terrain" type="TileMapLayer" parent="." unique_id=944107215]
+tile_map_data = PackedByteArray("AAAAAAAAAAAFAAAAAAABAAAAAAAFAAAAAAACAAAAAAAFAAAAAAADAAAAAAAFAAAAAAAEAAAAAAAEAAAAAAAFAAAAAAAEAAAAAAAGAAAAAAAEAAAAAAAHAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAJAAAAAAAEAAAAAAAKAAAAAAAEAAAAAAALAAAAAAAEAAAAAAAMAAAAAAAFAAAAAAANAAAAAAAFAAAAAAAOAAAAAAAFAAAAAAAPAAAAAAAFAAAAAAAQAAAAAAAEAAAAAAARAAAAAAAEAAAAAAASAAAAAAAEAAAAAAATAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAVAAAAAAAEAAAAAAAWAAAAAAAEAAAAAAAXAAAAAAAEAAAAAAAYAAAAAAAFAAAAAAAZAAAAAAAFAAAAAAAaAAAAAAAFAAAAAAAbAAAAAAAFAAAAAAAcAAAAAAAEAAAAAAAdAAAAAAAEAAAAAAAAAAEAAAAFAAAAAAABAAEAAAAFAAAAAAACAAEAAAAFAAAAAAADAAEAAAAFAAAAAAAEAAEAAAAEAAAAAAAFAAEAAAAEAAAAAAAGAAEAAAAEAAAAAAAHAAEAAAAEAAAAAAAIAAEAAAAEAAAAAAAJAAEAAAAEAAAAAAAKAAEAAAAEAAAAAAALAAEAAAAEAAAAAAAMAAEAAAAFAAAAAAANAAEAAAAFAAAAAAAOAAEAAAAFAAAAAAAPAAEAAAAFAAAAAAAQAAEAAAAEAAAAAAARAAEAAAAEAAAAAAASAAEAAAAEAAAAAAATAAEAAAAEAAAAAAAUAAEAAAAEAAAAAAAVAAEAAAAEAAAAAAAWAAEAAAAEAAAAAAAXAAEAAAAEAAAAAAAYAAEAAAAFAAAAAAAZAAEAAAAFAAAAAAAaAAEAAAAFAAAAAAAbAAEAAAAFAAAAAAAcAAEAAAAEAAAAAAAdAAEAAAAEAAAAAAAAAAIAAAAFAAAAAAABAAIAAAAFAAAAAAACAAIAAAAFAAAAAAADAAIAAAAFAAAAAAAEAAIAAAAEAAAAAAAFAAIAAAAEAAAAAAAGAAIAAAAEAAAAAAAHAAIAAAAEAAAAAAAIAAIAAAAEAAAAAAAJAAIAAAAEAAAAAAAKAAIAAAAEAAAAAAALAAIAAAAEAAAAAAAMAAIAAAAFAAAAAAANAAIAAAAFAAAAAAAOAAIAAAAFAAAAAAAPAAIAAAACAAAAAAAQAAIAAAAEAAAAAAARAAIAAAAEAAAAAAASAAIAAAAEAAAAAAATAAIAAAAEAAAAAAAUAAIAAAAEAAAAAAAVAAIAAAAEAAAAAAAWAAIAAAAEAAAAAAAXAAIAAAAEAAAAAAAYAAIAAAAFAAAAAAAZAAIAAAAFAAAAAAAaAAIAAAAFAAAAAAAbAAIAAAAFAAAAAAAcAAIAAAAEAAAAAAAdAAIAAAAEAAAAAAAAAAMAAAAFAAAAAAABAAMAAAAFAAAAAAACAAMAAAAFAAAAAAADAAMAAAAFAAAAAAAEAAMAAAAEAAAAAAAFAAMAAAAEAAAAAAAGAAMAAAAEAAAAAAAHAAMAAAAEAAAAAAAIAAMAAAAEAAAAAAAJAAMAAAAEAAAAAAAKAAMAAAAEAAAAAAALAAMAAAAEAAAAAAAMAAMAAAAFAAAAAAANAAMAAAAFAAAAAAAOAAMAAAAFAAAAAAAPAAMAAAACAAAAAAAQAAMAAAAEAAAAAAARAAMAAAAEAAAAAAASAAMAAAAEAAAAAAATAAMAAAAEAAAAAAAUAAMAAAAEAAAAAAAVAAMAAAAEAAAAAAAWAAMAAAAEAAAAAAAXAAMAAAAEAAAAAAAYAAMAAAAFAAAAAAAZAAMAAAAFAAAAAAAaAAMAAAAFAAAAAAAbAAMAAAAFAAAAAAAcAAMAAAAEAAAAAAAdAAMAAAAEAAAAAAAAAAQAAAAEAAAAAAABAAQAAAAEAAAAAAACAAQAAAAEAAAAAAADAAQAAAAEAAAAAAAEAAQAAAAEAAAAAAAFAAQAAAAEAAAAAAAGAAQAAAAEAAAAAAAHAAQAAAAEAAAAAAAIAAQAAAAFAAAAAAAJAAQAAAAFAAAAAAAKAAQAAAAFAAAAAAALAAQAAAAFAAAAAAAMAAQAAAAEAAAAAAANAAQAAAAEAAAAAAAOAAQAAAAEAAAAAAAPAAQAAAABAAEAAAAQAAQAAAAEAAAAAAARAAQAAAAEAAAAAAASAAQAAAAEAAAAAAATAAQAAAAEAAAAAAAUAAQAAAAFAAAAAAAVAAQAAAAFAAAAAAAWAAQAAAAFAAAAAAAXAAQAAAAFAAAAAAAYAAQAAAAEAAAAAAAZAAQAAAAEAAAAAAAaAAQAAAAEAAAAAAAbAAQAAAAEAAAAAAAcAAQAAAAEAAAAAAAdAAQAAAAEAAAAAAAAAAUAAAAEAAAAAAABAAUAAAAEAAAAAAACAAUAAAAEAAAAAAADAAUAAAAEAAAAAAAEAAUAAAAEAAAAAAAFAAUAAAAEAAAAAAAGAAUAAAAEAAAAAAAHAAUAAAAEAAAAAAAIAAUAAAAFAAAAAAAJAAUAAAAFAAAAAAAKAAUAAAAFAAAAAAALAAUAAAAFAAAAAAAMAAUAAAAEAAAAAAANAAUAAAAEAAAAAAAOAAUAAAAEAAAAAAAPAAUAAAACAAAAAAAQAAUAAAAEAAAAAAARAAUAAAAEAAAAAAASAAUAAAAEAAAAAAATAAUAAAAEAAAAAAAUAAUAAAAFAAAAAAAVAAUAAAAFAAAAAAAWAAUAAAAFAAAAAAAXAAUAAAAFAAAAAAAYAAUAAAAEAAAAAAAZAAUAAAAEAAAAAAAaAAUAAAAEAAAAAAAbAAUAAAAEAAAAAAAcAAUAAAAEAAAAAAAdAAUAAAAEAAAAAAAAAAYAAAAEAAAAAAABAAYAAAAEAAAAAAACAAYAAAAEAAAAAAADAAYAAAAEAAAAAAAEAAYAAAAEAAAAAAAFAAYAAAAEAAAAAAAGAAYAAAAEAAAAAAAHAAYAAAAEAAAAAAAIAAYAAAAFAAAAAAAJAAYAAAAFAAAAAAAKAAYAAAAFAAAAAAALAAYAAAAFAAAAAAAMAAYAAAAEAAAAAAANAAYAAAAEAAAAAAAOAAYAAAAEAAAAAAAPAAYAAAACAAAAAAAQAAYAAAAEAAAAAAARAAYAAAAEAAAAAAASAAYAAAAEAAAAAAATAAYAAAAEAAAAAAAUAAYAAAAFAAAAAAAVAAYAAAAFAAAAAAAWAAYAAAAFAAAAAAAXAAYAAAAFAAAAAAAYAAYAAAAEAAAAAAAZAAYAAAAEAAAAAAAaAAYAAAAEAAAAAAAbAAYAAAAEAAAAAAAcAAYAAAAEAAAAAAAdAAYAAAAEAAAAAAAAAAcAAAAEAAAAAAABAAcAAAAEAAAAAAACAAcAAAAEAAAAAAADAAcAAAAEAAAAAAAEAAcAAAAEAAAAAAAFAAcAAAAEAAAAAAAGAAcAAAAEAAAAAAAHAAcAAAAEAAAAAAAIAAcAAAAFAAAAAAAJAAcAAAAFAAAAAAAKAAcAAAAFAAAAAAALAAcAAAAFAAAAAAAMAAcAAAAEAAAAAAANAAcAAAAEAAAAAAAOAAcAAAAEAAAAAAAPAAcAAAACAAAAAAAQAAcAAAAEAAAAAAARAAcAAAAEAAAAAAASAAcAAAAEAAAAAAATAAcAAAAEAAAAAAAUAAcAAAAFAAAAAAAVAAcAAAAFAAAAAAAWAAcAAAAFAAAAAAAXAAcAAAAFAAAAAAAYAAcAAAAEAAAAAAAZAAcAAAAEAAAAAAAaAAcAAAAEAAAAAAAbAAcAAAAEAAAAAAAcAAcAAAAEAAAAAAAdAAcAAAAEAAAAAAAAAAgAAAAEAAAAAAABAAgAAAAEAAAAAAACAAgAAAAEAAAAAAADAAgAAAAEAAAAAAAEAAgAAAAFAAAAAAAFAAgAAAAFAAAAAAAGAAgAAAAFAAAAAAAHAAgAAAAFAAAAAAAIAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAKAAgAAAAEAAAAAAALAAgAAAAEAAAAAAAMAAgAAAAEAAAAAAANAAgAAAAEAAAAAAAOAAgAAAAEAAAAAAAPAAgAAAABAAEAAAAQAAgAAAAFAAAAAAARAAgAAAAFAAAAAAASAAgAAAAFAAAAAAATAAgAAAAFAAAAAAAUAAgAAAAEAAAAAAAVAAgAAAAEAAAAAAAWAAgAAAAEAAAAAAAXAAgAAAAEAAAAAAAYAAgAAAAEAAAAAAAZAAgAAAAEAAAAAAAaAAgAAAAEAAAAAAAbAAgAAAAEAAAAAAAcAAgAAAAFAAAAAAAdAAgAAAAFAAAAAAAAAAkAAAAEAAAAAAABAAkAAAAEAAAAAAACAAkAAAAEAAAAAAADAAkAAAAEAAAAAAAEAAkAAAAFAAAAAAAFAAkAAAAFAAAAAAAGAAkAAAAFAAAAAAAHAAkAAAAFAAAAAAAIAAkAAAAEAAAAAAAJAAkAAAAEAAAAAAAKAAkAAAAEAAAAAAALAAkAAAAEAAAAAAAMAAkAAAAEAAAAAAANAAkAAAAEAAAAAAAOAAkAAAAEAAAAAAAPAAkAAAACAAAAAAAQAAkAAAAFAAAAAAARAAkAAAAFAAAAAAASAAkAAAAFAAAAAAATAAkAAAAFAAAAAAAUAAkAAAAEAAAAAAAVAAkAAAAEAAAAAAAWAAkAAAAEAAAAAAAXAAkAAAAEAAAAAAAYAAkAAAAEAAAAAAAZAAkAAAAEAAAAAAAaAAkAAAAEAAAAAAAbAAkAAAAEAAAAAAAcAAkAAAAFAAAAAAAdAAkAAAAFAAAAAAAAAAoAAAAEAAAAAAABAAoAAAABAAEAAAACAAoAAAACAAAAAAADAAoAAAACAAAAAAAEAAoAAAABAAEAAAAFAAoAAAACAAAAAAAGAAoAAAACAAAAAAAHAAoAAAACAAAAAAAIAAoAAAABAAEAAAAJAAoAAAACAAAAAAAKAAoAAAACAAAAAAALAAoAAAACAAAAAAAMAAoAAAABAAEAAAANAAoAAAACAAAAAAAOAAoAAAACAAAAAAAPAAoAAAACAAAAAAAQAAoAAAABAAEAAAARAAoAAAACAAAAAAASAAoAAAACAAAAAAATAAoAAAACAAAAAAAUAAoAAAABAAEAAAAVAAoAAAACAAAAAAAWAAoAAAACAAAAAAAXAAoAAAACAAAAAAAYAAoAAAABAAEAAAAZAAoAAAACAAAAAAAaAAoAAAACAAAAAAAbAAoAAAACAAAAAAAcAAoAAAAFAAAAAAAdAAoAAAAFAAAAAAAAAAsAAAAEAAAAAAABAAsAAAAEAAAAAAACAAsAAAAEAAAAAAADAAsAAAAEAAAAAAAEAAsAAAAFAAAAAAAFAAsAAAAFAAAAAAAGAAsAAAAFAAAAAAAHAAsAAAAFAAAAAAAIAAsAAAAEAAAAAAAJAAsAAAAEAAAAAAAKAAsAAAAEAAAAAAALAAsAAAAEAAAAAAAMAAsAAAAEAAAAAAANAAsAAAAEAAAAAAAOAAsAAAAEAAAAAAAPAAsAAAACAAAAAAAQAAsAAAAFAAAAAAARAAsAAAAFAAAAAAASAAsAAAAFAAAAAAATAAsAAAAFAAAAAAAUAAsAAAAEAAAAAAAVAAsAAAAEAAAAAAAWAAsAAAAEAAAAAAAXAAsAAAAEAAAAAAAYAAsAAAAEAAAAAAAZAAsAAAAEAAAAAAAaAAsAAAAEAAAAAAAbAAsAAAAEAAAAAAAcAAsAAAAFAAAAAAAdAAsAAAAFAAAAAAAAAAwAAAAFAAAAAAABAAwAAAAFAAAAAAACAAwAAAAFAAAAAAADAAwAAAAFAAAAAAAEAAwAAAAEAAAAAAAFAAwAAAAEAAAAAAAGAAwAAAAEAAAAAAAHAAwAAAAEAAAAAAAIAAwAAAAEAAAAAAAJAAwAAAAEAAAAAAAKAAwAAAAEAAAAAAALAAwAAAAEAAAAAAAMAAwAAAAFAAAAAAANAAwAAAAFAAAAAAAOAAwAAAAFAAAAAAAPAAwAAAABAAEAAAAQAAwAAAAEAAAAAAARAAwAAAAEAAAAAAASAAwAAAAEAAAAAAATAAwAAAAEAAAAAAAUAAwAAAAEAAAAAAAVAAwAAAAEAAAAAAAWAAwAAAAEAAAAAAAXAAwAAAAEAAAAAAAYAAwAAAAFAAAAAAAZAAwAAAAFAAAAAAAaAAwAAAAFAAAAAAAbAAwAAAAFAAAAAAAcAAwAAAAEAAAAAAAdAAwAAAAEAAAAAAAAAA0AAAAFAAAAAAABAA0AAAAFAAAAAAACAA0AAAAFAAAAAAADAA0AAAAFAAAAAAAEAA0AAAAEAAAAAAAFAA0AAAAEAAAAAAAGAA0AAAAEAAAAAAAHAA0AAAAEAAAAAAAIAA0AAAAEAAAAAAAJAA0AAAAEAAAAAAAKAA0AAAAEAAAAAAALAA0AAAAEAAAAAAAMAA0AAAAFAAAAAAANAA0AAAAFAAAAAAAOAA0AAAAFAAAAAAAPAA0AAAACAAAAAAAQAA0AAAAEAAAAAAARAA0AAAAEAAAAAAASAA0AAAAEAAAAAAATAA0AAAAEAAAAAAAUAA0AAAAEAAAAAAAVAA0AAAAEAAAAAAAWAA0AAAAEAAAAAAAXAA0AAAAEAAAAAAAYAA0AAAAFAAAAAAAZAA0AAAAFAAAAAAAaAA0AAAAFAAAAAAAbAA0AAAAFAAAAAAAcAA0AAAAEAAAAAAAdAA0AAAAEAAAAAAAAAA4AAAAFAAAAAAABAA4AAAAFAAAAAAACAA4AAAAFAAAAAAADAA4AAAAFAAAAAAAEAA4AAAAEAAAAAAAFAA4AAAAEAAAAAAAGAA4AAAAEAAAAAAAHAA4AAAAEAAAAAAAIAA4AAAAEAAAAAAAJAA4AAAAEAAAAAAAKAA4AAAAEAAAAAAALAA4AAAAEAAAAAAAMAA4AAAAFAAAAAAANAA4AAAAFAAAAAAAOAA4AAAAFAAAAAAAPAA4AAAACAAAAAAAQAA4AAAAEAAAAAAARAA4AAAAEAAAAAAASAA4AAAAEAAAAAAATAA4AAAAEAAAAAAAUAA4AAAAEAAAAAAAVAA4AAAAEAAAAAAAWAA4AAAAEAAAAAAAXAA4AAAAEAAAAAAAYAA4AAAAFAAAAAAAZAA4AAAAFAAAAAAAaAA4AAAAFAAAAAAAbAA4AAAAFAAAAAAAcAA4AAAAEAAAAAAAdAA4AAAAEAAAAAAAAAA8AAAAFAAAAAAABAA8AAAAFAAAAAAACAA8AAAAFAAAAAAADAA8AAAAFAAAAAAAEAA8AAAAEAAAAAAAFAA8AAAAEAAAAAAAGAA8AAAAEAAAAAAAHAA8AAAAEAAAAAAAIAA8AAAAEAAAAAAAJAA8AAAAEAAAAAAAKAA8AAAAEAAAAAAALAA8AAAAEAAAAAAAMAA8AAAAFAAAAAAANAA8AAAAFAAAAAAAOAA8AAAAFAAAAAAAPAA8AAAACAAAAAAAQAA8AAAAEAAAAAAARAA8AAAAEAAAAAAASAA8AAAAEAAAAAAATAA8AAAAEAAAAAAAUAA8AAAAEAAAAAAAVAA8AAAAEAAAAAAAWAA8AAAAEAAAAAAAXAA8AAAAEAAAAAAAYAA8AAAAFAAAAAAAZAA8AAAAFAAAAAAAaAA8AAAAFAAAAAAAbAA8AAAAFAAAAAAAcAA8AAAAEAAAAAAAdAA8AAAAEAAAAAAAAABAAAAAEAAAAAAABABAAAAAEAAAAAAACABAAAAAEAAAAAAADABAAAAAEAAAAAAAEABAAAAAEAAAAAAAFABAAAAAEAAAAAAAGABAAAAAEAAAAAAAHABAAAAAEAAAAAAAIABAAAAAFAAAAAAAJABAAAAAFAAAAAAAKABAAAAAFAAAAAAALABAAAAAFAAAAAAAMABAAAAAEAAAAAAANABAAAAAEAAAAAAAOABAAAAAEAAAAAAAPABAAAAABAAEAAAAQABAAAAAEAAAAAAARABAAAAAEAAAAAAASABAAAAAEAAAAAAATABAAAAAEAAAAAAAUABAAAAAFAAAAAAAVABAAAAAFAAAAAAAWABAAAAAFAAAAAAAXABAAAAAFAAAAAAAYABAAAAAEAAAAAAAZABAAAAAEAAAAAAAaABAAAAAEAAAAAAAbABAAAAAEAAAAAAAcABAAAAAEAAAAAAAdABAAAAAEAAAAAAAAABEAAAAEAAAAAAABABEAAAAEAAAAAAACABEAAAAEAAAAAAADABEAAAAEAAAAAAAEABEAAAAEAAAAAAAFABEAAAAEAAAAAAAGABEAAAAEAAAAAAAHABEAAAAEAAAAAAAIABEAAAAFAAAAAAAJABEAAAAFAAAAAAAKABEAAAAFAAAAAAALABEAAAAFAAAAAAAMABEAAAAEAAAAAAANABEAAAAEAAAAAAAOABEAAAAEAAAAAAAPABEAAAACAAAAAAAQABEAAAAEAAAAAAARABEAAAAEAAAAAAASABEAAAAEAAAAAAATABEAAAAEAAAAAAAUABEAAAAFAAAAAAAVABEAAAAFAAAAAAAWABEAAAAFAAAAAAAXABEAAAAFAAAAAAAYABEAAAAEAAAAAAAZABEAAAAEAAAAAAAaABEAAAAEAAAAAAAbABEAAAAEAAAAAAAcABEAAAAEAAAAAAAdABEAAAAEAAAAAAAAABIAAAAEAAAAAAABABIAAAAEAAAAAAACABIAAAAEAAAAAAADABIAAAAEAAAAAAAEABIAAAAEAAAAAAAFABIAAAAEAAAAAAAGABIAAAAEAAAAAAAHABIAAAAEAAAAAAAIABIAAAAFAAAAAAAJABIAAAAFAAAAAAAKABIAAAAFAAAAAAALABIAAAAFAAAAAAAMABIAAAAEAAAAAAANABIAAAAEAAAAAAAOABIAAAAEAAAAAAAPABIAAAAEAAAAAAAQABIAAAAEAAAAAAARABIAAAAEAAAAAAASABIAAAAEAAAAAAATABIAAAAEAAAAAAAUABIAAAAFAAAAAAAVABIAAAAFAAAAAAAWABIAAAAFAAAAAAAXABIAAAAFAAAAAAAYABIAAAAEAAAAAAAZABIAAAAEAAAAAAAaABIAAAAEAAAAAAAbABIAAAAEAAAAAAAcABIAAAAEAAAAAAAdABIAAAAEAAAAAAAAABMAAAAEAAAAAAABABMAAAAEAAAAAAACABMAAAAEAAAAAAADABMAAAAEAAAAAAAEABMAAAAEAAAAAAAFABMAAAAEAAAAAAAGABMAAAAEAAAAAAAHABMAAAAEAAAAAAAIABMAAAAFAAAAAAAJABMAAAAFAAAAAAAKABMAAAAFAAAAAAALABMAAAAFAAAAAAAMABMAAAAEAAAAAAANABMAAAAEAAAAAAAOABMAAAAEAAAAAAAPABMAAAAEAAAAAAAQABMAAAAEAAAAAAARABMAAAAEAAAAAAASABMAAAAEAAAAAAATABMAAAAEAAAAAAAUABMAAAAFAAAAAAAVABMAAAAFAAAAAAAWABMAAAAFAAAAAAAXABMAAAAFAAAAAAAYABMAAAAEAAAAAAAZABMAAAAEAAAAAAAaABMAAAAEAAAAAAAbABMAAAAEAAAAAAAcABMAAAAEAAAAAAAdABMAAAAEAAAAAAA=")
+tile_set = SubResource("TileSet_1oqf3")
+
+[node name="TerrainCollisions" type="StaticBody2D" parent="." unique_id=511104105]
+
+[node name="@CollisionShape2D@9506" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1519770879]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_75tne")
+
+[node name="@CollisionShape2D@9507" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1927438587]
+position = Vector2(24, 8)
+shape = SubResource("RectangleShape2D_vsiov")
+
+[node name="@CollisionShape2D@9508" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1687475228]
+position = Vector2(40, 8)
+shape = SubResource("RectangleShape2D_4pebi")
+
+[node name="@CollisionShape2D@9509" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1547222346]
+position = Vector2(56, 8)
+shape = SubResource("RectangleShape2D_dcoq7")
+
+[node name="@CollisionShape2D@9510" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1572373510]
+position = Vector2(72, 8)
+shape = SubResource("RectangleShape2D_23wya")
+
+[node name="@CollisionShape2D@9511" type="CollisionShape2D" parent="TerrainCollisions" unique_id=53126592]
+position = Vector2(88, 8)
+shape = SubResource("RectangleShape2D_sho0g")
+
+[node name="@CollisionShape2D@9512" type="CollisionShape2D" parent="TerrainCollisions" unique_id=875694226]
+position = Vector2(104, 8)
+shape = SubResource("RectangleShape2D_0o6nw")
+
+[node name="@CollisionShape2D@9513" type="CollisionShape2D" parent="TerrainCollisions" unique_id=467194405]
+position = Vector2(120, 8)
+shape = SubResource("RectangleShape2D_gvdxk")
+
+[node name="@CollisionShape2D@9514" type="CollisionShape2D" parent="TerrainCollisions" unique_id=296622487]
+position = Vector2(136, 8)
+shape = SubResource("RectangleShape2D_j40nd")
+
+[node name="@CollisionShape2D@9515" type="CollisionShape2D" parent="TerrainCollisions" unique_id=7840174]
+position = Vector2(152, 8)
+shape = SubResource("RectangleShape2D_gj1bf")
+
+[node name="@CollisionShape2D@9516" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2147126469]
+position = Vector2(168, 8)
+shape = SubResource("RectangleShape2D_tsa1f")
+
+[node name="@CollisionShape2D@9517" type="CollisionShape2D" parent="TerrainCollisions" unique_id=612862413]
+position = Vector2(184, 8)
+shape = SubResource("RectangleShape2D_7cbxw")
+
+[node name="@CollisionShape2D@9518" type="CollisionShape2D" parent="TerrainCollisions" unique_id=168805750]
+position = Vector2(200, 8)
+shape = SubResource("RectangleShape2D_6bvx2")
+
+[node name="@CollisionShape2D@9519" type="CollisionShape2D" parent="TerrainCollisions" unique_id=991358728]
+position = Vector2(216, 8)
+shape = SubResource("RectangleShape2D_s3jx5")
+
+[node name="@CollisionShape2D@9520" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1440627964]
+position = Vector2(232, 8)
+shape = SubResource("RectangleShape2D_owetc")
+
+[node name="@CollisionShape2D@9521" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1482255409]
+position = Vector2(248, 8)
+shape = SubResource("RectangleShape2D_jisia")
+
+[node name="@CollisionShape2D@9522" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1963077629]
+position = Vector2(264, 8)
+shape = SubResource("RectangleShape2D_gm8eb")
+
+[node name="@CollisionShape2D@9523" type="CollisionShape2D" parent="TerrainCollisions" unique_id=896001260]
+position = Vector2(280, 8)
+shape = SubResource("RectangleShape2D_wx4vl")
+
+[node name="@CollisionShape2D@9524" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1914269499]
+position = Vector2(296, 8)
+shape = SubResource("RectangleShape2D_jmi84")
+
+[node name="@CollisionShape2D@9525" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2135518106]
+position = Vector2(312, 8)
+shape = SubResource("RectangleShape2D_og8na")
+
+[node name="@CollisionShape2D@9526" type="CollisionShape2D" parent="TerrainCollisions" unique_id=928995936]
+position = Vector2(328, 8)
+shape = SubResource("RectangleShape2D_ng41g")
+
+[node name="@CollisionShape2D@9527" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1864465001]
+position = Vector2(344, 8)
+shape = SubResource("RectangleShape2D_20s0n")
+
+[node name="@CollisionShape2D@9528" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1921126905]
+position = Vector2(360, 8)
+shape = SubResource("RectangleShape2D_8e8an")
+
+[node name="@CollisionShape2D@9529" type="CollisionShape2D" parent="TerrainCollisions" unique_id=681409163]
+position = Vector2(376, 8)
+shape = SubResource("RectangleShape2D_81e1l")
+
+[node name="@CollisionShape2D@9530" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1503650021]
+position = Vector2(392, 8)
+shape = SubResource("RectangleShape2D_ygtah")
+
+[node name="@CollisionShape2D@9531" type="CollisionShape2D" parent="TerrainCollisions" unique_id=484126475]
+position = Vector2(408, 8)
+shape = SubResource("RectangleShape2D_bx4md")
+
+[node name="@CollisionShape2D@9532" type="CollisionShape2D" parent="TerrainCollisions" unique_id=262727123]
+position = Vector2(424, 8)
+shape = SubResource("RectangleShape2D_7pwbt")
+
+[node name="@CollisionShape2D@9533" type="CollisionShape2D" parent="TerrainCollisions" unique_id=571499074]
+position = Vector2(440, 8)
+shape = SubResource("RectangleShape2D_edewv")
+
+[node name="@CollisionShape2D@9534" type="CollisionShape2D" parent="TerrainCollisions" unique_id=476804998]
+position = Vector2(456, 8)
+shape = SubResource("RectangleShape2D_rojsd")
+
+[node name="@CollisionShape2D@9535" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2021135185]
+position = Vector2(472, 8)
+shape = SubResource("RectangleShape2D_6scwm")
+
+[node name="@CollisionShape2D@9536" type="CollisionShape2D" parent="TerrainCollisions" unique_id=244274481]
+position = Vector2(8, 24)
+shape = SubResource("RectangleShape2D_6al8r")
+
+[node name="@CollisionShape2D@9537" type="CollisionShape2D" parent="TerrainCollisions" unique_id=887368402]
+position = Vector2(24, 24)
+shape = SubResource("RectangleShape2D_5mg25")
+
+[node name="@CollisionShape2D@9538" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1527898845]
+position = Vector2(40, 24)
+shape = SubResource("RectangleShape2D_tm8ts")
+
+[node name="@CollisionShape2D@9539" type="CollisionShape2D" parent="TerrainCollisions" unique_id=273266870]
+position = Vector2(56, 24)
+shape = SubResource("RectangleShape2D_yrjwx")
+
+[node name="@CollisionShape2D@9540" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1988749401]
+position = Vector2(72, 24)
+shape = SubResource("RectangleShape2D_2y7ot")
+
+[node name="@CollisionShape2D@9541" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1841422112]
+position = Vector2(88, 24)
+shape = SubResource("RectangleShape2D_kvbqw")
+
+[node name="@CollisionShape2D@9542" type="CollisionShape2D" parent="TerrainCollisions" unique_id=592089518]
+position = Vector2(104, 24)
+shape = SubResource("RectangleShape2D_0mw17")
+
+[node name="@CollisionShape2D@9543" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1195477222]
+position = Vector2(120, 24)
+shape = SubResource("RectangleShape2D_6hukg")
+
+[node name="@CollisionShape2D@9544" type="CollisionShape2D" parent="TerrainCollisions" unique_id=531582888]
+position = Vector2(136, 24)
+shape = SubResource("RectangleShape2D_k0tj5")
+
+[node name="@CollisionShape2D@9545" type="CollisionShape2D" parent="TerrainCollisions" unique_id=749930267]
+position = Vector2(152, 24)
+shape = SubResource("RectangleShape2D_hv713")
+
+[node name="@CollisionShape2D@9546" type="CollisionShape2D" parent="TerrainCollisions" unique_id=902385235]
+position = Vector2(168, 24)
+shape = SubResource("RectangleShape2D_7kvuv")
+
+[node name="@CollisionShape2D@9547" type="CollisionShape2D" parent="TerrainCollisions" unique_id=242202137]
+position = Vector2(184, 24)
+shape = SubResource("RectangleShape2D_woe52")
+
+[node name="@CollisionShape2D@9548" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2049780528]
+position = Vector2(200, 24)
+shape = SubResource("RectangleShape2D_pctfc")
+
+[node name="@CollisionShape2D@9549" type="CollisionShape2D" parent="TerrainCollisions" unique_id=564905228]
+position = Vector2(216, 24)
+shape = SubResource("RectangleShape2D_rn5b8")
+
+[node name="@CollisionShape2D@9550" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1558679273]
+position = Vector2(232, 24)
+shape = SubResource("RectangleShape2D_uj15c")
+
+[node name="@CollisionShape2D@9551" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1387412678]
+position = Vector2(248, 24)
+shape = SubResource("RectangleShape2D_uvns7")
+
+[node name="@CollisionShape2D@9552" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1647672577]
+position = Vector2(264, 24)
+shape = SubResource("RectangleShape2D_e1qow")
+
+[node name="@CollisionShape2D@9553" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1257682762]
+position = Vector2(280, 24)
+shape = SubResource("RectangleShape2D_tf6r4")
+
+[node name="@CollisionShape2D@9554" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1528585695]
+position = Vector2(296, 24)
+shape = SubResource("RectangleShape2D_4mpdf")
+
+[node name="@CollisionShape2D@9555" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1560167956]
+position = Vector2(312, 24)
+shape = SubResource("RectangleShape2D_jpqu3")
+
+[node name="@CollisionShape2D@9556" type="CollisionShape2D" parent="TerrainCollisions" unique_id=592549880]
+position = Vector2(328, 24)
+shape = SubResource("RectangleShape2D_hk602")
+
+[node name="@CollisionShape2D@9557" type="CollisionShape2D" parent="TerrainCollisions" unique_id=465037309]
+position = Vector2(344, 24)
+shape = SubResource("RectangleShape2D_k2l7t")
+
+[node name="@CollisionShape2D@9558" type="CollisionShape2D" parent="TerrainCollisions" unique_id=804413797]
+position = Vector2(360, 24)
+shape = SubResource("RectangleShape2D_0y5vq")
+
+[node name="@CollisionShape2D@9559" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1024341033]
+position = Vector2(376, 24)
+shape = SubResource("RectangleShape2D_rllmo")
+
+[node name="@CollisionShape2D@9560" type="CollisionShape2D" parent="TerrainCollisions" unique_id=835966433]
+position = Vector2(392, 24)
+shape = SubResource("RectangleShape2D_wsu67")
+
+[node name="@CollisionShape2D@9561" type="CollisionShape2D" parent="TerrainCollisions" unique_id=619541929]
+position = Vector2(408, 24)
+shape = SubResource("RectangleShape2D_8g7d2")
+
+[node name="@CollisionShape2D@9562" type="CollisionShape2D" parent="TerrainCollisions" unique_id=504376347]
+position = Vector2(424, 24)
+shape = SubResource("RectangleShape2D_7kqi8")
+
+[node name="@CollisionShape2D@9563" type="CollisionShape2D" parent="TerrainCollisions" unique_id=965489112]
+position = Vector2(440, 24)
+shape = SubResource("RectangleShape2D_3tm4l")
+
+[node name="@CollisionShape2D@9564" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1005470032]
+position = Vector2(456, 24)
+shape = SubResource("RectangleShape2D_qqnce")
+
+[node name="@CollisionShape2D@9565" type="CollisionShape2D" parent="TerrainCollisions" unique_id=391103195]
+position = Vector2(472, 24)
+shape = SubResource("RectangleShape2D_gkx4o")
+
+[node name="@CollisionShape2D@9566" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1655136798]
+position = Vector2(8, 40)
+shape = SubResource("RectangleShape2D_3p33x")
+
+[node name="@CollisionShape2D@9567" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1279032377]
+position = Vector2(24, 40)
+shape = SubResource("RectangleShape2D_yay8m")
+
+[node name="@CollisionShape2D@9568" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1851252054]
+position = Vector2(40, 40)
+shape = SubResource("RectangleShape2D_3h6bm")
+
+[node name="@CollisionShape2D@9569" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1536695854]
+position = Vector2(56, 40)
+shape = SubResource("RectangleShape2D_xamvf")
+
+[node name="@CollisionShape2D@9570" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1772549018]
+position = Vector2(72, 40)
+shape = SubResource("RectangleShape2D_pebuy")
+
+[node name="@CollisionShape2D@9571" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1521707595]
+position = Vector2(88, 40)
+shape = SubResource("RectangleShape2D_4c0il")
+
+[node name="@CollisionShape2D@9572" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1474929402]
+position = Vector2(104, 40)
+shape = SubResource("RectangleShape2D_snry3")
+
+[node name="@CollisionShape2D@9573" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1458929313]
+position = Vector2(120, 40)
+shape = SubResource("RectangleShape2D_bovd7")
+
+[node name="@CollisionShape2D@9574" type="CollisionShape2D" parent="TerrainCollisions" unique_id=894440390]
+position = Vector2(136, 40)
+shape = SubResource("RectangleShape2D_w3i3c")
+
+[node name="@CollisionShape2D@9575" type="CollisionShape2D" parent="TerrainCollisions" unique_id=893221838]
+position = Vector2(152, 40)
+shape = SubResource("RectangleShape2D_7f7ou")
+
+[node name="@CollisionShape2D@9576" type="CollisionShape2D" parent="TerrainCollisions" unique_id=469635820]
+position = Vector2(168, 40)
+shape = SubResource("RectangleShape2D_whpqc")
+
+[node name="@CollisionShape2D@9577" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1040532406]
+position = Vector2(184, 40)
+shape = SubResource("RectangleShape2D_lxy3x")
+
+[node name="@CollisionShape2D@9578" type="CollisionShape2D" parent="TerrainCollisions" unique_id=324093285]
+position = Vector2(200, 40)
+shape = SubResource("RectangleShape2D_iuuks")
+
+[node name="@CollisionShape2D@9579" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1032721044]
+position = Vector2(216, 40)
+shape = SubResource("RectangleShape2D_ihyuh")
+
+[node name="@CollisionShape2D@9580" type="CollisionShape2D" parent="TerrainCollisions" unique_id=133445794]
+position = Vector2(232, 40)
+shape = SubResource("RectangleShape2D_v8nfa")
+
+[node name="@CollisionShape2D@9581" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2039441038]
+position = Vector2(264, 40)
+shape = SubResource("RectangleShape2D_yauqs")
+
+[node name="@CollisionShape2D@9582" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1974388703]
+position = Vector2(280, 40)
+shape = SubResource("RectangleShape2D_1arst")
+
+[node name="@CollisionShape2D@9583" type="CollisionShape2D" parent="TerrainCollisions" unique_id=391526801]
+position = Vector2(296, 40)
+shape = SubResource("RectangleShape2D_vecgo")
+
+[node name="@CollisionShape2D@9584" type="CollisionShape2D" parent="TerrainCollisions" unique_id=647776039]
+position = Vector2(312, 40)
+shape = SubResource("RectangleShape2D_spv7x")
+
+[node name="@CollisionShape2D@9585" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1148359828]
+position = Vector2(328, 40)
+shape = SubResource("RectangleShape2D_nat5m")
+
+[node name="@CollisionShape2D@9586" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1350870118]
+position = Vector2(344, 40)
+shape = SubResource("RectangleShape2D_xyhul")
+
+[node name="@CollisionShape2D@9587" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1708588260]
+position = Vector2(360, 40)
+shape = SubResource("RectangleShape2D_xoyox")
+
+[node name="@CollisionShape2D@9588" type="CollisionShape2D" parent="TerrainCollisions" unique_id=435729816]
+position = Vector2(376, 40)
+shape = SubResource("RectangleShape2D_44qgx")
+
+[node name="@CollisionShape2D@9589" type="CollisionShape2D" parent="TerrainCollisions" unique_id=836109168]
+position = Vector2(392, 40)
+shape = SubResource("RectangleShape2D_smlb2")
+
+[node name="@CollisionShape2D@9590" type="CollisionShape2D" parent="TerrainCollisions" unique_id=580133329]
+position = Vector2(408, 40)
+shape = SubResource("RectangleShape2D_wlqd2")
+
+[node name="@CollisionShape2D@9591" type="CollisionShape2D" parent="TerrainCollisions" unique_id=641113947]
+position = Vector2(424, 40)
+shape = SubResource("RectangleShape2D_ev8xy")
+
+[node name="@CollisionShape2D@9592" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2087816629]
+position = Vector2(440, 40)
+shape = SubResource("RectangleShape2D_nxve3")
+
+[node name="@CollisionShape2D@9593" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1582608091]
+position = Vector2(456, 40)
+shape = SubResource("RectangleShape2D_725in")
+
+[node name="@CollisionShape2D@9594" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1658521693]
+position = Vector2(472, 40)
+shape = SubResource("RectangleShape2D_toudd")
+
+[node name="@CollisionShape2D@9595" type="CollisionShape2D" parent="TerrainCollisions" unique_id=662474546]
+position = Vector2(8, 56)
+shape = SubResource("RectangleShape2D_qbpav")
+
+[node name="@CollisionShape2D@9596" type="CollisionShape2D" parent="TerrainCollisions" unique_id=840990652]
+position = Vector2(24, 56)
+shape = SubResource("RectangleShape2D_64r6j")
+
+[node name="@CollisionShape2D@9597" type="CollisionShape2D" parent="TerrainCollisions" unique_id=913870841]
+position = Vector2(40, 56)
+shape = SubResource("RectangleShape2D_tkd4g")
+
+[node name="@CollisionShape2D@9598" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1077587388]
+position = Vector2(56, 56)
+shape = SubResource("RectangleShape2D_8y3ko")
+
+[node name="@CollisionShape2D@9599" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2095006488]
+position = Vector2(72, 56)
+shape = SubResource("RectangleShape2D_sqihl")
+
+[node name="@CollisionShape2D@9600" type="CollisionShape2D" parent="TerrainCollisions" unique_id=984739072]
+position = Vector2(88, 56)
+shape = SubResource("RectangleShape2D_80ry0")
+
+[node name="@CollisionShape2D@9601" type="CollisionShape2D" parent="TerrainCollisions" unique_id=533210233]
+position = Vector2(104, 56)
+shape = SubResource("RectangleShape2D_6y68d")
+
+[node name="@CollisionShape2D@9602" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1996185310]
+position = Vector2(120, 56)
+shape = SubResource("RectangleShape2D_dl215")
+
+[node name="@CollisionShape2D@9603" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1567275340]
+position = Vector2(136, 56)
+shape = SubResource("RectangleShape2D_hhikq")
+
+[node name="@CollisionShape2D@9604" type="CollisionShape2D" parent="TerrainCollisions" unique_id=778251456]
+position = Vector2(152, 56)
+shape = SubResource("RectangleShape2D_r8r2d")
+
+[node name="@CollisionShape2D@9605" type="CollisionShape2D" parent="TerrainCollisions" unique_id=804232105]
+position = Vector2(168, 56)
+shape = SubResource("RectangleShape2D_5cmtd")
+
+[node name="@CollisionShape2D@9606" type="CollisionShape2D" parent="TerrainCollisions" unique_id=618480095]
+position = Vector2(184, 56)
+shape = SubResource("RectangleShape2D_4qwd2")
+
+[node name="@CollisionShape2D@9607" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1873457621]
+position = Vector2(200, 56)
+shape = SubResource("RectangleShape2D_jnsys")
+
+[node name="@CollisionShape2D@9608" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1541967243]
+position = Vector2(216, 56)
+shape = SubResource("RectangleShape2D_6wb55")
+
+[node name="@CollisionShape2D@9609" type="CollisionShape2D" parent="TerrainCollisions" unique_id=97096356]
+position = Vector2(232, 56)
+shape = SubResource("RectangleShape2D_l8lyj")
+
+[node name="@CollisionShape2D@9610" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1431848063]
+position = Vector2(264, 56)
+shape = SubResource("RectangleShape2D_eyhd4")
+
+[node name="@CollisionShape2D@9611" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1673687364]
+position = Vector2(280, 56)
+shape = SubResource("RectangleShape2D_kvg2h")
+
+[node name="@CollisionShape2D@9612" type="CollisionShape2D" parent="TerrainCollisions" unique_id=372636139]
+position = Vector2(296, 56)
+shape = SubResource("RectangleShape2D_ph1r2")
+
+[node name="@CollisionShape2D@9613" type="CollisionShape2D" parent="TerrainCollisions" unique_id=751047607]
+position = Vector2(312, 56)
+shape = SubResource("RectangleShape2D_e74pt")
+
+[node name="@CollisionShape2D@9614" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2121241345]
+position = Vector2(328, 56)
+shape = SubResource("RectangleShape2D_xl5as")
+
+[node name="@CollisionShape2D@9615" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1462706440]
+position = Vector2(344, 56)
+shape = SubResource("RectangleShape2D_gfad3")
+
+[node name="@CollisionShape2D@9616" type="CollisionShape2D" parent="TerrainCollisions" unique_id=965932493]
+position = Vector2(360, 56)
+shape = SubResource("RectangleShape2D_php3a")
+
+[node name="@CollisionShape2D@9617" type="CollisionShape2D" parent="TerrainCollisions" unique_id=797724544]
+position = Vector2(376, 56)
+shape = SubResource("RectangleShape2D_athah")
+
+[node name="@CollisionShape2D@9618" type="CollisionShape2D" parent="TerrainCollisions" unique_id=69885496]
+position = Vector2(392, 56)
+shape = SubResource("RectangleShape2D_5wyy5")
+
+[node name="@CollisionShape2D@9619" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1412526474]
+position = Vector2(408, 56)
+shape = SubResource("RectangleShape2D_fw5v4")
+
+[node name="@CollisionShape2D@9620" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1527207750]
+position = Vector2(424, 56)
+shape = SubResource("RectangleShape2D_lesyp")
+
+[node name="@CollisionShape2D@9621" type="CollisionShape2D" parent="TerrainCollisions" unique_id=249661447]
+position = Vector2(440, 56)
+shape = SubResource("RectangleShape2D_1ekgs")
+
+[node name="@CollisionShape2D@9622" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1900722066]
+position = Vector2(456, 56)
+shape = SubResource("RectangleShape2D_3htnt")
+
+[node name="@CollisionShape2D@9623" type="CollisionShape2D" parent="TerrainCollisions" unique_id=633292395]
+position = Vector2(472, 56)
+shape = SubResource("RectangleShape2D_fne72")
+
+[node name="@CollisionShape2D@9624" type="CollisionShape2D" parent="TerrainCollisions" unique_id=464968691]
+position = Vector2(8, 72)
+shape = SubResource("RectangleShape2D_lulah")
+
+[node name="@CollisionShape2D@9625" type="CollisionShape2D" parent="TerrainCollisions" unique_id=585955508]
+position = Vector2(24, 72)
+shape = SubResource("RectangleShape2D_5hmtl")
+
+[node name="@CollisionShape2D@9626" type="CollisionShape2D" parent="TerrainCollisions" unique_id=586273505]
+position = Vector2(40, 72)
+shape = SubResource("RectangleShape2D_w8wsa")
+
+[node name="@CollisionShape2D@9627" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1988233137]
+position = Vector2(56, 72)
+shape = SubResource("RectangleShape2D_8gctr")
+
+[node name="@CollisionShape2D@9628" type="CollisionShape2D" parent="TerrainCollisions" unique_id=428515907]
+position = Vector2(72, 72)
+shape = SubResource("RectangleShape2D_buvq1")
+
+[node name="@CollisionShape2D@9629" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2090518144]
+position = Vector2(88, 72)
+shape = SubResource("RectangleShape2D_x8ijw")
+
+[node name="@CollisionShape2D@9630" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1426836793]
+position = Vector2(104, 72)
+shape = SubResource("RectangleShape2D_7x8ly")
+
+[node name="@CollisionShape2D@9631" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1315725527]
+position = Vector2(120, 72)
+shape = SubResource("RectangleShape2D_0k8cl")
+
+[node name="@CollisionShape2D@9632" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1363183642]
+position = Vector2(136, 72)
+shape = SubResource("RectangleShape2D_ha8tj")
+
+[node name="@CollisionShape2D@9633" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1706104009]
+position = Vector2(152, 72)
+shape = SubResource("RectangleShape2D_ceua1")
+
+[node name="@CollisionShape2D@9634" type="CollisionShape2D" parent="TerrainCollisions" unique_id=18628082]
+position = Vector2(168, 72)
+shape = SubResource("RectangleShape2D_t1lqu")
+
+[node name="@CollisionShape2D@9635" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2073356544]
+position = Vector2(184, 72)
+shape = SubResource("RectangleShape2D_60o3k")
+
+[node name="@CollisionShape2D@9636" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2108335091]
+position = Vector2(200, 72)
+shape = SubResource("RectangleShape2D_151i0")
+
+[node name="@CollisionShape2D@9637" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1145647856]
+position = Vector2(216, 72)
+shape = SubResource("RectangleShape2D_rst1f")
+
+[node name="@CollisionShape2D@9638" type="CollisionShape2D" parent="TerrainCollisions" unique_id=191975577]
+position = Vector2(232, 72)
+shape = SubResource("RectangleShape2D_vvoce")
+
+[node name="@CollisionShape2D@9639" type="CollisionShape2D" parent="TerrainCollisions" unique_id=677125007]
+position = Vector2(264, 72)
+shape = SubResource("RectangleShape2D_aeqo5")
+
+[node name="@CollisionShape2D@9640" type="CollisionShape2D" parent="TerrainCollisions" unique_id=38963791]
+position = Vector2(280, 72)
+shape = SubResource("RectangleShape2D_jhydb")
+
+[node name="@CollisionShape2D@9641" type="CollisionShape2D" parent="TerrainCollisions" unique_id=305234270]
+position = Vector2(296, 72)
+shape = SubResource("RectangleShape2D_kvbnu")
+
+[node name="@CollisionShape2D@9642" type="CollisionShape2D" parent="TerrainCollisions" unique_id=670867203]
+position = Vector2(312, 72)
+shape = SubResource("RectangleShape2D_rswdx")
+
+[node name="@CollisionShape2D@9643" type="CollisionShape2D" parent="TerrainCollisions" unique_id=634133285]
+position = Vector2(328, 72)
+shape = SubResource("RectangleShape2D_jc82x")
+
+[node name="@CollisionShape2D@9644" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1227590982]
+position = Vector2(344, 72)
+shape = SubResource("RectangleShape2D_a6so2")
+
+[node name="@CollisionShape2D@9645" type="CollisionShape2D" parent="TerrainCollisions" unique_id=359997771]
+position = Vector2(360, 72)
+shape = SubResource("RectangleShape2D_svgjb")
+
+[node name="@CollisionShape2D@9646" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1758500900]
+position = Vector2(376, 72)
+shape = SubResource("RectangleShape2D_l7ovm")
+
+[node name="@CollisionShape2D@9647" type="CollisionShape2D" parent="TerrainCollisions" unique_id=169541707]
+position = Vector2(392, 72)
+shape = SubResource("RectangleShape2D_r6yp5")
+
+[node name="@CollisionShape2D@9648" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1574611126]
+position = Vector2(408, 72)
+shape = SubResource("RectangleShape2D_rxgrc")
+
+[node name="@CollisionShape2D@9649" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1666260058]
+position = Vector2(424, 72)
+shape = SubResource("RectangleShape2D_4echu")
+
+[node name="@CollisionShape2D@9650" type="CollisionShape2D" parent="TerrainCollisions" unique_id=820333204]
+position = Vector2(440, 72)
+shape = SubResource("RectangleShape2D_8lbvs")
+
+[node name="@CollisionShape2D@9651" type="CollisionShape2D" parent="TerrainCollisions" unique_id=591928936]
+position = Vector2(456, 72)
+shape = SubResource("RectangleShape2D_wyd7w")
+
+[node name="@CollisionShape2D@9652" type="CollisionShape2D" parent="TerrainCollisions" unique_id=562198649]
+position = Vector2(472, 72)
+shape = SubResource("RectangleShape2D_hdv16")
+
+[node name="@CollisionShape2D@9653" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1051568299]
+position = Vector2(8, 88)
+shape = SubResource("RectangleShape2D_66f1w")
+
+[node name="@CollisionShape2D@9654" type="CollisionShape2D" parent="TerrainCollisions" unique_id=560212327]
+position = Vector2(24, 88)
+shape = SubResource("RectangleShape2D_s6u3t")
+
+[node name="@CollisionShape2D@9655" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1159953030]
+position = Vector2(40, 88)
+shape = SubResource("RectangleShape2D_x3b7w")
+
+[node name="@CollisionShape2D@9656" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1546783462]
+position = Vector2(56, 88)
+shape = SubResource("RectangleShape2D_udbbf")
+
+[node name="@CollisionShape2D@9657" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1955047299]
+position = Vector2(72, 88)
+shape = SubResource("RectangleShape2D_ienao")
+
+[node name="@CollisionShape2D@9658" type="CollisionShape2D" parent="TerrainCollisions" unique_id=354123950]
+position = Vector2(88, 88)
+shape = SubResource("RectangleShape2D_gsly3")
+
+[node name="@CollisionShape2D@9659" type="CollisionShape2D" parent="TerrainCollisions" unique_id=576913409]
+position = Vector2(104, 88)
+shape = SubResource("RectangleShape2D_1tb4h")
+
+[node name="@CollisionShape2D@9660" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1572083898]
+position = Vector2(120, 88)
+shape = SubResource("RectangleShape2D_abfte")
+
+[node name="@CollisionShape2D@9661" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1614928115]
+position = Vector2(136, 88)
+shape = SubResource("RectangleShape2D_e0css")
+
+[node name="@CollisionShape2D@9662" type="CollisionShape2D" parent="TerrainCollisions" unique_id=912454816]
+position = Vector2(152, 88)
+shape = SubResource("RectangleShape2D_0q17m")
+
+[node name="@CollisionShape2D@9663" type="CollisionShape2D" parent="TerrainCollisions" unique_id=512150940]
+position = Vector2(168, 88)
+shape = SubResource("RectangleShape2D_o03r0")
+
+[node name="@CollisionShape2D@9664" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1914282354]
+position = Vector2(184, 88)
+shape = SubResource("RectangleShape2D_sl4yu")
+
+[node name="@CollisionShape2D@9665" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1938749720]
+position = Vector2(200, 88)
+shape = SubResource("RectangleShape2D_ek6wn")
+
+[node name="@CollisionShape2D@9666" type="CollisionShape2D" parent="TerrainCollisions" unique_id=505597700]
+position = Vector2(216, 88)
+shape = SubResource("RectangleShape2D_tt3ai")
+
+[node name="@CollisionShape2D@9667" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1440918740]
+position = Vector2(232, 88)
+shape = SubResource("RectangleShape2D_5rc0h")
+
+[node name="@CollisionShape2D@9668" type="CollisionShape2D" parent="TerrainCollisions" unique_id=706759091]
+position = Vector2(264, 88)
+shape = SubResource("RectangleShape2D_0mpyo")
+
+[node name="@CollisionShape2D@9669" type="CollisionShape2D" parent="TerrainCollisions" unique_id=988734973]
+position = Vector2(280, 88)
+shape = SubResource("RectangleShape2D_85toe")
+
+[node name="@CollisionShape2D@9670" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1166545153]
+position = Vector2(296, 88)
+shape = SubResource("RectangleShape2D_3exp3")
+
+[node name="@CollisionShape2D@9671" type="CollisionShape2D" parent="TerrainCollisions" unique_id=732653028]
+position = Vector2(312, 88)
+shape = SubResource("RectangleShape2D_sw62g")
+
+[node name="@CollisionShape2D@9672" type="CollisionShape2D" parent="TerrainCollisions" unique_id=892054973]
+position = Vector2(328, 88)
+shape = SubResource("RectangleShape2D_36atu")
+
+[node name="@CollisionShape2D@9673" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1939663340]
+position = Vector2(344, 88)
+shape = SubResource("RectangleShape2D_102bs")
+
+[node name="@CollisionShape2D@9674" type="CollisionShape2D" parent="TerrainCollisions" unique_id=409171498]
+position = Vector2(360, 88)
+shape = SubResource("RectangleShape2D_0cntk")
+
+[node name="@CollisionShape2D@9675" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1773032961]
+position = Vector2(376, 88)
+shape = SubResource("RectangleShape2D_802jn")
+
+[node name="@CollisionShape2D@9676" type="CollisionShape2D" parent="TerrainCollisions" unique_id=50798664]
+position = Vector2(392, 88)
+shape = SubResource("RectangleShape2D_mpc8w")
+
+[node name="@CollisionShape2D@9677" type="CollisionShape2D" parent="TerrainCollisions" unique_id=962413925]
+position = Vector2(408, 88)
+shape = SubResource("RectangleShape2D_2gb3n")
+
+[node name="@CollisionShape2D@9678" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1357760532]
+position = Vector2(424, 88)
+shape = SubResource("RectangleShape2D_5y1xt")
+
+[node name="@CollisionShape2D@9679" type="CollisionShape2D" parent="TerrainCollisions" unique_id=23923508]
+position = Vector2(440, 88)
+shape = SubResource("RectangleShape2D_xyumt")
+
+[node name="@CollisionShape2D@9680" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1461503885]
+position = Vector2(456, 88)
+shape = SubResource("RectangleShape2D_3octu")
+
+[node name="@CollisionShape2D@9681" type="CollisionShape2D" parent="TerrainCollisions" unique_id=850745656]
+position = Vector2(472, 88)
+shape = SubResource("RectangleShape2D_0c4on")
+
+[node name="@CollisionShape2D@9682" type="CollisionShape2D" parent="TerrainCollisions" unique_id=198319548]
+position = Vector2(8, 104)
+shape = SubResource("RectangleShape2D_gh158")
+
+[node name="@CollisionShape2D@9683" type="CollisionShape2D" parent="TerrainCollisions" unique_id=421185252]
+position = Vector2(24, 104)
+shape = SubResource("RectangleShape2D_okqta")
+
+[node name="@CollisionShape2D@9684" type="CollisionShape2D" parent="TerrainCollisions" unique_id=520650389]
+position = Vector2(40, 104)
+shape = SubResource("RectangleShape2D_uwhrd")
+
+[node name="@CollisionShape2D@9685" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2082382085]
+position = Vector2(56, 104)
+shape = SubResource("RectangleShape2D_h8c1m")
+
+[node name="@CollisionShape2D@9686" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2040951523]
+position = Vector2(72, 104)
+shape = SubResource("RectangleShape2D_v174q")
+
+[node name="@CollisionShape2D@9687" type="CollisionShape2D" parent="TerrainCollisions" unique_id=678690336]
+position = Vector2(88, 104)
+shape = SubResource("RectangleShape2D_erypo")
+
+[node name="@CollisionShape2D@9688" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1461269349]
+position = Vector2(104, 104)
+shape = SubResource("RectangleShape2D_t1l2b")
+
+[node name="@CollisionShape2D@9689" type="CollisionShape2D" parent="TerrainCollisions" unique_id=729867484]
+position = Vector2(120, 104)
+shape = SubResource("RectangleShape2D_qmjhs")
+
+[node name="@CollisionShape2D@9690" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1293901948]
+position = Vector2(136, 104)
+shape = SubResource("RectangleShape2D_f17cw")
+
+[node name="@CollisionShape2D@9691" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1291413655]
+position = Vector2(152, 104)
+shape = SubResource("RectangleShape2D_1pw8w")
+
+[node name="@CollisionShape2D@9692" type="CollisionShape2D" parent="TerrainCollisions" unique_id=610504314]
+position = Vector2(168, 104)
+shape = SubResource("RectangleShape2D_21iua")
+
+[node name="@CollisionShape2D@9693" type="CollisionShape2D" parent="TerrainCollisions" unique_id=506605018]
+position = Vector2(184, 104)
+shape = SubResource("RectangleShape2D_p0qxw")
+
+[node name="@CollisionShape2D@9694" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2090079673]
+position = Vector2(200, 104)
+shape = SubResource("RectangleShape2D_nv5go")
+
+[node name="@CollisionShape2D@9695" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1647834726]
+position = Vector2(216, 104)
+shape = SubResource("RectangleShape2D_0ivkg")
+
+[node name="@CollisionShape2D@9696" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1571909457]
+position = Vector2(232, 104)
+shape = SubResource("RectangleShape2D_pveoa")
+
+[node name="@CollisionShape2D@9697" type="CollisionShape2D" parent="TerrainCollisions" unique_id=324976839]
+position = Vector2(264, 104)
+shape = SubResource("RectangleShape2D_50n1p")
+
+[node name="@CollisionShape2D@9698" type="CollisionShape2D" parent="TerrainCollisions" unique_id=905006787]
+position = Vector2(280, 104)
+shape = SubResource("RectangleShape2D_tu7ue")
+
+[node name="@CollisionShape2D@9699" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1984386006]
+position = Vector2(296, 104)
+shape = SubResource("RectangleShape2D_ty2v0")
+
+[node name="@CollisionShape2D@9700" type="CollisionShape2D" parent="TerrainCollisions" unique_id=836746194]
+position = Vector2(312, 104)
+shape = SubResource("RectangleShape2D_75s4q")
+
+[node name="@CollisionShape2D@9701" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2099387170]
+position = Vector2(328, 104)
+shape = SubResource("RectangleShape2D_ech7h")
+
+[node name="@CollisionShape2D@9702" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1728140137]
+position = Vector2(344, 104)
+shape = SubResource("RectangleShape2D_0v7tc")
+
+[node name="@CollisionShape2D@9703" type="CollisionShape2D" parent="TerrainCollisions" unique_id=889843721]
+position = Vector2(360, 104)
+shape = SubResource("RectangleShape2D_a33rp")
+
+[node name="@CollisionShape2D@9704" type="CollisionShape2D" parent="TerrainCollisions" unique_id=365844231]
+position = Vector2(376, 104)
+shape = SubResource("RectangleShape2D_wc57g")
+
+[node name="@CollisionShape2D@9705" type="CollisionShape2D" parent="TerrainCollisions" unique_id=662883834]
+position = Vector2(392, 104)
+shape = SubResource("RectangleShape2D_ht5la")
+
+[node name="@CollisionShape2D@9706" type="CollisionShape2D" parent="TerrainCollisions" unique_id=238821679]
+position = Vector2(408, 104)
+shape = SubResource("RectangleShape2D_sgjdn")
+
+[node name="@CollisionShape2D@9707" type="CollisionShape2D" parent="TerrainCollisions" unique_id=944472364]
+position = Vector2(424, 104)
+shape = SubResource("RectangleShape2D_lrkfg")
+
+[node name="@CollisionShape2D@9708" type="CollisionShape2D" parent="TerrainCollisions" unique_id=656603227]
+position = Vector2(440, 104)
+shape = SubResource("RectangleShape2D_4v7f2")
+
+[node name="@CollisionShape2D@9709" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1493739379]
+position = Vector2(456, 104)
+shape = SubResource("RectangleShape2D_xjs6t")
+
+[node name="@CollisionShape2D@9710" type="CollisionShape2D" parent="TerrainCollisions" unique_id=892355090]
+position = Vector2(472, 104)
+shape = SubResource("RectangleShape2D_1513b")
+
+[node name="@CollisionShape2D@9711" type="CollisionShape2D" parent="TerrainCollisions" unique_id=170285456]
+position = Vector2(8, 120)
+shape = SubResource("RectangleShape2D_35tty")
+
+[node name="@CollisionShape2D@9712" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2090968677]
+position = Vector2(24, 120)
+shape = SubResource("RectangleShape2D_wwcgk")
+
+[node name="@CollisionShape2D@9713" type="CollisionShape2D" parent="TerrainCollisions" unique_id=289613852]
+position = Vector2(40, 120)
+shape = SubResource("RectangleShape2D_lb1pw")
+
+[node name="@CollisionShape2D@9714" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1685110674]
+position = Vector2(56, 120)
+shape = SubResource("RectangleShape2D_fv1xo")
+
+[node name="@CollisionShape2D@9715" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1412184273]
+position = Vector2(72, 120)
+shape = SubResource("RectangleShape2D_6eevc")
+
+[node name="@CollisionShape2D@9716" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2027054021]
+position = Vector2(88, 120)
+shape = SubResource("RectangleShape2D_3m2u4")
+
+[node name="@CollisionShape2D@9717" type="CollisionShape2D" parent="TerrainCollisions" unique_id=880643318]
+position = Vector2(104, 120)
+shape = SubResource("RectangleShape2D_rw2eo")
+
+[node name="@CollisionShape2D@9718" type="CollisionShape2D" parent="TerrainCollisions" unique_id=566929319]
+position = Vector2(120, 120)
+shape = SubResource("RectangleShape2D_4opbx")
+
+[node name="@CollisionShape2D@9719" type="CollisionShape2D" parent="TerrainCollisions" unique_id=339197729]
+position = Vector2(136, 120)
+shape = SubResource("RectangleShape2D_lt34v")
+
+[node name="@CollisionShape2D@9720" type="CollisionShape2D" parent="TerrainCollisions" unique_id=867181734]
+position = Vector2(152, 120)
+shape = SubResource("RectangleShape2D_t6x8r")
+
+[node name="@CollisionShape2D@9721" type="CollisionShape2D" parent="TerrainCollisions" unique_id=452754762]
+position = Vector2(168, 120)
+shape = SubResource("RectangleShape2D_7rdj7")
+
+[node name="@CollisionShape2D@9722" type="CollisionShape2D" parent="TerrainCollisions" unique_id=111416877]
+position = Vector2(184, 120)
+shape = SubResource("RectangleShape2D_3n3fb")
+
+[node name="@CollisionShape2D@9723" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2121818556]
+position = Vector2(200, 120)
+shape = SubResource("RectangleShape2D_g12lh")
+
+[node name="@CollisionShape2D@9724" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2071590022]
+position = Vector2(216, 120)
+shape = SubResource("RectangleShape2D_2rme0")
+
+[node name="@CollisionShape2D@9725" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1554585839]
+position = Vector2(232, 120)
+shape = SubResource("RectangleShape2D_mjfc5")
+
+[node name="@CollisionShape2D@9726" type="CollisionShape2D" parent="TerrainCollisions" unique_id=119007691]
+position = Vector2(264, 120)
+shape = SubResource("RectangleShape2D_gswrf")
+
+[node name="@CollisionShape2D@9727" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1036296073]
+position = Vector2(280, 120)
+shape = SubResource("RectangleShape2D_ait00")
+
+[node name="@CollisionShape2D@9728" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1897077900]
+position = Vector2(296, 120)
+shape = SubResource("RectangleShape2D_v2py6")
+
+[node name="@CollisionShape2D@9729" type="CollisionShape2D" parent="TerrainCollisions" unique_id=121097218]
+position = Vector2(312, 120)
+shape = SubResource("RectangleShape2D_u6wgc")
+
+[node name="@CollisionShape2D@9730" type="CollisionShape2D" parent="TerrainCollisions" unique_id=531123488]
+position = Vector2(328, 120)
+shape = SubResource("RectangleShape2D_3v8wx")
+
+[node name="@CollisionShape2D@9731" type="CollisionShape2D" parent="TerrainCollisions" unique_id=119929349]
+position = Vector2(344, 120)
+shape = SubResource("RectangleShape2D_fpexo")
+
+[node name="@CollisionShape2D@9732" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1410182749]
+position = Vector2(360, 120)
+shape = SubResource("RectangleShape2D_i4add")
+
+[node name="@CollisionShape2D@9733" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1226951083]
+position = Vector2(376, 120)
+shape = SubResource("RectangleShape2D_n04ia")
+
+[node name="@CollisionShape2D@9734" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2121426834]
+position = Vector2(392, 120)
+shape = SubResource("RectangleShape2D_wcmfn")
+
+[node name="@CollisionShape2D@9735" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1549997953]
+position = Vector2(408, 120)
+shape = SubResource("RectangleShape2D_pox5s")
+
+[node name="@CollisionShape2D@9736" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1461444871]
+position = Vector2(424, 120)
+shape = SubResource("RectangleShape2D_ppsx7")
+
+[node name="@CollisionShape2D@9737" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1051601911]
+position = Vector2(440, 120)
+shape = SubResource("RectangleShape2D_wh74g")
+
+[node name="@CollisionShape2D@9738" type="CollisionShape2D" parent="TerrainCollisions" unique_id=956230851]
+position = Vector2(456, 120)
+shape = SubResource("RectangleShape2D_p544u")
+
+[node name="@CollisionShape2D@9739" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1530080386]
+position = Vector2(472, 120)
+shape = SubResource("RectangleShape2D_ie7es")
+
+[node name="@CollisionShape2D@9740" type="CollisionShape2D" parent="TerrainCollisions" unique_id=246128563]
+position = Vector2(8, 136)
+shape = SubResource("RectangleShape2D_oodn4")
+
+[node name="@CollisionShape2D@9741" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1270753412]
+position = Vector2(24, 136)
+shape = SubResource("RectangleShape2D_617qf")
+
+[node name="@CollisionShape2D@9742" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1893071323]
+position = Vector2(40, 136)
+shape = SubResource("RectangleShape2D_tvtbl")
+
+[node name="@CollisionShape2D@9743" type="CollisionShape2D" parent="TerrainCollisions" unique_id=936553674]
+position = Vector2(56, 136)
+shape = SubResource("RectangleShape2D_f5nx1")
+
+[node name="@CollisionShape2D@9744" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2066607345]
+position = Vector2(72, 136)
+shape = SubResource("RectangleShape2D_vuvd4")
+
+[node name="@CollisionShape2D@9745" type="CollisionShape2D" parent="TerrainCollisions" unique_id=288915834]
+position = Vector2(88, 136)
+shape = SubResource("RectangleShape2D_pp2er")
+
+[node name="@CollisionShape2D@9746" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1380437383]
+position = Vector2(104, 136)
+shape = SubResource("RectangleShape2D_wo6hk")
+
+[node name="@CollisionShape2D@9747" type="CollisionShape2D" parent="TerrainCollisions" unique_id=867873823]
+position = Vector2(120, 136)
+shape = SubResource("RectangleShape2D_6b5ek")
+
+[node name="@CollisionShape2D@9748" type="CollisionShape2D" parent="TerrainCollisions" unique_id=564012348]
+position = Vector2(136, 136)
+shape = SubResource("RectangleShape2D_p3ynx")
+
+[node name="@CollisionShape2D@9749" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1618553019]
+position = Vector2(152, 136)
+shape = SubResource("RectangleShape2D_lipwc")
+
+[node name="@CollisionShape2D@9750" type="CollisionShape2D" parent="TerrainCollisions" unique_id=705273406]
+position = Vector2(168, 136)
+shape = SubResource("RectangleShape2D_arxyu")
+
+[node name="@CollisionShape2D@9751" type="CollisionShape2D" parent="TerrainCollisions" unique_id=754345461]
+position = Vector2(184, 136)
+shape = SubResource("RectangleShape2D_qcahr")
+
+[node name="@CollisionShape2D@9752" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1958371484]
+position = Vector2(200, 136)
+shape = SubResource("RectangleShape2D_sjfh0")
+
+[node name="@CollisionShape2D@9753" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1559447311]
+position = Vector2(216, 136)
+shape = SubResource("RectangleShape2D_7cw8p")
+
+[node name="@CollisionShape2D@9754" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2036261686]
+position = Vector2(232, 136)
+shape = SubResource("RectangleShape2D_maxy4")
+
+[node name="@CollisionShape2D@9755" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1277351816]
+position = Vector2(264, 136)
+shape = SubResource("RectangleShape2D_cquh7")
+
+[node name="@CollisionShape2D@9756" type="CollisionShape2D" parent="TerrainCollisions" unique_id=673127253]
+position = Vector2(280, 136)
+shape = SubResource("RectangleShape2D_y8juk")
+
+[node name="@CollisionShape2D@9757" type="CollisionShape2D" parent="TerrainCollisions" unique_id=610678332]
+position = Vector2(296, 136)
+shape = SubResource("RectangleShape2D_8lmof")
+
+[node name="@CollisionShape2D@9758" type="CollisionShape2D" parent="TerrainCollisions" unique_id=993232571]
+position = Vector2(312, 136)
+shape = SubResource("RectangleShape2D_ted0f")
+
+[node name="@CollisionShape2D@9759" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1856557923]
+position = Vector2(328, 136)
+shape = SubResource("RectangleShape2D_cbmvt")
+
+[node name="@CollisionShape2D@9760" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1484717620]
+position = Vector2(344, 136)
+shape = SubResource("RectangleShape2D_5hjt5")
+
+[node name="@CollisionShape2D@9761" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1448638888]
+position = Vector2(360, 136)
+shape = SubResource("RectangleShape2D_jju3b")
+
+[node name="@CollisionShape2D@9762" type="CollisionShape2D" parent="TerrainCollisions" unique_id=468561526]
+position = Vector2(376, 136)
+shape = SubResource("RectangleShape2D_3ceqk")
+
+[node name="@CollisionShape2D@9763" type="CollisionShape2D" parent="TerrainCollisions" unique_id=279313611]
+position = Vector2(392, 136)
+shape = SubResource("RectangleShape2D_fh37b")
+
+[node name="@CollisionShape2D@9764" type="CollisionShape2D" parent="TerrainCollisions" unique_id=865878658]
+position = Vector2(408, 136)
+shape = SubResource("RectangleShape2D_2qger")
+
+[node name="@CollisionShape2D@9765" type="CollisionShape2D" parent="TerrainCollisions" unique_id=772100868]
+position = Vector2(424, 136)
+shape = SubResource("RectangleShape2D_eh3cf")
+
+[node name="@CollisionShape2D@9766" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1481754391]
+position = Vector2(440, 136)
+shape = SubResource("RectangleShape2D_fswg3")
+
+[node name="@CollisionShape2D@9767" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2012342950]
+position = Vector2(456, 136)
+shape = SubResource("RectangleShape2D_2bd6d")
+
+[node name="@CollisionShape2D@9768" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1473375151]
+position = Vector2(472, 136)
+shape = SubResource("RectangleShape2D_dqfi5")
+
+[node name="@CollisionShape2D@9769" type="CollisionShape2D" parent="TerrainCollisions" unique_id=178581889]
+position = Vector2(8, 152)
+shape = SubResource("RectangleShape2D_4tq0s")
+
+[node name="@CollisionShape2D@9770" type="CollisionShape2D" parent="TerrainCollisions" unique_id=335991176]
+position = Vector2(24, 152)
+shape = SubResource("RectangleShape2D_4n00p")
+
+[node name="@CollisionShape2D@9771" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1508549601]
+position = Vector2(40, 152)
+shape = SubResource("RectangleShape2D_ogejp")
+
+[node name="@CollisionShape2D@9772" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2101944083]
+position = Vector2(56, 152)
+shape = SubResource("RectangleShape2D_54b4c")
+
+[node name="@CollisionShape2D@9773" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1454329161]
+position = Vector2(72, 152)
+shape = SubResource("RectangleShape2D_tvsbd")
+
+[node name="@CollisionShape2D@9774" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1480740795]
+position = Vector2(88, 152)
+shape = SubResource("RectangleShape2D_nck20")
+
+[node name="@CollisionShape2D@9775" type="CollisionShape2D" parent="TerrainCollisions" unique_id=675308264]
+position = Vector2(104, 152)
+shape = SubResource("RectangleShape2D_ss7ac")
+
+[node name="@CollisionShape2D@9776" type="CollisionShape2D" parent="TerrainCollisions" unique_id=174009648]
+position = Vector2(120, 152)
+shape = SubResource("RectangleShape2D_elq21")
+
+[node name="@CollisionShape2D@9777" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1678716160]
+position = Vector2(136, 152)
+shape = SubResource("RectangleShape2D_blflh")
+
+[node name="@CollisionShape2D@9778" type="CollisionShape2D" parent="TerrainCollisions" unique_id=642831980]
+position = Vector2(152, 152)
+shape = SubResource("RectangleShape2D_v543a")
+
+[node name="@CollisionShape2D@9779" type="CollisionShape2D" parent="TerrainCollisions" unique_id=972154314]
+position = Vector2(168, 152)
+shape = SubResource("RectangleShape2D_ofpby")
+
+[node name="@CollisionShape2D@9780" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1755337241]
+position = Vector2(184, 152)
+shape = SubResource("RectangleShape2D_wmq07")
+
+[node name="@CollisionShape2D@9781" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1940455382]
+position = Vector2(200, 152)
+shape = SubResource("RectangleShape2D_yky36")
+
+[node name="@CollisionShape2D@9782" type="CollisionShape2D" parent="TerrainCollisions" unique_id=693915130]
+position = Vector2(216, 152)
+shape = SubResource("RectangleShape2D_vak25")
+
+[node name="@CollisionShape2D@9783" type="CollisionShape2D" parent="TerrainCollisions" unique_id=749583247]
+position = Vector2(232, 152)
+shape = SubResource("RectangleShape2D_ff5hu")
+
+[node name="@CollisionShape2D@9784" type="CollisionShape2D" parent="TerrainCollisions" unique_id=98328956]
+position = Vector2(264, 152)
+shape = SubResource("RectangleShape2D_3g838")
+
+[node name="@CollisionShape2D@9785" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1809372029]
+position = Vector2(280, 152)
+shape = SubResource("RectangleShape2D_aynrl")
+
+[node name="@CollisionShape2D@9786" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1049827984]
+position = Vector2(296, 152)
+shape = SubResource("RectangleShape2D_an4vs")
+
+[node name="@CollisionShape2D@9787" type="CollisionShape2D" parent="TerrainCollisions" unique_id=659743576]
+position = Vector2(312, 152)
+shape = SubResource("RectangleShape2D_d5byg")
+
+[node name="@CollisionShape2D@9788" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1525057784]
+position = Vector2(328, 152)
+shape = SubResource("RectangleShape2D_hvk30")
+
+[node name="@CollisionShape2D@9789" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1641301859]
+position = Vector2(344, 152)
+shape = SubResource("RectangleShape2D_27rlh")
+
+[node name="@CollisionShape2D@9790" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1663719154]
+position = Vector2(360, 152)
+shape = SubResource("RectangleShape2D_58ul3")
+
+[node name="@CollisionShape2D@9791" type="CollisionShape2D" parent="TerrainCollisions" unique_id=893255502]
+position = Vector2(376, 152)
+shape = SubResource("RectangleShape2D_16ece")
+
+[node name="@CollisionShape2D@9792" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1482228048]
+position = Vector2(392, 152)
+shape = SubResource("RectangleShape2D_p2cfl")
+
+[node name="@CollisionShape2D@9793" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1986057650]
+position = Vector2(408, 152)
+shape = SubResource("RectangleShape2D_16i4s")
+
+[node name="@CollisionShape2D@9794" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1010129030]
+position = Vector2(424, 152)
+shape = SubResource("RectangleShape2D_2fonw")
+
+[node name="@CollisionShape2D@9795" type="CollisionShape2D" parent="TerrainCollisions" unique_id=547544251]
+position = Vector2(440, 152)
+shape = SubResource("RectangleShape2D_5et8b")
+
+[node name="@CollisionShape2D@9796" type="CollisionShape2D" parent="TerrainCollisions" unique_id=653066742]
+position = Vector2(456, 152)
+shape = SubResource("RectangleShape2D_8khxx")
+
+[node name="@CollisionShape2D@9797" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2042860382]
+position = Vector2(472, 152)
+shape = SubResource("RectangleShape2D_7a3r6")
+
+[node name="@CollisionShape2D@9798" type="CollisionShape2D" parent="TerrainCollisions" unique_id=107412871]
+position = Vector2(8, 168)
+shape = SubResource("RectangleShape2D_3byu6")
+
+[node name="@CollisionShape2D@9799" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1744525656]
+position = Vector2(456, 168)
+shape = SubResource("RectangleShape2D_8y0ot")
+
+[node name="@CollisionShape2D@9800" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1186362993]
+position = Vector2(472, 168)
+shape = SubResource("RectangleShape2D_ifqb1")
+
+[node name="@CollisionShape2D@9801" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1306146613]
+position = Vector2(8, 184)
+shape = SubResource("RectangleShape2D_av6sx")
+
+[node name="@CollisionShape2D@9802" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1078174985]
+position = Vector2(24, 184)
+shape = SubResource("RectangleShape2D_jmt0h")
+
+[node name="@CollisionShape2D@9803" type="CollisionShape2D" parent="TerrainCollisions" unique_id=43890219]
+position = Vector2(40, 184)
+shape = SubResource("RectangleShape2D_qqqox")
+
+[node name="@CollisionShape2D@9804" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1852846583]
+position = Vector2(56, 184)
+shape = SubResource("RectangleShape2D_vbbn6")
+
+[node name="@CollisionShape2D@9805" type="CollisionShape2D" parent="TerrainCollisions" unique_id=657628450]
+position = Vector2(72, 184)
+shape = SubResource("RectangleShape2D_4xlu6")
+
+[node name="@CollisionShape2D@9806" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1289811256]
+position = Vector2(88, 184)
+shape = SubResource("RectangleShape2D_33md4")
+
+[node name="@CollisionShape2D@9807" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1583616367]
+position = Vector2(104, 184)
+shape = SubResource("RectangleShape2D_m2747")
+
+[node name="@CollisionShape2D@9808" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1999191521]
+position = Vector2(120, 184)
+shape = SubResource("RectangleShape2D_5amtx")
+
+[node name="@CollisionShape2D@9809" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1289342711]
+position = Vector2(136, 184)
+shape = SubResource("RectangleShape2D_56t0h")
+
+[node name="@CollisionShape2D@9810" type="CollisionShape2D" parent="TerrainCollisions" unique_id=7406086]
+position = Vector2(152, 184)
+shape = SubResource("RectangleShape2D_nljdj")
+
+[node name="@CollisionShape2D@9811" type="CollisionShape2D" parent="TerrainCollisions" unique_id=535760644]
+position = Vector2(168, 184)
+shape = SubResource("RectangleShape2D_csvvd")
+
+[node name="@CollisionShape2D@9812" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1263663888]
+position = Vector2(184, 184)
+shape = SubResource("RectangleShape2D_y2e24")
+
+[node name="@CollisionShape2D@9813" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2014080250]
+position = Vector2(200, 184)
+shape = SubResource("RectangleShape2D_oreg6")
+
+[node name="@CollisionShape2D@9814" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1704675581]
+position = Vector2(216, 184)
+shape = SubResource("RectangleShape2D_jf53l")
+
+[node name="@CollisionShape2D@9815" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1651819826]
+position = Vector2(232, 184)
+shape = SubResource("RectangleShape2D_0i0ox")
+
+[node name="@CollisionShape2D@9816" type="CollisionShape2D" parent="TerrainCollisions" unique_id=382661915]
+position = Vector2(264, 184)
+shape = SubResource("RectangleShape2D_402lg")
+
+[node name="@CollisionShape2D@9817" type="CollisionShape2D" parent="TerrainCollisions" unique_id=365291718]
+position = Vector2(280, 184)
+shape = SubResource("RectangleShape2D_7t1wi")
+
+[node name="@CollisionShape2D@9818" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2112021083]
+position = Vector2(296, 184)
+shape = SubResource("RectangleShape2D_m0eg4")
+
+[node name="@CollisionShape2D@9819" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1125927950]
+position = Vector2(312, 184)
+shape = SubResource("RectangleShape2D_u0m62")
+
+[node name="@CollisionShape2D@9820" type="CollisionShape2D" parent="TerrainCollisions" unique_id=196715061]
+position = Vector2(328, 184)
+shape = SubResource("RectangleShape2D_qqyl0")
+
+[node name="@CollisionShape2D@9821" type="CollisionShape2D" parent="TerrainCollisions" unique_id=377262617]
+position = Vector2(344, 184)
+shape = SubResource("RectangleShape2D_etlbf")
+
+[node name="@CollisionShape2D@9822" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1528417446]
+position = Vector2(360, 184)
+shape = SubResource("RectangleShape2D_cfvrd")
+
+[node name="@CollisionShape2D@9823" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2129168816]
+position = Vector2(376, 184)
+shape = SubResource("RectangleShape2D_py7al")
+
+[node name="@CollisionShape2D@9824" type="CollisionShape2D" parent="TerrainCollisions" unique_id=822560906]
+position = Vector2(392, 184)
+shape = SubResource("RectangleShape2D_q0hmo")
+
+[node name="@CollisionShape2D@9825" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1673813925]
+position = Vector2(408, 184)
+shape = SubResource("RectangleShape2D_1qkf5")
+
+[node name="@CollisionShape2D@9826" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1246435588]
+position = Vector2(424, 184)
+shape = SubResource("RectangleShape2D_7m7ec")
+
+[node name="@CollisionShape2D@9827" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2117817265]
+position = Vector2(440, 184)
+shape = SubResource("RectangleShape2D_jxs6e")
+
+[node name="@CollisionShape2D@9828" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1722765949]
+position = Vector2(456, 184)
+shape = SubResource("RectangleShape2D_y3sju")
+
+[node name="@CollisionShape2D@9829" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1388357308]
+position = Vector2(472, 184)
+shape = SubResource("RectangleShape2D_tivjw")
+
+[node name="@CollisionShape2D@9830" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1187584992]
+position = Vector2(8, 200)
+shape = SubResource("RectangleShape2D_enn21")
+
+[node name="@CollisionShape2D@9831" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1492404171]
+position = Vector2(24, 200)
+shape = SubResource("RectangleShape2D_yidb6")
+
+[node name="@CollisionShape2D@9832" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1284237779]
+position = Vector2(40, 200)
+shape = SubResource("RectangleShape2D_ytu2f")
+
+[node name="@CollisionShape2D@9833" type="CollisionShape2D" parent="TerrainCollisions" unique_id=948579626]
+position = Vector2(56, 200)
+shape = SubResource("RectangleShape2D_4arrg")
+
+[node name="@CollisionShape2D@9834" type="CollisionShape2D" parent="TerrainCollisions" unique_id=422519866]
+position = Vector2(72, 200)
+shape = SubResource("RectangleShape2D_1imgp")
+
+[node name="@CollisionShape2D@9835" type="CollisionShape2D" parent="TerrainCollisions" unique_id=648947045]
+position = Vector2(88, 200)
+shape = SubResource("RectangleShape2D_jlqn6")
+
+[node name="@CollisionShape2D@9836" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1369585374]
+position = Vector2(104, 200)
+shape = SubResource("RectangleShape2D_dbgq7")
+
+[node name="@CollisionShape2D@9837" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1557016275]
+position = Vector2(120, 200)
+shape = SubResource("RectangleShape2D_0vi5a")
+
+[node name="@CollisionShape2D@9838" type="CollisionShape2D" parent="TerrainCollisions" unique_id=758845415]
+position = Vector2(136, 200)
+shape = SubResource("RectangleShape2D_1ajba")
+
+[node name="@CollisionShape2D@9839" type="CollisionShape2D" parent="TerrainCollisions" unique_id=517969907]
+position = Vector2(152, 200)
+shape = SubResource("RectangleShape2D_j2ony")
+
+[node name="@CollisionShape2D@9840" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1973680112]
+position = Vector2(168, 200)
+shape = SubResource("RectangleShape2D_26o75")
+
+[node name="@CollisionShape2D@9841" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1314038091]
+position = Vector2(184, 200)
+shape = SubResource("RectangleShape2D_x2dcc")
+
+[node name="@CollisionShape2D@9842" type="CollisionShape2D" parent="TerrainCollisions" unique_id=366248732]
+position = Vector2(200, 200)
+shape = SubResource("RectangleShape2D_hb40w")
+
+[node name="@CollisionShape2D@9843" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1236277130]
+position = Vector2(216, 200)
+shape = SubResource("RectangleShape2D_eggs6")
+
+[node name="@CollisionShape2D@9844" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1259536285]
+position = Vector2(232, 200)
+shape = SubResource("RectangleShape2D_5drof")
+
+[node name="@CollisionShape2D@9845" type="CollisionShape2D" parent="TerrainCollisions" unique_id=161114426]
+position = Vector2(264, 200)
+shape = SubResource("RectangleShape2D_q74rh")
+
+[node name="@CollisionShape2D@9846" type="CollisionShape2D" parent="TerrainCollisions" unique_id=833188345]
+position = Vector2(280, 200)
+shape = SubResource("RectangleShape2D_ck2k0")
+
+[node name="@CollisionShape2D@9847" type="CollisionShape2D" parent="TerrainCollisions" unique_id=760820755]
+position = Vector2(296, 200)
+shape = SubResource("RectangleShape2D_0tmx8")
+
+[node name="@CollisionShape2D@9848" type="CollisionShape2D" parent="TerrainCollisions" unique_id=42650405]
+position = Vector2(312, 200)
+shape = SubResource("RectangleShape2D_hs0gl")
+
+[node name="@CollisionShape2D@9849" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2041425635]
+position = Vector2(328, 200)
+shape = SubResource("RectangleShape2D_r8jy7")
+
+[node name="@CollisionShape2D@9850" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1456197753]
+position = Vector2(344, 200)
+shape = SubResource("RectangleShape2D_g3fjw")
+
+[node name="@CollisionShape2D@9851" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2095614214]
+position = Vector2(360, 200)
+shape = SubResource("RectangleShape2D_7sa7q")
+
+[node name="@CollisionShape2D@9852" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1632328076]
+position = Vector2(376, 200)
+shape = SubResource("RectangleShape2D_6rrmx")
+
+[node name="@CollisionShape2D@9853" type="CollisionShape2D" parent="TerrainCollisions" unique_id=900707548]
+position = Vector2(392, 200)
+shape = SubResource("RectangleShape2D_wxpxt")
+
+[node name="@CollisionShape2D@9854" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1806532697]
+position = Vector2(408, 200)
+shape = SubResource("RectangleShape2D_0okv6")
+
+[node name="@CollisionShape2D@9855" type="CollisionShape2D" parent="TerrainCollisions" unique_id=87457436]
+position = Vector2(424, 200)
+shape = SubResource("RectangleShape2D_qtmh7")
+
+[node name="@CollisionShape2D@9856" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1070512255]
+position = Vector2(440, 200)
+shape = SubResource("RectangleShape2D_nma4t")
+
+[node name="@CollisionShape2D@9857" type="CollisionShape2D" parent="TerrainCollisions" unique_id=55215063]
+position = Vector2(456, 200)
+shape = SubResource("RectangleShape2D_6xveo")
+
+[node name="@CollisionShape2D@9858" type="CollisionShape2D" parent="TerrainCollisions" unique_id=352187374]
+position = Vector2(472, 200)
+shape = SubResource("RectangleShape2D_86vil")
+
+[node name="@CollisionShape2D@9859" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1128950337]
+position = Vector2(8, 216)
+shape = SubResource("RectangleShape2D_mcvwa")
+
+[node name="@CollisionShape2D@9860" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1107826781]
+position = Vector2(24, 216)
+shape = SubResource("RectangleShape2D_pymok")
+
+[node name="@CollisionShape2D@9861" type="CollisionShape2D" parent="TerrainCollisions" unique_id=535887095]
+position = Vector2(40, 216)
+shape = SubResource("RectangleShape2D_elxhl")
+
+[node name="@CollisionShape2D@9862" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2079808062]
+position = Vector2(56, 216)
+shape = SubResource("RectangleShape2D_xy8bc")
+
+[node name="@CollisionShape2D@9863" type="CollisionShape2D" parent="TerrainCollisions" unique_id=577886842]
+position = Vector2(72, 216)
+shape = SubResource("RectangleShape2D_fshy8")
+
+[node name="@CollisionShape2D@9864" type="CollisionShape2D" parent="TerrainCollisions" unique_id=621892504]
+position = Vector2(88, 216)
+shape = SubResource("RectangleShape2D_l2swc")
+
+[node name="@CollisionShape2D@9865" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1296241175]
+position = Vector2(104, 216)
+shape = SubResource("RectangleShape2D_rq7sb")
+
+[node name="@CollisionShape2D@9866" type="CollisionShape2D" parent="TerrainCollisions" unique_id=325373242]
+position = Vector2(120, 216)
+shape = SubResource("RectangleShape2D_fi4ss")
+
+[node name="@CollisionShape2D@9867" type="CollisionShape2D" parent="TerrainCollisions" unique_id=243958972]
+position = Vector2(136, 216)
+shape = SubResource("RectangleShape2D_7cjmu")
+
+[node name="@CollisionShape2D@9868" type="CollisionShape2D" parent="TerrainCollisions" unique_id=795787696]
+position = Vector2(152, 216)
+shape = SubResource("RectangleShape2D_vjv4w")
+
+[node name="@CollisionShape2D@9869" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1888989456]
+position = Vector2(168, 216)
+shape = SubResource("RectangleShape2D_d6p5k")
+
+[node name="@CollisionShape2D@9870" type="CollisionShape2D" parent="TerrainCollisions" unique_id=656161148]
+position = Vector2(184, 216)
+shape = SubResource("RectangleShape2D_hsx14")
+
+[node name="@CollisionShape2D@9871" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1388910940]
+position = Vector2(200, 216)
+shape = SubResource("RectangleShape2D_ep3qq")
+
+[node name="@CollisionShape2D@9872" type="CollisionShape2D" parent="TerrainCollisions" unique_id=991104200]
+position = Vector2(216, 216)
+shape = SubResource("RectangleShape2D_gf6fd")
+
+[node name="@CollisionShape2D@9873" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1260595901]
+position = Vector2(232, 216)
+shape = SubResource("RectangleShape2D_l25ut")
+
+[node name="@CollisionShape2D@9874" type="CollisionShape2D" parent="TerrainCollisions" unique_id=72686127]
+position = Vector2(264, 216)
+shape = SubResource("RectangleShape2D_svx66")
+
+[node name="@CollisionShape2D@9875" type="CollisionShape2D" parent="TerrainCollisions" unique_id=984535079]
+position = Vector2(280, 216)
+shape = SubResource("RectangleShape2D_fqrjf")
+
+[node name="@CollisionShape2D@9876" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1874366903]
+position = Vector2(296, 216)
+shape = SubResource("RectangleShape2D_0njmq")
+
+[node name="@CollisionShape2D@9877" type="CollisionShape2D" parent="TerrainCollisions" unique_id=571424844]
+position = Vector2(312, 216)
+shape = SubResource("RectangleShape2D_cew2g")
+
+[node name="@CollisionShape2D@9878" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1256691711]
+position = Vector2(328, 216)
+shape = SubResource("RectangleShape2D_c6ghc")
+
+[node name="@CollisionShape2D@9879" type="CollisionShape2D" parent="TerrainCollisions" unique_id=46273609]
+position = Vector2(344, 216)
+shape = SubResource("RectangleShape2D_ifal1")
+
+[node name="@CollisionShape2D@9880" type="CollisionShape2D" parent="TerrainCollisions" unique_id=577116859]
+position = Vector2(360, 216)
+shape = SubResource("RectangleShape2D_88w8w")
+
+[node name="@CollisionShape2D@9881" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1975768704]
+position = Vector2(376, 216)
+shape = SubResource("RectangleShape2D_e3ffv")
+
+[node name="@CollisionShape2D@9882" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1342553235]
+position = Vector2(392, 216)
+shape = SubResource("RectangleShape2D_ybtt7")
+
+[node name="@CollisionShape2D@9883" type="CollisionShape2D" parent="TerrainCollisions" unique_id=71571364]
+position = Vector2(408, 216)
+shape = SubResource("RectangleShape2D_tsc62")
+
+[node name="@CollisionShape2D@9884" type="CollisionShape2D" parent="TerrainCollisions" unique_id=726859962]
+position = Vector2(424, 216)
+shape = SubResource("RectangleShape2D_o4f76")
+
+[node name="@CollisionShape2D@9885" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1910139912]
+position = Vector2(440, 216)
+shape = SubResource("RectangleShape2D_a15n2")
+
+[node name="@CollisionShape2D@9886" type="CollisionShape2D" parent="TerrainCollisions" unique_id=819878840]
+position = Vector2(456, 216)
+shape = SubResource("RectangleShape2D_sy4fs")
+
+[node name="@CollisionShape2D@9887" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1199358077]
+position = Vector2(472, 216)
+shape = SubResource("RectangleShape2D_c7vw6")
+
+[node name="@CollisionShape2D@9888" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1264497266]
+position = Vector2(8, 232)
+shape = SubResource("RectangleShape2D_3hta3")
+
+[node name="@CollisionShape2D@9889" type="CollisionShape2D" parent="TerrainCollisions" unique_id=644301491]
+position = Vector2(24, 232)
+shape = SubResource("RectangleShape2D_8w68r")
+
+[node name="@CollisionShape2D@9890" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1614328323]
+position = Vector2(40, 232)
+shape = SubResource("RectangleShape2D_04njq")
+
+[node name="@CollisionShape2D@9891" type="CollisionShape2D" parent="TerrainCollisions" unique_id=284382518]
+position = Vector2(56, 232)
+shape = SubResource("RectangleShape2D_nxufy")
+
+[node name="@CollisionShape2D@9892" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1581542153]
+position = Vector2(72, 232)
+shape = SubResource("RectangleShape2D_qag2n")
+
+[node name="@CollisionShape2D@9893" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1472926271]
+position = Vector2(88, 232)
+shape = SubResource("RectangleShape2D_1nrf0")
+
+[node name="@CollisionShape2D@9894" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1538484391]
+position = Vector2(104, 232)
+shape = SubResource("RectangleShape2D_6an4n")
+
+[node name="@CollisionShape2D@9895" type="CollisionShape2D" parent="TerrainCollisions" unique_id=573441219]
+position = Vector2(120, 232)
+shape = SubResource("RectangleShape2D_t3xmn")
+
+[node name="@CollisionShape2D@9896" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1205304230]
+position = Vector2(136, 232)
+shape = SubResource("RectangleShape2D_c5k3s")
+
+[node name="@CollisionShape2D@9897" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1661816904]
+position = Vector2(152, 232)
+shape = SubResource("RectangleShape2D_6tq7p")
+
+[node name="@CollisionShape2D@9898" type="CollisionShape2D" parent="TerrainCollisions" unique_id=403424627]
+position = Vector2(168, 232)
+shape = SubResource("RectangleShape2D_kyk0b")
+
+[node name="@CollisionShape2D@9899" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1439019732]
+position = Vector2(184, 232)
+shape = SubResource("RectangleShape2D_ba2w7")
+
+[node name="@CollisionShape2D@9900" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1199640639]
+position = Vector2(200, 232)
+shape = SubResource("RectangleShape2D_vqswt")
+
+[node name="@CollisionShape2D@9901" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1253334412]
+position = Vector2(216, 232)
+shape = SubResource("RectangleShape2D_owmdw")
+
+[node name="@CollisionShape2D@9902" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1470764216]
+position = Vector2(232, 232)
+shape = SubResource("RectangleShape2D_fdyy0")
+
+[node name="@CollisionShape2D@9903" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1510568270]
+position = Vector2(264, 232)
+shape = SubResource("RectangleShape2D_cjhgw")
+
+[node name="@CollisionShape2D@9904" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1899357011]
+position = Vector2(280, 232)
+shape = SubResource("RectangleShape2D_pm6up")
+
+[node name="@CollisionShape2D@9905" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2114433096]
+position = Vector2(296, 232)
+shape = SubResource("RectangleShape2D_eeq0h")
+
+[node name="@CollisionShape2D@9906" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1082181835]
+position = Vector2(312, 232)
+shape = SubResource("RectangleShape2D_kwh2n")
+
+[node name="@CollisionShape2D@9907" type="CollisionShape2D" parent="TerrainCollisions" unique_id=723639650]
+position = Vector2(328, 232)
+shape = SubResource("RectangleShape2D_hmvib")
+
+[node name="@CollisionShape2D@9908" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1919640677]
+position = Vector2(344, 232)
+shape = SubResource("RectangleShape2D_es0ar")
+
+[node name="@CollisionShape2D@9909" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1747622701]
+position = Vector2(360, 232)
+shape = SubResource("RectangleShape2D_8ccxv")
+
+[node name="@CollisionShape2D@9910" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1126695822]
+position = Vector2(376, 232)
+shape = SubResource("RectangleShape2D_rfbxu")
+
+[node name="@CollisionShape2D@9911" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1736376460]
+position = Vector2(392, 232)
+shape = SubResource("RectangleShape2D_cabhp")
+
+[node name="@CollisionShape2D@9912" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1357414243]
+position = Vector2(408, 232)
+shape = SubResource("RectangleShape2D_t636n")
+
+[node name="@CollisionShape2D@9913" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1624536111]
+position = Vector2(424, 232)
+shape = SubResource("RectangleShape2D_i8uuj")
+
+[node name="@CollisionShape2D@9914" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1566521522]
+position = Vector2(440, 232)
+shape = SubResource("RectangleShape2D_cck1s")
+
+[node name="@CollisionShape2D@9915" type="CollisionShape2D" parent="TerrainCollisions" unique_id=962124055]
+position = Vector2(456, 232)
+shape = SubResource("RectangleShape2D_j3dgh")
+
+[node name="@CollisionShape2D@9916" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1616571531]
+position = Vector2(472, 232)
+shape = SubResource("RectangleShape2D_ltm2p")
+
+[node name="@CollisionShape2D@9917" type="CollisionShape2D" parent="TerrainCollisions" unique_id=759117070]
+position = Vector2(8, 248)
+shape = SubResource("RectangleShape2D_v2mur")
+
+[node name="@CollisionShape2D@9918" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1450681950]
+position = Vector2(24, 248)
+shape = SubResource("RectangleShape2D_q0jbg")
+
+[node name="@CollisionShape2D@9919" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1715820811]
+position = Vector2(40, 248)
+shape = SubResource("RectangleShape2D_migco")
+
+[node name="@CollisionShape2D@9920" type="CollisionShape2D" parent="TerrainCollisions" unique_id=702469828]
+position = Vector2(56, 248)
+shape = SubResource("RectangleShape2D_dkbo6")
+
+[node name="@CollisionShape2D@9921" type="CollisionShape2D" parent="TerrainCollisions" unique_id=586894443]
+position = Vector2(72, 248)
+shape = SubResource("RectangleShape2D_uav4y")
+
+[node name="@CollisionShape2D@9922" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2088329699]
+position = Vector2(88, 248)
+shape = SubResource("RectangleShape2D_yyyb0")
+
+[node name="@CollisionShape2D@9923" type="CollisionShape2D" parent="TerrainCollisions" unique_id=969507317]
+position = Vector2(104, 248)
+shape = SubResource("RectangleShape2D_icj0w")
+
+[node name="@CollisionShape2D@9924" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1474931744]
+position = Vector2(120, 248)
+shape = SubResource("RectangleShape2D_drygp")
+
+[node name="@CollisionShape2D@9925" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1404591596]
+position = Vector2(136, 248)
+shape = SubResource("RectangleShape2D_obrfe")
+
+[node name="@CollisionShape2D@9926" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2076402692]
+position = Vector2(152, 248)
+shape = SubResource("RectangleShape2D_774gn")
+
+[node name="@CollisionShape2D@9927" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1031845948]
+position = Vector2(168, 248)
+shape = SubResource("RectangleShape2D_2yjhh")
+
+[node name="@CollisionShape2D@9928" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1618407021]
+position = Vector2(184, 248)
+shape = SubResource("RectangleShape2D_x2gv7")
+
+[node name="@CollisionShape2D@9929" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1061097844]
+position = Vector2(200, 248)
+shape = SubResource("RectangleShape2D_sy51e")
+
+[node name="@CollisionShape2D@9930" type="CollisionShape2D" parent="TerrainCollisions" unique_id=826423407]
+position = Vector2(216, 248)
+shape = SubResource("RectangleShape2D_vq85p")
+
+[node name="@CollisionShape2D@9931" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1789542123]
+position = Vector2(232, 248)
+shape = SubResource("RectangleShape2D_4ssp1")
+
+[node name="@CollisionShape2D@9932" type="CollisionShape2D" parent="TerrainCollisions" unique_id=421773486]
+position = Vector2(264, 248)
+shape = SubResource("RectangleShape2D_l231e")
+
+[node name="@CollisionShape2D@9933" type="CollisionShape2D" parent="TerrainCollisions" unique_id=974260904]
+position = Vector2(280, 248)
+shape = SubResource("RectangleShape2D_irfko")
+
+[node name="@CollisionShape2D@9934" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1499875915]
+position = Vector2(296, 248)
+shape = SubResource("RectangleShape2D_0vg1b")
+
+[node name="@CollisionShape2D@9935" type="CollisionShape2D" parent="TerrainCollisions" unique_id=461566860]
+position = Vector2(312, 248)
+shape = SubResource("RectangleShape2D_qc2vv")
+
+[node name="@CollisionShape2D@9936" type="CollisionShape2D" parent="TerrainCollisions" unique_id=414478903]
+position = Vector2(328, 248)
+shape = SubResource("RectangleShape2D_cv7h8")
+
+[node name="@CollisionShape2D@9937" type="CollisionShape2D" parent="TerrainCollisions" unique_id=294880854]
+position = Vector2(344, 248)
+shape = SubResource("RectangleShape2D_1vfi7")
+
+[node name="@CollisionShape2D@9938" type="CollisionShape2D" parent="TerrainCollisions" unique_id=270852446]
+position = Vector2(360, 248)
+shape = SubResource("RectangleShape2D_5mvun")
+
+[node name="@CollisionShape2D@9939" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1031821139]
+position = Vector2(376, 248)
+shape = SubResource("RectangleShape2D_y84rg")
+
+[node name="@CollisionShape2D@9940" type="CollisionShape2D" parent="TerrainCollisions" unique_id=124955469]
+position = Vector2(392, 248)
+shape = SubResource("RectangleShape2D_072ca")
+
+[node name="@CollisionShape2D@9941" type="CollisionShape2D" parent="TerrainCollisions" unique_id=429337271]
+position = Vector2(408, 248)
+shape = SubResource("RectangleShape2D_xu6ed")
+
+[node name="@CollisionShape2D@9942" type="CollisionShape2D" parent="TerrainCollisions" unique_id=616633542]
+position = Vector2(424, 248)
+shape = SubResource("RectangleShape2D_lrgdv")
+
+[node name="@CollisionShape2D@9943" type="CollisionShape2D" parent="TerrainCollisions" unique_id=413233232]
+position = Vector2(440, 248)
+shape = SubResource("RectangleShape2D_igcy8")
+
+[node name="@CollisionShape2D@9944" type="CollisionShape2D" parent="TerrainCollisions" unique_id=635523987]
+position = Vector2(456, 248)
+shape = SubResource("RectangleShape2D_8wu7a")
+
+[node name="@CollisionShape2D@9945" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2025328818]
+position = Vector2(472, 248)
+shape = SubResource("RectangleShape2D_gm7ex")
+
+[node name="@CollisionShape2D@9946" type="CollisionShape2D" parent="TerrainCollisions" unique_id=509688830]
+position = Vector2(8, 264)
+shape = SubResource("RectangleShape2D_5ijbb")
+
+[node name="@CollisionShape2D@9947" type="CollisionShape2D" parent="TerrainCollisions" unique_id=720398197]
+position = Vector2(24, 264)
+shape = SubResource("RectangleShape2D_0wf5k")
+
+[node name="@CollisionShape2D@9948" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1200120668]
+position = Vector2(40, 264)
+shape = SubResource("RectangleShape2D_mq2nb")
+
+[node name="@CollisionShape2D@9949" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1431516022]
+position = Vector2(56, 264)
+shape = SubResource("RectangleShape2D_ye0qf")
+
+[node name="@CollisionShape2D@9950" type="CollisionShape2D" parent="TerrainCollisions" unique_id=189375613]
+position = Vector2(72, 264)
+shape = SubResource("RectangleShape2D_50k2d")
+
+[node name="@CollisionShape2D@9951" type="CollisionShape2D" parent="TerrainCollisions" unique_id=141841853]
+position = Vector2(88, 264)
+shape = SubResource("RectangleShape2D_sfo1l")
+
+[node name="@CollisionShape2D@9952" type="CollisionShape2D" parent="TerrainCollisions" unique_id=368129626]
+position = Vector2(104, 264)
+shape = SubResource("RectangleShape2D_mpd2u")
+
+[node name="@CollisionShape2D@9953" type="CollisionShape2D" parent="TerrainCollisions" unique_id=619094918]
+position = Vector2(120, 264)
+shape = SubResource("RectangleShape2D_ks6ve")
+
+[node name="@CollisionShape2D@9954" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1450812721]
+position = Vector2(136, 264)
+shape = SubResource("RectangleShape2D_ae76d")
+
+[node name="@CollisionShape2D@9955" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1378569492]
+position = Vector2(152, 264)
+shape = SubResource("RectangleShape2D_5gaiu")
+
+[node name="@CollisionShape2D@9956" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1468902082]
+position = Vector2(168, 264)
+shape = SubResource("RectangleShape2D_sumau")
+
+[node name="@CollisionShape2D@9957" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1674133048]
+position = Vector2(184, 264)
+shape = SubResource("RectangleShape2D_vyqve")
+
+[node name="@CollisionShape2D@9958" type="CollisionShape2D" parent="TerrainCollisions" unique_id=744209252]
+position = Vector2(200, 264)
+shape = SubResource("RectangleShape2D_23t24")
+
+[node name="@CollisionShape2D@9959" type="CollisionShape2D" parent="TerrainCollisions" unique_id=297997080]
+position = Vector2(216, 264)
+shape = SubResource("RectangleShape2D_lii3u")
+
+[node name="@CollisionShape2D@9960" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1856795436]
+position = Vector2(232, 264)
+shape = SubResource("RectangleShape2D_gm4ch")
+
+[node name="@CollisionShape2D@9961" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1502410937]
+position = Vector2(264, 264)
+shape = SubResource("RectangleShape2D_m3avw")
+
+[node name="@CollisionShape2D@9962" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1121482383]
+position = Vector2(280, 264)
+shape = SubResource("RectangleShape2D_ga7n6")
+
+[node name="@CollisionShape2D@9963" type="CollisionShape2D" parent="TerrainCollisions" unique_id=28684284]
+position = Vector2(296, 264)
+shape = SubResource("RectangleShape2D_ukfip")
+
+[node name="@CollisionShape2D@9964" type="CollisionShape2D" parent="TerrainCollisions" unique_id=880438613]
+position = Vector2(312, 264)
+shape = SubResource("RectangleShape2D_t7yw4")
+
+[node name="@CollisionShape2D@9965" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1469542197]
+position = Vector2(328, 264)
+shape = SubResource("RectangleShape2D_wt3ye")
+
+[node name="@CollisionShape2D@9966" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1519291964]
+position = Vector2(344, 264)
+shape = SubResource("RectangleShape2D_0q6be")
+
+[node name="@CollisionShape2D@9967" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1011171013]
+position = Vector2(360, 264)
+shape = SubResource("RectangleShape2D_q32fl")
+
+[node name="@CollisionShape2D@9968" type="CollisionShape2D" parent="TerrainCollisions" unique_id=364658506]
+position = Vector2(376, 264)
+shape = SubResource("RectangleShape2D_vo1fp")
+
+[node name="@CollisionShape2D@9969" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2078357668]
+position = Vector2(392, 264)
+shape = SubResource("RectangleShape2D_f3kts")
+
+[node name="@CollisionShape2D@9970" type="CollisionShape2D" parent="TerrainCollisions" unique_id=918621870]
+position = Vector2(408, 264)
+shape = SubResource("RectangleShape2D_cr13w")
+
+[node name="@CollisionShape2D@9971" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2089302180]
+position = Vector2(424, 264)
+shape = SubResource("RectangleShape2D_i517k")
+
+[node name="@CollisionShape2D@9972" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1081939744]
+position = Vector2(440, 264)
+shape = SubResource("RectangleShape2D_ykpc0")
+
+[node name="@CollisionShape2D@9973" type="CollisionShape2D" parent="TerrainCollisions" unique_id=34770769]
+position = Vector2(456, 264)
+shape = SubResource("RectangleShape2D_mx76m")
+
+[node name="@CollisionShape2D@9974" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1583464292]
+position = Vector2(472, 264)
+shape = SubResource("RectangleShape2D_rudkt")
+
+[node name="@CollisionShape2D@9975" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1638689415]
+position = Vector2(8, 280)
+shape = SubResource("RectangleShape2D_vjvn7")
+
+[node name="@CollisionShape2D@9976" type="CollisionShape2D" parent="TerrainCollisions" unique_id=151473088]
+position = Vector2(24, 280)
+shape = SubResource("RectangleShape2D_ipy6h")
+
+[node name="@CollisionShape2D@9977" type="CollisionShape2D" parent="TerrainCollisions" unique_id=165941244]
+position = Vector2(40, 280)
+shape = SubResource("RectangleShape2D_2h4yl")
+
+[node name="@CollisionShape2D@9978" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1021099229]
+position = Vector2(56, 280)
+shape = SubResource("RectangleShape2D_7gpua")
+
+[node name="@CollisionShape2D@9979" type="CollisionShape2D" parent="TerrainCollisions" unique_id=950427599]
+position = Vector2(72, 280)
+shape = SubResource("RectangleShape2D_5pxto")
+
+[node name="@CollisionShape2D@9980" type="CollisionShape2D" parent="TerrainCollisions" unique_id=488691102]
+position = Vector2(88, 280)
+shape = SubResource("RectangleShape2D_t2fc1")
+
+[node name="@CollisionShape2D@9981" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1458096956]
+position = Vector2(104, 280)
+shape = SubResource("RectangleShape2D_hd5m8")
+
+[node name="@CollisionShape2D@9982" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1112455456]
+position = Vector2(120, 280)
+shape = SubResource("RectangleShape2D_nouct")
+
+[node name="@CollisionShape2D@9983" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1922132709]
+position = Vector2(136, 280)
+shape = SubResource("RectangleShape2D_41weu")
+
+[node name="@CollisionShape2D@9984" type="CollisionShape2D" parent="TerrainCollisions" unique_id=779143710]
+position = Vector2(152, 280)
+shape = SubResource("RectangleShape2D_04nwi")
+
+[node name="@CollisionShape2D@9985" type="CollisionShape2D" parent="TerrainCollisions" unique_id=315351495]
+position = Vector2(168, 280)
+shape = SubResource("RectangleShape2D_2si2m")
+
+[node name="@CollisionShape2D@9986" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1163548431]
+position = Vector2(184, 280)
+shape = SubResource("RectangleShape2D_wa30j")
+
+[node name="@CollisionShape2D@9987" type="CollisionShape2D" parent="TerrainCollisions" unique_id=459718530]
+position = Vector2(200, 280)
+shape = SubResource("RectangleShape2D_ey2ob")
+
+[node name="@CollisionShape2D@9988" type="CollisionShape2D" parent="TerrainCollisions" unique_id=256357819]
+position = Vector2(216, 280)
+shape = SubResource("RectangleShape2D_t5ew2")
+
+[node name="@CollisionShape2D@9989" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1167917423]
+position = Vector2(232, 280)
+shape = SubResource("RectangleShape2D_klbj5")
+
+[node name="@CollisionShape2D@9990" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2095990832]
+position = Vector2(264, 280)
+shape = SubResource("RectangleShape2D_4u72g")
+
+[node name="@CollisionShape2D@9991" type="CollisionShape2D" parent="TerrainCollisions" unique_id=978662086]
+position = Vector2(280, 280)
+shape = SubResource("RectangleShape2D_ffgm2")
+
+[node name="@CollisionShape2D@9992" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1110976763]
+position = Vector2(296, 280)
+shape = SubResource("RectangleShape2D_cp76h")
+
+[node name="@CollisionShape2D@9993" type="CollisionShape2D" parent="TerrainCollisions" unique_id=854633774]
+position = Vector2(312, 280)
+shape = SubResource("RectangleShape2D_n63sw")
+
+[node name="@CollisionShape2D@9994" type="CollisionShape2D" parent="TerrainCollisions" unique_id=379302227]
+position = Vector2(328, 280)
+shape = SubResource("RectangleShape2D_jxvhx")
+
+[node name="@CollisionShape2D@9995" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1855377841]
+position = Vector2(344, 280)
+shape = SubResource("RectangleShape2D_2iq5u")
+
+[node name="@CollisionShape2D@9996" type="CollisionShape2D" parent="TerrainCollisions" unique_id=503428338]
+position = Vector2(360, 280)
+shape = SubResource("RectangleShape2D_itfur")
+
+[node name="@CollisionShape2D@9997" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1375816639]
+position = Vector2(376, 280)
+shape = SubResource("RectangleShape2D_ahutp")
+
+[node name="@CollisionShape2D@9998" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1207945026]
+position = Vector2(392, 280)
+shape = SubResource("RectangleShape2D_ntsa4")
+
+[node name="@CollisionShape2D@9999" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2033767665]
+position = Vector2(408, 280)
+shape = SubResource("RectangleShape2D_suugf")
+
+[node name="@CollisionShape2D@10000" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1947617675]
+position = Vector2(424, 280)
+shape = SubResource("RectangleShape2D_uauev")
+
+[node name="@CollisionShape2D@10001" type="CollisionShape2D" parent="TerrainCollisions" unique_id=426922695]
+position = Vector2(440, 280)
+shape = SubResource("RectangleShape2D_15mwk")
+
+[node name="@CollisionShape2D@10002" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1419199178]
+position = Vector2(456, 280)
+shape = SubResource("RectangleShape2D_xgstx")
+
+[node name="@CollisionShape2D@10003" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1975084843]
+position = Vector2(472, 280)
+shape = SubResource("RectangleShape2D_tld2n")
+
+[node name="@CollisionShape2D@10004" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1809663449]
+position = Vector2(8, 296)
+shape = SubResource("RectangleShape2D_m40dt")
+
+[node name="@CollisionShape2D@10005" type="CollisionShape2D" parent="TerrainCollisions" unique_id=854263265]
+position = Vector2(24, 296)
+shape = SubResource("RectangleShape2D_wkyjr")
+
+[node name="@CollisionShape2D@10006" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1104093820]
+position = Vector2(40, 296)
+shape = SubResource("RectangleShape2D_u0m0q")
+
+[node name="@CollisionShape2D@10007" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1540242323]
+position = Vector2(56, 296)
+shape = SubResource("RectangleShape2D_uetcr")
+
+[node name="@CollisionShape2D@10008" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1144369656]
+position = Vector2(72, 296)
+shape = SubResource("RectangleShape2D_b56wp")
+
+[node name="@CollisionShape2D@10009" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1141335825]
+position = Vector2(88, 296)
+shape = SubResource("RectangleShape2D_l3l5x")
+
+[node name="@CollisionShape2D@10010" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1329474484]
+position = Vector2(104, 296)
+shape = SubResource("RectangleShape2D_xgob6")
+
+[node name="@CollisionShape2D@10011" type="CollisionShape2D" parent="TerrainCollisions" unique_id=367904271]
+position = Vector2(120, 296)
+shape = SubResource("RectangleShape2D_riq74")
+
+[node name="@CollisionShape2D@10012" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1946370917]
+position = Vector2(136, 296)
+shape = SubResource("RectangleShape2D_8criu")
+
+[node name="@CollisionShape2D@10013" type="CollisionShape2D" parent="TerrainCollisions" unique_id=514554331]
+position = Vector2(152, 296)
+shape = SubResource("RectangleShape2D_qhikj")
+
+[node name="@CollisionShape2D@10014" type="CollisionShape2D" parent="TerrainCollisions" unique_id=933993307]
+position = Vector2(168, 296)
+shape = SubResource("RectangleShape2D_ttg42")
+
+[node name="@CollisionShape2D@10015" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1526409894]
+position = Vector2(184, 296)
+shape = SubResource("RectangleShape2D_w0qp1")
+
+[node name="@CollisionShape2D@10016" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1355722478]
+position = Vector2(200, 296)
+shape = SubResource("RectangleShape2D_pnoyc")
+
+[node name="@CollisionShape2D@10017" type="CollisionShape2D" parent="TerrainCollisions" unique_id=181433581]
+position = Vector2(216, 296)
+shape = SubResource("RectangleShape2D_l8qqo")
+
+[node name="@CollisionShape2D@10018" type="CollisionShape2D" parent="TerrainCollisions" unique_id=40516625]
+position = Vector2(232, 296)
+shape = SubResource("RectangleShape2D_3prl7")
+
+[node name="@CollisionShape2D@10019" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1778768307]
+position = Vector2(248, 296)
+shape = SubResource("RectangleShape2D_m20jn")
+
+[node name="@CollisionShape2D@10020" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2084629324]
+position = Vector2(264, 296)
+shape = SubResource("RectangleShape2D_wy7i6")
+
+[node name="@CollisionShape2D@10021" type="CollisionShape2D" parent="TerrainCollisions" unique_id=946056758]
+position = Vector2(280, 296)
+shape = SubResource("RectangleShape2D_r4usx")
+
+[node name="@CollisionShape2D@10022" type="CollisionShape2D" parent="TerrainCollisions" unique_id=392289896]
+position = Vector2(296, 296)
+shape = SubResource("RectangleShape2D_pts8n")
+
+[node name="@CollisionShape2D@10023" type="CollisionShape2D" parent="TerrainCollisions" unique_id=617526014]
+position = Vector2(312, 296)
+shape = SubResource("RectangleShape2D_qjgto")
+
+[node name="@CollisionShape2D@10024" type="CollisionShape2D" parent="TerrainCollisions" unique_id=703264224]
+position = Vector2(328, 296)
+shape = SubResource("RectangleShape2D_k7hs0")
+
+[node name="@CollisionShape2D@10025" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1058777854]
+position = Vector2(344, 296)
+shape = SubResource("RectangleShape2D_k2d7p")
+
+[node name="@CollisionShape2D@10026" type="CollisionShape2D" parent="TerrainCollisions" unique_id=587183261]
+position = Vector2(360, 296)
+shape = SubResource("RectangleShape2D_ebbcy")
+
+[node name="@CollisionShape2D@10027" type="CollisionShape2D" parent="TerrainCollisions" unique_id=22956980]
+position = Vector2(376, 296)
+shape = SubResource("RectangleShape2D_sl74r")
+
+[node name="@CollisionShape2D@10028" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1015443990]
+position = Vector2(392, 296)
+shape = SubResource("RectangleShape2D_8vqle")
+
+[node name="@CollisionShape2D@10029" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1408414364]
+position = Vector2(408, 296)
+shape = SubResource("RectangleShape2D_4g7gv")
+
+[node name="@CollisionShape2D@10030" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1092852658]
+position = Vector2(424, 296)
+shape = SubResource("RectangleShape2D_602f8")
+
+[node name="@CollisionShape2D@10031" type="CollisionShape2D" parent="TerrainCollisions" unique_id=47710291]
+position = Vector2(440, 296)
+shape = SubResource("RectangleShape2D_yelru")
+
+[node name="@CollisionShape2D@10032" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2065916034]
+position = Vector2(456, 296)
+shape = SubResource("RectangleShape2D_u6tb2")
+
+[node name="@CollisionShape2D@10033" type="CollisionShape2D" parent="TerrainCollisions" unique_id=929737361]
+position = Vector2(472, 296)
+shape = SubResource("RectangleShape2D_k44s5")
+
+[node name="@CollisionShape2D@10034" type="CollisionShape2D" parent="TerrainCollisions" unique_id=83946465]
+position = Vector2(8, 312)
+shape = SubResource("RectangleShape2D_73d6b")
+
+[node name="@CollisionShape2D@10035" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1417706879]
+position = Vector2(24, 312)
+shape = SubResource("RectangleShape2D_oudq8")
+
+[node name="@CollisionShape2D@10036" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2068352427]
+position = Vector2(40, 312)
+shape = SubResource("RectangleShape2D_yu2kr")
+
+[node name="@CollisionShape2D@10037" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1387143529]
+position = Vector2(56, 312)
+shape = SubResource("RectangleShape2D_5gug7")
+
+[node name="@CollisionShape2D@10038" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1907747315]
+position = Vector2(72, 312)
+shape = SubResource("RectangleShape2D_25da1")
+
+[node name="@CollisionShape2D@10039" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1538079616]
+position = Vector2(88, 312)
+shape = SubResource("RectangleShape2D_gu6qx")
+
+[node name="@CollisionShape2D@10040" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1926256831]
+position = Vector2(104, 312)
+shape = SubResource("RectangleShape2D_lbt16")
+
+[node name="@CollisionShape2D@10041" type="CollisionShape2D" parent="TerrainCollisions" unique_id=907334510]
+position = Vector2(120, 312)
+shape = SubResource("RectangleShape2D_uuqff")
+
+[node name="@CollisionShape2D@10042" type="CollisionShape2D" parent="TerrainCollisions" unique_id=959266133]
+position = Vector2(136, 312)
+shape = SubResource("RectangleShape2D_g1u2j")
+
+[node name="@CollisionShape2D@10043" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1441482206]
+position = Vector2(152, 312)
+shape = SubResource("RectangleShape2D_j3mtn")
+
+[node name="@CollisionShape2D@10044" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1939839856]
+position = Vector2(168, 312)
+shape = SubResource("RectangleShape2D_q8pf7")
+
+[node name="@CollisionShape2D@10045" type="CollisionShape2D" parent="TerrainCollisions" unique_id=383307132]
+position = Vector2(184, 312)
+shape = SubResource("RectangleShape2D_444wk")
+
+[node name="@CollisionShape2D@10046" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1274060882]
+position = Vector2(200, 312)
+shape = SubResource("RectangleShape2D_2y2if")
+
+[node name="@CollisionShape2D@10047" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1054593987]
+position = Vector2(216, 312)
+shape = SubResource("RectangleShape2D_xhyq0")
+
+[node name="@CollisionShape2D@10048" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1780016778]
+position = Vector2(232, 312)
+shape = SubResource("RectangleShape2D_48i62")
+
+[node name="@CollisionShape2D@10049" type="CollisionShape2D" parent="TerrainCollisions" unique_id=242411248]
+position = Vector2(248, 312)
+shape = SubResource("RectangleShape2D_kk6o5")
+
+[node name="@CollisionShape2D@10050" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1866694836]
+position = Vector2(264, 312)
+shape = SubResource("RectangleShape2D_magwh")
+
+[node name="@CollisionShape2D@10051" type="CollisionShape2D" parent="TerrainCollisions" unique_id=13174393]
+position = Vector2(280, 312)
+shape = SubResource("RectangleShape2D_bolof")
+
+[node name="@CollisionShape2D@10052" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1664022465]
+position = Vector2(296, 312)
+shape = SubResource("RectangleShape2D_qgoen")
+
+[node name="@CollisionShape2D@10053" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1759152174]
+position = Vector2(312, 312)
+shape = SubResource("RectangleShape2D_8400o")
+
+[node name="@CollisionShape2D@10054" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1714280053]
+position = Vector2(328, 312)
+shape = SubResource("RectangleShape2D_ywl2m")
+
+[node name="@CollisionShape2D@10055" type="CollisionShape2D" parent="TerrainCollisions" unique_id=600379763]
+position = Vector2(344, 312)
+shape = SubResource("RectangleShape2D_pigxl")
+
+[node name="@CollisionShape2D@10056" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1423502776]
+position = Vector2(360, 312)
+shape = SubResource("RectangleShape2D_sxf8h")
+
+[node name="@CollisionShape2D@10057" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1628157874]
+position = Vector2(376, 312)
+shape = SubResource("RectangleShape2D_m1end")
+
+[node name="@CollisionShape2D@10058" type="CollisionShape2D" parent="TerrainCollisions" unique_id=196133716]
+position = Vector2(392, 312)
+shape = SubResource("RectangleShape2D_ecuk2")
+
+[node name="@CollisionShape2D@10059" type="CollisionShape2D" parent="TerrainCollisions" unique_id=513623084]
+position = Vector2(408, 312)
+shape = SubResource("RectangleShape2D_jtg8a")
+
+[node name="@CollisionShape2D@10060" type="CollisionShape2D" parent="TerrainCollisions" unique_id=66034558]
+position = Vector2(424, 312)
+shape = SubResource("RectangleShape2D_m4nsl")
+
+[node name="@CollisionShape2D@10061" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1685623134]
+position = Vector2(440, 312)
+shape = SubResource("RectangleShape2D_b6852")
+
+[node name="@CollisionShape2D@10062" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1741838835]
+position = Vector2(456, 312)
+shape = SubResource("RectangleShape2D_ncsxe")
+
+[node name="@CollisionShape2D@10063" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1712926000]
+position = Vector2(472, 312)
+shape = SubResource("RectangleShape2D_25mfr")
+
+[node name="Sign_Sign" type="Node2D" parent="." unique_id=542569365]
+position = Vector2(248, 136)
+script = ExtResource("3_he2ax")
+actor_kind = "sign"
+
+[node name="Interaction" type="Area2D" parent="Sign_Sign" unique_id=2045961631]
+collision_layer = 2
+collision_mask = 0
+metadata/dialogue = "Chenal 125 — prenez le temps d'explorer."
+
+[node name="@CollisionShape2D@10064" type="CollisionShape2D" parent="Sign_Sign/Interaction" unique_id=1745797224]
+shape = SubResource("RectangleShape2D_58q7w")
+
+[node name="NPC_Voyageur" type="Node2D" parent="." unique_id=739460465]
+position = Vector2(280, 152)
+script = ExtResource("3_he2ax")
+
+[node name="Interaction" type="Area2D" parent="NPC_Voyageur" unique_id=304709630]
+collision_layer = 2
+collision_mask = 0
+metadata/dialogue = "Bienvenue dans la zone : Chenal 125."
+
+[node name="@CollisionShape2D@10065" type="CollisionShape2D" parent="NPC_Voyageur/Interaction" unique_id=1909347717]
+shape = SubResource("RectangleShape2D_j7ion")
+
+[node name="BlockingBody" type="StaticBody2D" parent="NPC_Voyageur" unique_id=193304726]
+
+[node name="@CollisionShape2D@10066" type="CollisionShape2D" parent="NPC_Voyageur/BlockingBody" unique_id=323679639]
+shape = SubResource("RectangleShape2D_d0gu0")
+
+[node name="Item_Objet trouvé" type="Node2D" parent="." unique_id=595912587]
+position = Vector2(216, 184)
+script = ExtResource("3_he2ax")
+actor_kind = "item"
+
+[node name="Interaction" type="Area2D" parent="Item_Objet trouvé" unique_id=130900488]
+collision_layer = 2
+collision_mask = 0
+metadata/dialogue = "Tu as trouvé un objet. (Système d'inventaire à venir.)"
+
+[node name="@CollisionShape2D@10067" type="CollisionShape2D" parent="Item_Objet trouvé/Interaction" unique_id=1310823287]
+shape = SubResource("RectangleShape2D_vveyf")
+
+[node name="Transition_chenal_124" type="Area2D" parent="." unique_id=1816304180]
+position = Vector2(456, 168)
+collision_layer = 0
+metadata/target_scene = "res://scenes/hoenn/chenal_124.tscn"
+metadata/arrival_cell = Vector2i(27, 10)
+metadata/transition_kind = "path"
+
+[node name="@CollisionShape2D@10068" type="CollisionShape2D" parent="Transition_chenal_124" unique_id=397526201]
+shape = SubResource("RectangleShape2D_4duha")
+
+[node name="Transition_algatia" type="Area2D" parent="." unique_id=891609474]
+position = Vector2(248, 24)
+collision_layer = 0
+metadata/target_scene = "res://scenes/hoenn/algatia.tscn"
+metadata/arrival_cell = Vector2i(27, 10)
+metadata/transition_kind = "path"
+
+[node name="@CollisionShape2D@10069" type="CollisionShape2D" parent="Transition_algatia" unique_id=1387724248]
+shape = SubResource("RectangleShape2D_sjr6y")
+
+[node name="Transition_grotte_trefonds" type="Area2D" parent="." unique_id=1006854190]
+position = Vector2(248, 296)
+collision_layer = 0
+metadata/target_scene = "res://scenes/hoenn/grotte_trefonds.tscn"
+metadata/arrival_cell = Vector2i(12, 2)
+metadata/transition_kind = "branch"
+
+[node name="@CollisionShape2D@10070" type="CollisionShape2D" parent="Transition_grotte_trefonds" unique_id=161368266]
+shape = SubResource("RectangleShape2D_mlcbe")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=876268969]
+position = Vector2(248, 168)
+script = ExtResource("4_8rpjo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=964028303]
+shape = SubResource("RectangleShape2D_s5sps")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=524413142]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=508299753]
+
+[node name="Title" type="Label" parent="HUD" unique_id=387501750]
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 8.0
+offset_bottom = 5.0
+theme_override_font_sizes/font_size = 12
+text = "Chenal 125"
+
+[node name="Controls" type="Label" parent="HUD" unique_id=356974876]
+offset_left = 8.0
+offset_top = 21.0
+offset_right = 8.0
+offset_bottom = 21.0
+theme_override_font_sizes/font_size = 9
+text = "Flèches / WASD · Maj courir · E interagir"
+
+[node name="Dialogue" type="Label" parent="HUD" unique_id=155149495]
+visible = false
+offset_left = 8.0
+offset_top = 286.0
+offset_right = 472.0
+offset_bottom = 312.0
+theme_override_font_sizes/font_size = 11

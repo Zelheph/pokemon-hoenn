@@ -12,6 +12,10 @@ var _walk_phase: int = 0
 var _step_progress: float = 0.0
 
 func _ready() -> void:
+	var scene_manager: Node = get_node("/root/SceneManager")
+	var spawn_position: Vector2 = scene_manager.call("consume_spawn_position") as Vector2
+	if spawn_position != Vector2.INF:
+		position = spawn_position
 	_current_cell = Vector2i(roundi(position.x / TILE_SIZE - 0.5), roundi(position.y / TILE_SIZE - 0.5))
 	_target_position = position
 	get_node("/root/GameState").set("player_position", position)

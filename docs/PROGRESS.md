@@ -11,7 +11,7 @@
 - Joueur `CharacterBody2D` à déplacements par cases 16×16, quatre directions, animation pixel-art de marche et course (Maj).
 - Collisions physiques avec les obstacles de la scène de test.
 - Interaction avec un panneau devant le joueur (E ou Espace) et affichage de son dialogue.
-- Commit : `76f0be2` — « Étape 2 : joueur sur grille et zone de test ».
+- Commit : `b62a50f` — « Étape 2 : joueur sur grille et zone de test ».
 
 ## Zone de test
 - `data/test_zone.json` décrit un plan 30×20.
@@ -23,8 +23,19 @@
 - Godot 4.7.2 accessible avec `flatpak run org.godotengine.Godot`.
 - Réussis : `--headless --path . --import`, `--check-only --script` sur le joueur et le générateur, validation de la scène, puis `--headless --path . --quit`.
 
-## À faire ensuite
-- Étape 3 : vérifier les noms français officiels et connexions, rédiger `docs/WORLD.md`, puis générer les cartes complètes, intérieurs, PNJ, transitions et objets. À commencer après que l’utilisateur dise « suivant ».
+## Étape 3 — terminée
+- `docs/WORLD.md` recense les noms français et connexions de Hoenn, avec les sources consultées.
+- `data/world.json` décrit 154 zones et 161 liaisons ; chaque zone a son plan de terrain complet (dimensions et rangées de tuiles) dans `data/maps/*.json`.
+- `scripts/tools/build_world_data.py` génère les plans ; `scripts/tools/generate_world.gd` les convertit en scènes `.tscn` contenant un `TileMapLayer`, collisions, joueur, acteurs interactifs et Area2D de transition.
+- Scènes créées pour villes, routes, chenaux, intérieurs, arènes, grottes, forêts, montagnes, sites, Ligue et lieux mirages. `SceneManager` réalise le fondu au noir et replace le joueur à l’entrée correspondante.
+- Les dialogues, panneaux et objets sont des exemples génériques. Les plans sont originaux et schématiques, pas des copies exactes des cartes de ROSA. L’atlas de terrain SVG est un placeholder ; les planches d’assets fournies sont documentées pour intégration artistique ultérieure.
+- `scenes/main.tscn` démarre maintenant à Bourg-en-Vol ; la zone de test dédiée reste disponible.
+- Commit : dédié à cette étape.
+
+## Validation effectuée
+- Godot 4.7.2 : `--headless --path . --import`, contrôle syntaxique du générateur et du validateur, génération des 154 scènes, validation des 154 couches remplies et des transitions, puis lancement headless du projet.
+
+## Étapes restantes
 - Étape 4 : sous-étapes du Pokédex complet à définir et données officielles à sourcer.
 - Étape 5 : combats et tests unitaires.
 - Étape 6 : menus.

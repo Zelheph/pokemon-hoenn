@@ -1,0 +1,285 @@
+[gd_scene format=4]
+
+[ext_resource type="Script" path="res://scripts/hoenn/MapZone.gd" id="1_n4hpr"]
+[ext_resource type="Texture2D" path="res://assets/tilesets/placeholder_hoenn_terrain.svg" id="2_5sawl"]
+[ext_resource type="Script" path="res://scripts/player/WorldActor.gd" id="3_l1mvq"]
+[ext_resource type="Script" path="res://scripts/player/Player.gd" id="4_0v712"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iqxy1"]
+texture = ExtResource("2_5sawl")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1oqf3"]
+sources/0 = SubResource("TileSetAtlasSource_iqxy1")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsvp8"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epx11"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26jql"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vlk5"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7anfr"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8w1r"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0u425"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eog8y"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7uv3"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1nwk"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjukg"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pko3h"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bt0ya"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0qxx"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yggjd"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_daxgi"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6tklk"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g14e3"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gn53q"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0n1i"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hddis"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uibpw"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w736g"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jpou"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45amg"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqkch"]
+size = Vector2(10, 10)
+
+[node name="fleuriste_jolie_fleur" type="Node2D" unique_id=1246650096]
+script = ExtResource("1_n4hpr")
+zone_id = &"fleuriste_jolie_fleur"
+zone_name = "Fleuriste Jolie Fleur"
+
+[node name="Terrain" type="TileMapLayer" parent="." unique_id=361847259]
+tile_map_data = PackedByteArray("AAAAAAAAAAADAAEAAAABAAAAAAADAAEAAAACAAAAAAADAAEAAAADAAAAAAADAAEAAAAEAAAAAAADAAEAAAAFAAAAAAADAAEAAAAGAAAAAAADAAEAAAAHAAAAAAADAAEAAAAIAAAAAAADAAEAAAAJAAAAAAADAAEAAAAKAAAAAAADAAEAAAALAAAAAAADAAEAAAAMAAAAAAADAAEAAAANAAAAAAADAAEAAAAOAAAAAAADAAEAAAAPAAAAAAADAAEAAAAQAAAAAAADAAEAAAARAAAAAAADAAEAAAASAAAAAAADAAEAAAATAAAAAAADAAEAAAAUAAAAAAADAAEAAAAVAAAAAAADAAEAAAAWAAAAAAADAAEAAAAXAAAAAAADAAEAAAAAAAEAAAADAAEAAAABAAEAAAADAAEAAAACAAEAAAADAAEAAAADAAEAAAADAAEAAAAEAAEAAAADAAEAAAAFAAEAAAADAAEAAAAGAAEAAAADAAEAAAAHAAEAAAADAAEAAAAIAAEAAAADAAEAAAAJAAEAAAADAAEAAAAKAAEAAAADAAEAAAALAAEAAAADAAEAAAAMAAEAAAADAAEAAAANAAEAAAADAAEAAAAOAAEAAAADAAEAAAAPAAEAAAADAAEAAAAQAAEAAAADAAEAAAARAAEAAAADAAEAAAASAAEAAAADAAEAAAATAAEAAAADAAEAAAAUAAEAAAADAAEAAAAVAAEAAAADAAEAAAAWAAEAAAADAAEAAAAXAAEAAAADAAEAAAAAAAIAAAADAAEAAAABAAIAAAADAAEAAAACAAIAAAADAAEAAAADAAIAAAADAAEAAAAEAAIAAAADAAEAAAAFAAIAAAADAAEAAAAGAAIAAAADAAEAAAAHAAIAAAADAAEAAAAIAAIAAAADAAEAAAAJAAIAAAADAAEAAAAKAAIAAAADAAEAAAALAAIAAAADAAEAAAAMAAIAAAADAAEAAAANAAIAAAADAAEAAAAOAAIAAAADAAEAAAAPAAIAAAADAAEAAAAQAAIAAAADAAEAAAARAAIAAAADAAEAAAASAAIAAAADAAEAAAATAAIAAAADAAEAAAAUAAIAAAADAAEAAAAVAAIAAAADAAEAAAAWAAIAAAADAAEAAAAXAAIAAAADAAEAAAAAAAMAAAADAAEAAAABAAMAAAADAAEAAAACAAMAAAADAAEAAAADAAMAAAAEAAEAAAAEAAMAAAADAAEAAAAFAAMAAAADAAEAAAAGAAMAAAADAAEAAAAHAAMAAAADAAEAAAAIAAMAAAADAAEAAAAJAAMAAAADAAEAAAAKAAMAAAADAAEAAAALAAMAAAADAAEAAAAMAAMAAAADAAEAAAANAAMAAAAEAAEAAAAOAAMAAAADAAEAAAAPAAMAAAADAAEAAAAQAAMAAAADAAEAAAARAAMAAAADAAEAAAASAAMAAAADAAEAAAATAAMAAAADAAEAAAAUAAMAAAADAAEAAAAVAAMAAAADAAEAAAAWAAMAAAADAAEAAAAXAAMAAAADAAEAAAAAAAQAAAADAAEAAAABAAQAAAADAAEAAAACAAQAAAADAAEAAAADAAQAAAADAAEAAAAEAAQAAAADAAEAAAAFAAQAAAADAAEAAAAGAAQAAAADAAEAAAAHAAQAAAADAAEAAAAIAAQAAAAEAAEAAAAJAAQAAAADAAEAAAAKAAQAAAADAAEAAAALAAQAAAADAAEAAAAMAAQAAAADAAEAAAANAAQAAAADAAEAAAAOAAQAAAADAAEAAAAPAAQAAAADAAEAAAAQAAQAAAADAAEAAAARAAQAAAADAAEAAAASAAQAAAAEAAEAAAATAAQAAAADAAEAAAAUAAQAAAADAAEAAAAVAAQAAAADAAEAAAAWAAQAAAADAAEAAAAXAAQAAAADAAEAAAAAAAUAAAADAAEAAAABAAUAAAADAAEAAAACAAUAAAADAAEAAAADAAUAAAAEAAEAAAAEAAUAAAADAAEAAAAFAAUAAAADAAEAAAAGAAUAAAADAAEAAAAHAAUAAAADAAEAAAAIAAUAAAADAAEAAAAJAAUAAAADAAEAAAAKAAUAAAADAAEAAAALAAUAAAADAAEAAAAMAAUAAAADAAEAAAANAAUAAAAEAAEAAAAOAAUAAAADAAEAAAAPAAUAAAADAAEAAAAQAAUAAAADAAEAAAARAAUAAAADAAEAAAASAAUAAAADAAEAAAATAAUAAAADAAEAAAAUAAUAAAADAAEAAAAVAAUAAAADAAEAAAAWAAUAAAADAAEAAAAXAAUAAAADAAEAAAAAAAYAAAADAAEAAAABAAYAAAADAAEAAAACAAYAAAADAAEAAAADAAYAAAADAAEAAAAEAAYAAAADAAEAAAAFAAYAAAADAAEAAAAGAAYAAAADAAEAAAAHAAYAAAADAAEAAAAIAAYAAAAEAAEAAAAJAAYAAAADAAEAAAAKAAYAAAADAAEAAAALAAYAAAADAAEAAAAMAAYAAAADAAEAAAANAAYAAAADAAEAAAAOAAYAAAADAAEAAAAPAAYAAAADAAEAAAAQAAYAAAADAAEAAAARAAYAAAADAAEAAAASAAYAAAAEAAEAAAATAAYAAAADAAEAAAAUAAYAAAADAAEAAAAVAAYAAAADAAEAAAAWAAYAAAADAAEAAAAXAAYAAAADAAEAAAAAAAcAAAADAAEAAAABAAcAAAADAAEAAAACAAcAAAADAAEAAAADAAcAAAAEAAEAAAAEAAcAAAADAAEAAAAFAAcAAAADAAEAAAAGAAcAAAADAAEAAAAHAAcAAAADAAEAAAAIAAcAAAADAAEAAAAJAAcAAAADAAEAAAAKAAcAAAADAAEAAAALAAcAAAADAAEAAAAMAAcAAAADAAEAAAANAAcAAAAEAAEAAAAOAAcAAAADAAEAAAAPAAcAAAADAAEAAAAQAAcAAAADAAEAAAARAAcAAAADAAEAAAASAAcAAAADAAEAAAATAAcAAAADAAEAAAAUAAcAAAADAAEAAAAVAAcAAAADAAEAAAAWAAcAAAADAAEAAAAXAAcAAAADAAEAAAAAAAgAAAADAAEAAAABAAgAAAADAAEAAAACAAgAAAADAAEAAAADAAgAAAADAAEAAAAEAAgAAAADAAEAAAAFAAgAAAADAAEAAAAGAAgAAAADAAEAAAAHAAgAAAADAAEAAAAIAAgAAAAEAAEAAAAJAAgAAAADAAEAAAAKAAgAAAADAAEAAAALAAgAAAADAAEAAAAMAAgAAAADAAEAAAANAAgAAAADAAEAAAAOAAgAAAADAAEAAAAPAAgAAAADAAEAAAAQAAgAAAADAAEAAAARAAgAAAADAAEAAAASAAgAAAAEAAEAAAATAAgAAAADAAEAAAAUAAgAAAADAAEAAAAVAAgAAAADAAEAAAAWAAgAAAADAAEAAAAXAAgAAAADAAEAAAAAAAkAAAADAAEAAAABAAkAAAADAAEAAAACAAkAAAADAAEAAAADAAkAAAAEAAEAAAAEAAkAAAADAAEAAAAFAAkAAAADAAEAAAAGAAkAAAADAAEAAAAHAAkAAAADAAEAAAAIAAkAAAADAAEAAAAJAAkAAAADAAEAAAAKAAkAAAADAAEAAAALAAkAAAADAAEAAAAMAAkAAAADAAEAAAANAAkAAAAEAAEAAAAOAAkAAAADAAEAAAAPAAkAAAADAAEAAAAQAAkAAAADAAEAAAARAAkAAAADAAEAAAASAAkAAAADAAEAAAATAAkAAAADAAEAAAAUAAkAAAADAAEAAAAVAAkAAAADAAEAAAAWAAkAAAADAAEAAAAXAAkAAAADAAEAAAAAAAoAAAADAAEAAAABAAoAAAADAAEAAAACAAoAAAADAAEAAAADAAoAAAADAAEAAAAEAAoAAAADAAEAAAAFAAoAAAADAAEAAAAGAAoAAAADAAEAAAAHAAoAAAADAAEAAAAIAAoAAAAEAAEAAAAJAAoAAAADAAEAAAAKAAoAAAADAAEAAAALAAoAAAADAAEAAAAMAAoAAAADAAEAAAANAAoAAAADAAEAAAAOAAoAAAADAAEAAAAPAAoAAAADAAEAAAAQAAoAAAADAAEAAAARAAoAAAADAAEAAAASAAoAAAAEAAEAAAATAAoAAAADAAEAAAAUAAoAAAADAAEAAAAVAAoAAAADAAEAAAAWAAoAAAADAAEAAAAXAAoAAAADAAEAAAAAAAsAAAADAAEAAAABAAsAAAADAAEAAAACAAsAAAADAAEAAAADAAsAAAAEAAEAAAAEAAsAAAADAAEAAAAFAAsAAAADAAEAAAAGAAsAAAADAAEAAAAHAAsAAAADAAEAAAAIAAsAAAADAAEAAAAJAAsAAAADAAEAAAAKAAsAAAADAAEAAAALAAsAAAADAAEAAAAMAAsAAAADAAEAAAANAAsAAAAEAAEAAAAOAAsAAAADAAEAAAAPAAsAAAADAAEAAAAQAAsAAAADAAEAAAARAAsAAAADAAEAAAASAAsAAAADAAEAAAATAAsAAAADAAEAAAAUAAsAAAADAAEAAAAVAAsAAAADAAEAAAAWAAsAAAADAAEAAAAXAAsAAAADAAEAAAAAAAwAAAADAAEAAAABAAwAAAADAAEAAAACAAwAAAADAAEAAAADAAwAAAADAAEAAAAEAAwAAAADAAEAAAAFAAwAAAADAAEAAAAGAAwAAAADAAEAAAAHAAwAAAADAAEAAAAIAAwAAAAEAAEAAAAJAAwAAAADAAEAAAAKAAwAAAADAAEAAAALAAwAAAADAAEAAAAMAAwAAAADAAEAAAANAAwAAAADAAEAAAAOAAwAAAADAAEAAAAPAAwAAAADAAEAAAAQAAwAAAADAAEAAAARAAwAAAADAAEAAAASAAwAAAAEAAEAAAATAAwAAAADAAEAAAAUAAwAAAADAAEAAAAVAAwAAAADAAEAAAAWAAwAAAADAAEAAAAXAAwAAAADAAEAAAAAAA0AAAADAAEAAAABAA0AAAADAAEAAAACAA0AAAADAAEAAAADAA0AAAADAAEAAAAEAA0AAAADAAEAAAAFAA0AAAADAAEAAAAGAA0AAAADAAEAAAAHAA0AAAADAAEAAAAIAA0AAAADAAEAAAAJAA0AAAADAAEAAAAKAA0AAAADAAEAAAALAA0AAAADAAEAAAAMAA0AAAADAAEAAAANAA0AAAADAAEAAAAOAA0AAAADAAEAAAAPAA0AAAADAAEAAAAQAA0AAAADAAEAAAARAA0AAAADAAEAAAASAA0AAAADAAEAAAATAA0AAAADAAEAAAAUAA0AAAADAAEAAAAVAA0AAAADAAEAAAAWAA0AAAADAAEAAAAXAA0AAAADAAEAAAAAAA4AAAADAAEAAAABAA4AAAADAAEAAAACAA4AAAADAAEAAAADAA4AAAADAAEAAAAEAA4AAAADAAEAAAAFAA4AAAADAAEAAAAGAA4AAAADAAEAAAAHAA4AAAADAAEAAAAIAA4AAAADAAEAAAAJAA4AAAADAAEAAAAKAA4AAAADAAEAAAALAA4AAAADAAEAAAAMAA4AAAADAAEAAAANAA4AAAADAAEAAAAOAA4AAAADAAEAAAAPAA4AAAADAAEAAAAQAA4AAAADAAEAAAARAA4AAAADAAEAAAASAA4AAAADAAEAAAATAA4AAAADAAEAAAAUAA4AAAADAAEAAAAVAA4AAAADAAEAAAAWAA4AAAADAAEAAAAXAA4AAAADAAEAAAAAAA8AAAADAAEAAAABAA8AAAADAAEAAAACAA8AAAADAAEAAAADAA8AAAADAAEAAAAEAA8AAAADAAEAAAAFAA8AAAADAAEAAAAGAA8AAAADAAEAAAAHAA8AAAADAAEAAAAIAA8AAAADAAEAAAAJAA8AAAADAAEAAAAKAA8AAAACAAAAAAALAA8AAAACAAAAAAAMAA8AAAACAAAAAAANAA8AAAACAAAAAAAOAA8AAAACAAAAAAAPAA8AAAADAAEAAAAQAA8AAAADAAEAAAARAA8AAAADAAEAAAASAA8AAAADAAEAAAATAA8AAAADAAEAAAAUAA8AAAADAAEAAAAVAA8AAAADAAEAAAAWAA8AAAADAAEAAAAXAA8AAAADAAEAAAA=")
+tile_set = SubResource("TileSet_1oqf3")
+
+[node name="TerrainCollisions" type="StaticBody2D" parent="." unique_id=1181187208]
+
+[node name="@CollisionShape2D@20496" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1504536448]
+position = Vector2(56, 56)
+shape = SubResource("RectangleShape2D_vsvp8")
+
+[node name="@CollisionShape2D@20497" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2055797302]
+position = Vector2(216, 56)
+shape = SubResource("RectangleShape2D_epx11")
+
+[node name="@CollisionShape2D@20498" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1367149686]
+position = Vector2(136, 72)
+shape = SubResource("RectangleShape2D_26jql")
+
+[node name="@CollisionShape2D@20499" type="CollisionShape2D" parent="TerrainCollisions" unique_id=540804354]
+position = Vector2(296, 72)
+shape = SubResource("RectangleShape2D_1vlk5")
+
+[node name="@CollisionShape2D@20500" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1803975553]
+position = Vector2(56, 88)
+shape = SubResource("RectangleShape2D_7anfr")
+
+[node name="@CollisionShape2D@20501" type="CollisionShape2D" parent="TerrainCollisions" unique_id=756560686]
+position = Vector2(216, 88)
+shape = SubResource("RectangleShape2D_s8w1r")
+
+[node name="@CollisionShape2D@20502" type="CollisionShape2D" parent="TerrainCollisions" unique_id=448974730]
+position = Vector2(136, 104)
+shape = SubResource("RectangleShape2D_0u425")
+
+[node name="@CollisionShape2D@20503" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1349557576]
+position = Vector2(296, 104)
+shape = SubResource("RectangleShape2D_eog8y")
+
+[node name="@CollisionShape2D@20504" type="CollisionShape2D" parent="TerrainCollisions" unique_id=607610602]
+position = Vector2(56, 120)
+shape = SubResource("RectangleShape2D_e7uv3")
+
+[node name="@CollisionShape2D@20505" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1241631838]
+position = Vector2(216, 120)
+shape = SubResource("RectangleShape2D_x1nwk")
+
+[node name="@CollisionShape2D@20506" type="CollisionShape2D" parent="TerrainCollisions" unique_id=326472872]
+position = Vector2(136, 136)
+shape = SubResource("RectangleShape2D_fjukg")
+
+[node name="@CollisionShape2D@20507" type="CollisionShape2D" parent="TerrainCollisions" unique_id=2100735643]
+position = Vector2(296, 136)
+shape = SubResource("RectangleShape2D_pko3h")
+
+[node name="@CollisionShape2D@20508" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1083972806]
+position = Vector2(56, 152)
+shape = SubResource("RectangleShape2D_bt0ya")
+
+[node name="@CollisionShape2D@20509" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1007379352]
+position = Vector2(216, 152)
+shape = SubResource("RectangleShape2D_s0qxx")
+
+[node name="@CollisionShape2D@20510" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1010243642]
+position = Vector2(136, 168)
+shape = SubResource("RectangleShape2D_yggjd")
+
+[node name="@CollisionShape2D@20511" type="CollisionShape2D" parent="TerrainCollisions" unique_id=334294217]
+position = Vector2(296, 168)
+shape = SubResource("RectangleShape2D_daxgi")
+
+[node name="@CollisionShape2D@20512" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1407135776]
+position = Vector2(56, 184)
+shape = SubResource("RectangleShape2D_6tklk")
+
+[node name="@CollisionShape2D@20513" type="CollisionShape2D" parent="TerrainCollisions" unique_id=467502687]
+position = Vector2(216, 184)
+shape = SubResource("RectangleShape2D_g14e3")
+
+[node name="@CollisionShape2D@20514" type="CollisionShape2D" parent="TerrainCollisions" unique_id=924595455]
+position = Vector2(136, 200)
+shape = SubResource("RectangleShape2D_gn53q")
+
+[node name="@CollisionShape2D@20515" type="CollisionShape2D" parent="TerrainCollisions" unique_id=1699649112]
+position = Vector2(296, 200)
+shape = SubResource("RectangleShape2D_b0n1i")
+
+[node name="Sign_Sign" type="Node2D" parent="." unique_id=1657965406]
+position = Vector2(200, 104)
+script = ExtResource("3_l1mvq")
+actor_kind = "sign"
+
+[node name="Interaction" type="Area2D" parent="Sign_Sign" unique_id=1526658030]
+collision_layer = 2
+collision_mask = 0
+metadata/dialogue = "Fleuriste Jolie Fleur — prenez le temps d'explorer."
+
+[node name="@CollisionShape2D@20516" type="CollisionShape2D" parent="Sign_Sign/Interaction" unique_id=392754811]
+shape = SubResource("RectangleShape2D_hddis")
+
+[node name="NPC_Voyageur" type="Node2D" parent="." unique_id=1559313521]
+position = Vector2(232, 120)
+script = ExtResource("3_l1mvq")
+
+[node name="Interaction" type="Area2D" parent="NPC_Voyageur" unique_id=664997153]
+collision_layer = 2
+collision_mask = 0
+metadata/dialogue = "Bienvenue dans la zone : Fleuriste Jolie Fleur."
+
+[node name="@CollisionShape2D@20517" type="CollisionShape2D" parent="NPC_Voyageur/Interaction" unique_id=701671791]
+shape = SubResource("RectangleShape2D_uibpw")
+
+[node name="BlockingBody" type="StaticBody2D" parent="NPC_Voyageur" unique_id=691435154]
+
+[node name="@CollisionShape2D@20518" type="CollisionShape2D" parent="NPC_Voyageur/BlockingBody" unique_id=17075058]
+shape = SubResource("RectangleShape2D_w736g")
+
+[node name="Item_Objet trouvé" type="Node2D" parent="." unique_id=879557592]
+position = Vector2(168, 152)
+script = ExtResource("3_l1mvq")
+actor_kind = "item"
+
+[node name="Interaction" type="Area2D" parent="Item_Objet trouvé" unique_id=1257915562]
+collision_layer = 2
+collision_mask = 0
+metadata/dialogue = "Tu as trouvé un objet. (Système d'inventaire à venir.)"
+
+[node name="@CollisionShape2D@20519" type="CollisionShape2D" parent="Item_Objet trouvé/Interaction" unique_id=1672005020]
+shape = SubResource("RectangleShape2D_5jpou")
+
+[node name="Transition_route_104" type="Area2D" parent="." unique_id=437076085]
+position = Vector2(200, 24)
+collision_layer = 0
+metadata/target_scene = "res://scenes/hoenn/route_104.tscn"
+metadata/arrival_cell = Vector2i(2, 10)
+metadata/transition_kind = "branch"
+
+[node name="@CollisionShape2D@20520" type="CollisionShape2D" parent="Transition_route_104" unique_id=424976184]
+shape = SubResource("RectangleShape2D_45amg")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=479645367]
+position = Vector2(200, 136)
+script = ExtResource("4_0v712")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=876175955]
+shape = SubResource("RectangleShape2D_tqkch")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1652008274]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=332908805]
+
+[node name="Title" type="Label" parent="HUD" unique_id=1352441569]
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 8.0
+offset_bottom = 5.0
+theme_override_font_sizes/font_size = 12
+text = "Fleuriste Jolie Fleur"
+
+[node name="Controls" type="Label" parent="HUD" unique_id=516537660]
+offset_left = 8.0
+offset_top = 21.0
+offset_right = 8.0
+offset_bottom = 21.0
+theme_override_font_sizes/font_size = 9
+text = "Flèches / WASD · Maj courir · E interagir"
+
+[node name="Dialogue" type="Label" parent="HUD" unique_id=1599899058]
+visible = false
+offset_left = 8.0
+offset_top = 286.0
+offset_right = 472.0
+offset_bottom = 312.0
+theme_override_font_sizes/font_size = 11
