@@ -28,7 +28,7 @@
 - `data/world.json` décrit 154 zones et 161 liaisons ; chaque zone a son plan de terrain complet (dimensions et rangées de tuiles) dans `data/maps/*.json`.
 - `scripts/tools/build_world_data.py` génère les plans ; `scripts/tools/generate_world.gd` les convertit en scènes `.tscn` contenant un `TileMapLayer`, collisions, joueur, acteurs interactifs et Area2D de transition.
 - Scènes créées pour villes, routes, chenaux, intérieurs, arènes, grottes, forêts, montagnes, sites, Ligue et lieux mirages. `SceneManager` réalise le fondu au noir et replace le joueur à l’entrée correspondante.
-- Les dialogues, panneaux et objets sont des exemples génériques. Les plans sont originaux et schématiques, pas des copies exactes des cartes de ROSA. L’atlas de terrain SVG est un placeholder ; les planches d’assets fournies sont documentées pour intégration artistique ultérieure.
+- Les dialogues, panneaux et objets sont des exemples génériques. Les plans sont originaux et schématiques, pas des copies exactes des cartes de ROSA. Les scènes utilisent les TileSet atlas réels extraits des planches fournies; seul le ciel reste un placeholder faute d’asset adapté.
 - `scenes/main.tscn` démarre maintenant à Bourg-en-Vol ; la zone de test dédiée reste disponible.
 - Commit : dédié à cette étape.
 

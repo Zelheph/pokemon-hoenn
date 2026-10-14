@@ -2,20 +2,13 @@ extends SceneTree
 
 const WORLD_PATH: String = "res://data/world.json"
 const MAPS_PATH: String = "res://data/maps/"
-const TERRAIN_PATH: String = "res://assets/tilesets/placeholder_hoenn_terrain.svg"
+const EXTERIOR_TILESET_PATH: String = "res://assets/tilesets/emerald_exterior.tres"
+const INTERIOR_TILESET_PATH: String = "res://assets/tilesets/emerald_interior.tres"
 const SCENES_PATH: String = "res://scenes/hoenn/"
 const BLOCKED: Array[String] = ["T", "R", "B", "H", "W", "w"]
 const TILE_SIZE: int = 16
-const TILE_COORDS: Dictionary = {
-	"G": Vector2i(0,0), "g": Vector2i(1,0), "P": Vector2i(2,0), "p": Vector2i(3,0),
-	"W": Vector2i(4,0), "w": Vector2i(5,0), "T": Vector2i(6,0), "F": Vector2i(7,0),
-	"R": Vector2i(0,1), "D": Vector2i(1,1), "C": Vector2i(2,1), "I": Vector2i(3,1),
-	"B": Vector2i(4,1), "H": Vector2i(5,1), "S": Vector2i(6,1), "M": Vector2i(7,1)
-}
-
 var _edges: Array = []
 var _nodes: Dictionary = {}
-var _tile_set: TileSet
 
 func _initialize() -> void:
 	_generate_all()
@@ -31,11 +24,7 @@ func _generate_all() -> void:
 	for node_value: Variant in manifest["nodes"]:
 		var node_data: Dictionary = node_value
 		_nodes[str(node_data["id"])] = node_data
-	var texture: Texture2D = load(TERRAIN_PATH) as Texture2D
-	if texture == null:
-		push_error("Atlas de terrain introuvable.")
-		return
-	_tile_set = _make_tile_set(texture)
+
 	for node_data: Dictionary in _nodes.values():
 		var plan_file: FileAccess = FileAccess.open(MAPS_PATH + str(node_data["id"]) + ".json", FileAccess.READ)
 		if plan_file == null:
@@ -43,17 +32,6 @@ func _generate_all() -> void:
 			continue
 		_build_zone(node_data, JSON.parse_string(plan_file.get_as_text()) as Dictionary)
 	print("Génération terminée : %d zones et %d liaisons." % [_nodes.size(), _edges.size()])
-
-func _make_tile_set(texture: Texture2D) -> TileSet:
-	var result: TileSet = TileSet.new()
-	result.tile_size = Vector2i(TILE_SIZE, TILE_SIZE)
-	var atlas: TileSetAtlasSource = TileSetAtlasSource.new()
-	atlas.texture = texture
-	atlas.texture_region_size = Vector2i(TILE_SIZE, TILE_SIZE)
-	for y in range(2):
-		for x in range(8): atlas.create_tile(Vector2i(x,y))
-	result.add_source(atlas, 0)
-	return result
 
 func _build_zone(data: Dictionary, plan: Dictionary) -> void:
 	var size: Array = plan["size"]
@@ -67,7 +45,8 @@ func _build_zone(data: Dictionary, plan: Dictionary) -> void:
 
 	var layer: TileMapLayer = TileMapLayer.new()
 	layer.name = "Terrain"
-	layer.tile_set = _tile_set
+	var tileset_path: String = INTERIOR_TILESET_PATH if str(plan["tileset"]) == "interior" else EXTERIOR_TILESET_PATH
+	layer.tile_set = load(tileset_path) as TileSet
 	root.add_child(layer)
 	layer.owner = root
 	var rows: Array = plan["terrain"]
@@ -81,8 +60,9 @@ func _build_zone(data: Dictionary, plan: Dictionary) -> void:
 		var row: String = str(rows[y])
 		for x in range(mini(width, row.length())):
 			var symbol: String = row.substr(x,1)
-			if TILE_COORDS.has(symbol):
-				layer.set_cell(Vector2i(x,y), 0, TILE_COORDS[symbol])
+			var tile_id: Array = plan["tiles"].get(symbol, [])
+			if tile_id.size() == 3:
+				layer.set_cell(Vector2i(x,y), int(tile_id[0]), Vector2i(int(tile_id[1]), int(tile_id[2])))
 			if BLOCKED.has(symbol): _add_blocker(blockers, root, Vector2i(x,y))
 
 	_add_actor(root, plan["sign"], "sign")

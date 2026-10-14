@@ -152,12 +152,25 @@ for id,name,biome in mirages:
     link("grand_ciel",id,"mirage","Grand Envol")
 
 # Fabrique des plans complets de terrain et d'éléments de décor.
-TILE = {"G":[0,0],"g":[1,0],"P":[2,0],"p":[3,0],"W":[4,0],"w":[5,0],"T":[6,0],"F":[7,0],"R":[0,1],"D":[1,1],"C":[2,1],"I":[3,1],"B":[4,1],"H":[5,1],"S":[6,1],"M":[7,1]}
+EXTERIOR_TILES = {
+    "G": [0,87,14], "g": [0,87,13], "P": [0,84,22], "p": [0,83,22],
+    "W": [0,28,56], "w": [0,28,58], "T": [0,5,4], "F": [0,5,0],
+    "R": [0,61,40], "D": [0,26,66], "C": [0,61,40], "I": [0,48,59],
+    "B": [0,48,59], "H": [0,5,4], "S": [1,0,0], "M": [0,61,40]
+}
+INTERIOR_TILES = {
+    "G": [0,184,40], "g": [0,184,40], "P": [0,184,39], "p": [0,184,39],
+    "W": [0,184,40], "w": [0,184,40], "T": [0,178,42], "F": [0,185,39],
+    "R": [0,178,42], "D": [0,184,39], "C": [0,180,53], "I": [0,184,40],
+    "B": [0,184,38], "H": [0,178,42], "S": [1,0,0], "M": [0,176,42]
+}
 
 def make_plan(n: dict) -> dict:
     width,height=n["size"]
     kind,biome=n["kind"],n["biome"]
-    if kind in ("interior","shop","gym") or biome=="interior": base="I"
+    is_interior = kind in ("interior","shop","gym") or biome in ("interior","cave")
+    if biome=="cave": base="C"
+    elif is_interior: base="I"
     elif biome=="sea": base="W"
     elif biome=="cave": base="C"
     elif biome in ("mountain","ash"): base="R"
@@ -223,7 +236,8 @@ def make_plan(n: dict) -> dict:
     terrain=["".join(row) for row in grid]
     npcs=[{"name":"Voyageur","cell":[width//2+2,height//2-1],"dialogue":f"Bienvenue dans la zone : {n['name']}."}]
     items=[{"name":"Objet trouvé","cell":[width//2-2,height//2+1],"dialogue":"Tu as trouvé un objet. (Système d'inventaire à venir.)"}]
-    return {"id":n["id"],"size":[width,height],"terrain":terrain,"tiles":TILE,"npcs":npcs,"items":items,"sign":{"cell":[width//2,height//2-2],"dialogue":n["name"]+" — prenez le temps d'explorer."}}
+    tiles = INTERIOR_TILES if is_interior else EXTERIOR_TILES
+    return {"id":n["id"],"size":[width,height],"terrain":terrain,"tileset":"interior" if is_interior else "exterior","tiles":tiles,"npcs":npcs,"items":items,"sign":{"cell":[width//2,height//2-2],"dialogue":n["name"]+" — prenez le temps d'explorer."}}
 
 # Associe chaque bâtiment déclaré à une scène dédiée.
 for town_id,town_name,buildings in towns:

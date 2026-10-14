@@ -1,7 +1,7 @@
 extends SceneTree
 
 const PLAN_PATH: String = "res://data/test_zone.json"
-const TILESET_PATH: String = "res://assets/tilesets/emerald_exterior_tileset.png"
+const TILESET_PATH: String = "res://assets/tilesets/emerald_exterior.tres"
 const OUTPUT_PATH: String = "res://scenes/hoenn/test_zone.tscn"
 const TILE_SIZE: int = 16
 
@@ -15,21 +15,11 @@ func _generate() -> void:
 		push_error("Impossible d'ouvrir le plan JSON : %s" % PLAN_PATH)
 		return
 	var plan: Dictionary = JSON.parse_string(plan_file.get_as_text()) as Dictionary
-	var texture: Texture2D = load(TILESET_PATH) as Texture2D
-	if texture == null:
-		push_error("Impossible de charger le tileset : %s" % TILESET_PATH)
+	var tile_set: TileSet = load(TILESET_PATH) as TileSet
+	if tile_set == null:
+		push_error("Impossible de charger le TileSet : %s" % TILESET_PATH)
 		return
-	var tile_set: TileSet = TileSet.new()
-	tile_set.tile_size = Vector2i(TILE_SIZE, TILE_SIZE)
-	var atlas: TileSetAtlasSource = TileSetAtlasSource.new()
-	atlas.texture = texture
-	atlas.texture_region_size = Vector2i(TILE_SIZE, TILE_SIZE)
 	var tile_regions: Dictionary = plan["tile_regions"]
-	for region_value: Variant in tile_regions.values():
-		var region: Vector2i = Vector2i(region_value[0], region_value[1])
-		if not atlas.has_tile(region):
-			atlas.create_tile(region)
-	tile_set.add_source(atlas, 0)
 
 	var zone: Node2D = Node2D.new()
 	zone.name = "ZoneTest"
@@ -46,8 +36,8 @@ func _generate() -> void:
 		var row: String = str(rows[y])
 		for x in range(mini(int(size[0]), row.length())):
 			var symbol: String = row.substr(x, 1)
-			var atlas_coords: Array = tile_regions_by_symbol[symbol]
-			layer.set_cell(Vector2i(x, y), 0, Vector2i(int(atlas_coords[0]), int(atlas_coords[1])))
+			var tile_id: Array = tile_regions_by_symbol[symbol]
+			layer.set_cell(Vector2i(x, y), int(tile_id[0]), Vector2i(int(tile_id[1]), int(tile_id[2])))
 
 	var collision_root: StaticBody2D = StaticBody2D.new()
 	collision_root.name = "Obstacles"

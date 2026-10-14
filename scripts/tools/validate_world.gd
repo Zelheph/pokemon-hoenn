@@ -38,6 +38,18 @@ func _initialize() -> void:
 			if terrain.get_used_cells().size() != expected_cells:
 				push_error("Nombre de cases incorrect : %s (%d/%d)" % [id, terrain.get_used_cells().size(), expected_cells])
 				failures += 1
+			var expected_tileset := "res://assets/tilesets/emerald_interior.tres" if str(node_data["kind"]) in ["interior", "shop", "gym"] or str(node_data["biome"]) in ["interior", "cave"] else "res://assets/tilesets/emerald_exterior.tres"
+			if terrain.tile_set == null or terrain.tile_set.resource_path != expected_tileset:
+				push_error("TileSet réel inattendu : " + id)
+				failures += 1
+			else:
+				for cell: Vector2i in terrain.get_used_cells():
+					var source_id := terrain.get_cell_source_id(cell)
+					var source := terrain.tile_set.get_source(source_id) as TileSetAtlasSource
+					if source == null or not source.has_tile(terrain.get_cell_atlas_coords(cell)):
+						push_error("Identifiant de tuile invalide dans %s à %s" % [id, cell])
+						failures += 1
+						break
 		if root.get_node_or_null("Player") == null:
 			push_error("Joueur absent : " + id)
 			failures += 1
