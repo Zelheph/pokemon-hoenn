@@ -9,7 +9,7 @@ func _initialize() -> void:
 		"res://assets/tilesets/emerald_exterior_tileset.png",
 		"res://assets/tilesets/emerald_exterior.tres",
 		Vector2i(88, 69),
-		[Vector2i(87,14), Vector2i(87,13), Vector2i(84,22), Vector2i(83,22), Vector2i(28,56), Vector2i(28,58), Vector2i(5,4), Vector2i(5,0), Vector2i(61,40), Vector2i(26,66), Vector2i(48,59)],
+		[Vector2i(87,14), Vector2i(87,13), Vector2i(84,22), Vector2i(83,22), Vector2i(28,56), Vector2i(28,58), Vector2i(5,4), Vector2i(5,0), Vector2i(4,0), Vector2i(61,40), Vector2i(26,66), Vector2i(48,59)],
 		true
 	)
 	var interior_ok := _build_tileset(

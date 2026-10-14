@@ -40,6 +40,8 @@
 - `data/building_stamps.json` décrit deux petites maisons jumelles (toit du rival recoloré) et le grand laboratoire, cellule par cellule, avec position de porte, approche, cellules solides et traversables. Aperçus ×8 dans `docs/atlas/stamps/`.
 - Le générateur crée les sources d’atlas distinctes pour chaque bande et pose les stamps sans franchir leurs limites. Les portes sont des Area2D vers les intérieurs; Bourg-en-Vol ne garde qu’une sortie nord vers la Route 101. Route 101 et Rosyères ont les ouvertures réciproques au nord/sud.
 - Les scènes Bourg-en-Vol, Route 101 et Rosyères ont été régénérées. `docs/atlas/bourg_en_vol.png` donne le rendu complet de la carte (30×20 cases, 960×640 px).
+- Reprise des stamps maison : trois rangées nettes (toit, façade à fenêtre, façade à porte), chacune avec les bonnes tuiles du même atlas. Sentiers pavés continus depuis les seuils et le laboratoire jusqu’à la sortie nord; aucune tuile de chemin ne passe sur un bâtiment. Ajout au sud de fleurs, arbres isolés, bassin et panneau.
+- Les Area2D sont persistées dans les scènes, chacune cible son intérieur; les intérieurs du héros, du rival et du laboratoire ont une transition de retour vers la case d’approche. `validate_bourg_buildings.gd` contrôle aussi les collisions des façades et la continuité des chemins.
 - Vérifications terminées avec Godot 4.7.2 : import headless, contrôle syntaxique des scripts, validation des 154 scènes/322 transitions et chargement du projet sans erreur.
 - Crédit ajouté dans `docs/CREDITS.md`. La maison du héros et celle du rival sont des stamps composites; les grands blocs officiels de Centres, boutiques et arènes sont réservés à un catalogue ultérieur.
 

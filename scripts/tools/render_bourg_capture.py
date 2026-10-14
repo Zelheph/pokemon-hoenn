@@ -30,5 +30,11 @@ for building in plan.get("buildings", []):
         terrain.alpha_composite(crop, ((ox + dx) * 16, (oy + dy) * 16))
 scale = 2
 image = terrain.resize((terrain.width * scale, terrain.height * scale), Image.Resampling.NEAREST).convert("RGB")
+draw = ImageDraw.Draw(image)
+sign_x, sign_y = plan["sign"]["cell"]
+cx, cy = (sign_x * 16 + 8) * scale, (sign_y * 16 + 8) * scale
+draw.rectangle((cx - 4, cy - 8, cx + 4, cy + 16), fill=(117, 82, 55))
+draw.rectangle((cx - 14, cy - 22, cx + 14, cy - 6), fill=(240, 212, 138), outline=(117, 82, 55), width=2)
+draw.rectangle((cx - 10, cy - 18, cx + 10, cy - 10), fill=(133, 93, 53))
 image.save(ROOT / "docs/atlas/bourg_en_vol.png", optimize=True)
 print(f"Capture de contrôle : {image.width}×{image.height} px (zone 30×20 tuiles)")

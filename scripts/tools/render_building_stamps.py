@@ -29,7 +29,7 @@ for stamp in DATA["stamps"]:
         sx,sy = tile["atlas"]
         source = variant if (variant is not None and tile["role"] == "roof") else base
         crop = source.crop((sx*16,sy*16,(sx+1)*16,(sy+1)*16))
-        if all(pixel == EMPTY for pixel in crop.getdata()):
+        if crop.getcolors(maxcolors=1) == [(16 * 16, EMPTY)]:
             continue
         image.alpha_composite(crop.resize((TILE,TILE),Image.Resampling.NEAREST),(margin_x+dx*TILE,margin_y+dy*TILE))
     draw = ImageDraw.Draw(image)

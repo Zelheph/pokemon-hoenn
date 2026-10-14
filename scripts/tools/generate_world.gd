@@ -204,7 +204,7 @@ func _add_actor(root: Node2D, actor_data: Dictionary, kind: String) -> void:
 	sensor.name = "Interaction"
 	sensor.collision_layer = 2
 	sensor.collision_mask = 0
-	sensor.add_to_group("interactable")
+	sensor.add_to_group("interactable", true)
 	sensor.set_meta("dialogue", str(actor_data.get("dialogue", "")))
 	actor.add_child(sensor)
 	sensor.owner = root
@@ -251,7 +251,7 @@ func _add_transition(root: Node2D, data: Dictionary, plan: Dictionary, target_id
 	area.position = _cell_center(here) + area_offset
 	area.collision_layer = 0
 	area.collision_mask = 1
-	area.add_to_group("zone_transition")
+	area.add_to_group("zone_transition", true)
 	area.set_meta("target_scene", SCENES_PATH + target_id + ".tscn")
 	area.set_meta("arrival_cell", arrival)
 	area.set_meta("transition_kind", str(edge["kind"]))
