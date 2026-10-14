@@ -12,6 +12,7 @@ var _edges: Array = []
 var _nodes: Dictionary = {}
 var _plans: Dictionary = {}
 var _stamps: Dictionary = {}
+var _characters: Dictionary = {}
 var _selected_zones: Array[String] = []
 
 func _initialize() -> void:
@@ -34,6 +35,12 @@ func _generate_all() -> void:
 		push_error("Catalogue de stamps introuvable : " + STAMPS_PATH)
 		return
 	var stamps_data: Dictionary = JSON.parse_string(stamps_file.get_as_text()) as Dictionary
+	var characters_file := FileAccess.open("res://data/characters.json", FileAccess.READ)
+	if characters_file != null:
+		var characters_data: Dictionary = JSON.parse_string(characters_file.get_as_text()) as Dictionary
+		for character_value: Variant in characters_data.get("characters", []):
+			var character: Dictionary = character_value
+			_characters[str(character["id"])] = character
 	for stamp_value: Variant in stamps_data["stamps"]:
 		var stamp: Dictionary = stamp_value
 		_stamps[str(stamp["id"])] = stamp
@@ -103,7 +110,8 @@ func _build_zone(data: Dictionary, plan: Dictionary) -> void:
 	_add_building_stamps(layer, blockers, root, plan)
 	_add_furniture(layer, blockers, root, plan)
 
-	_add_actor(root, plan["sign"], "sign")
+	if plan.has("sign"):
+		_add_actor(root, plan["sign"], "sign")
 	for value: Variant in plan["npcs"]: _add_actor(root, value, "npc")
 	for value: Variant in plan["items"]: _add_actor(root, value, "item")
 	for edge_value: Variant in _edges:
@@ -253,9 +261,21 @@ func _add_encounter_area(root: Node2D, cell: Vector2i) -> void:
 func _add_actor(root: Node2D, actor_data: Dictionary, kind: String) -> void:
 	var actor: Node2D = Node2D.new()
 	var actor_name: String = str(actor_data.get("name", kind.capitalize()))
+	var dialogue: String = str(actor_data.get("dialogue", ""))
+	if kind == "npc":
+		var character_id := str(actor_data.get("character_id", ""))
+		if not _characters.has(character_id):
+			push_error("Fiche de personnage absente : " + character_id)
+		else:
+			var character: Dictionary = _characters[character_id]
+			actor_name = str(character["name"])
+			dialogue = "%s : %s" % [actor_name, str(character["dialogue"])]
 	actor.name = ("Sign_" if kind == "sign" else "NPC_" if kind == "npc" else "Item_") + actor_name.validate_node_name()
 	actor.set_script(load("res://scripts/player/WorldActor.gd"))
 	actor.set("actor_kind", kind)
+	if kind == "npc" and _characters.has(str(actor_data.get("character_id", ""))):
+		var character: Dictionary = _characters[str(actor_data["character_id"])]
+		actor.set("actor_color", Color(str(character.get("color", "#e9c659"))))
 	var cell: Array = actor_data["cell"]
 	actor.position = _cell_center(Vector2i(int(cell[0]),int(cell[1])))
 	root.add_child(actor)
@@ -265,7 +285,7 @@ func _add_actor(root: Node2D, actor_data: Dictionary, kind: String) -> void:
 	sensor.collision_layer = 2
 	sensor.collision_mask = 0
 	sensor.add_to_group("interactable", true)
-	sensor.set_meta("dialogue", str(actor_data.get("dialogue", "")))
+	sensor.set_meta("dialogue", dialogue)
 	actor.add_child(sensor)
 	sensor.owner = root
 	var sensor_collision: CollisionShape2D = CollisionShape2D.new()

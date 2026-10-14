@@ -73,12 +73,15 @@ def render(zone_id: str, title: str) -> Path:
             draw.rectangle((cx - 2*k, cy - 4*k, cx + 2*k, cy + 12*k), fill="#755237")
             draw.rectangle((cx - 7*k, cy - 11*k, cx + 7*k, cy - 3*k), fill="#f0d48a")
             draw.rectangle((cx - 5*k, cy - 9*k, cx + 5*k, cy - 5*k), fill="#855d35")
+    characters = {c["id"]: c for c in json.loads((ROOT / "data/characters.json").read_text(encoding="utf-8"))["characters"]}
     for npc in plan.get("npcs", []):
         cx, cy = point(npc["cell"])
         k = scale
+        character = characters.get(npc.get("character_id", ""), {})
+        coat = character.get("color", "#e9c659")
         draw.rectangle((cx - 5*k, cy - 8*k, cx + 5*k, cy), fill="#f1c59a")
         draw.rectangle((cx - 5*k, cy - 9*k, cx + 5*k, cy - 6*k), fill="#473747")
-        draw.rectangle((cx - 6*k, cy, cx + 6*k, cy + 9*k), fill="#e9c659")
+        draw.rectangle((cx - 6*k, cy, cx + 6*k, cy + 9*k), fill=coat)
         draw.rectangle((cx - 5*k, cy + 9*k, cx - 1*k, cy + 14*k), fill="#394056")
         draw.rectangle((cx + 1*k, cy + 9*k, cx + 5*k, cy + 14*k), fill="#394056")
     for item in plan.get("items", []):

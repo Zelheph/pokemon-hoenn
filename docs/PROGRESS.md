@@ -73,3 +73,11 @@
 - Étape 9 : sauvegardes multi-emplacements.
 - Étape 10 : audio.
 - Étape 11 : polish, manette et export Windows.
+
+## Retouches des intérieurs et de la Route 101 — terminées
+- Retiré les panneaux et objets de test des trois intérieurs. La Route 101 garde un seul panneau qui nomme la route à son entrée sud; ses hautes herbes forment des parcelles irrégulières le long du sentier.
+- Les intérieurs ont maintenant des dispositions distinctes : lit à l’ouest et table à l’est chez le héros, lit à l’est et commode/bureau à l’ouest chez le rival. La maison du rival reste sans PNJ. Le laboratoire reprend le mur du fond et la plinthe des maisons, avec bibliothèques et postes de travail sur les côtés et un passage central libre.
+- Les personnages sont référencés par identifiant dans les plans et possèdent nom, dialogue et couleur dans `data/characters.json`. Seule la mère du héros apparaît dans sa maison; le Professeur Seko a une apparence distincte dans le laboratoire.
+- `validate_interiors.gd` vérifie l'absence des objets de test, les fiches des PNJ, l'absence de chevauchement, les collisions physiques des meubles/PNJ, les tentatives de mouvement contre chaque groupe de meubles et l'accès depuis le sol aux points d'intérêt.
+- Captures mises à jour dans `docs/atlas/route_101.png` et `docs/atlas/bourg_en_vol_interieur_*.png`.
+- Parcours Godot headless réussi : entrée/sortie des trois pièces, Route 101 et liaison vers Rosyères; les collisions et l'accessibilité des pièces passent également.
