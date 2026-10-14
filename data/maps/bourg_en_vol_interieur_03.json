@@ -1,113 +1,193 @@
 {
   "id": "bourg_en_vol_interieur_03",
   "size": [
-    20,
-    14
-  ],
-  "terrain": [
-    "IIIIIIIIIIIIIIIIIIII",
-    "IIIIIIIIIIIIIIIIIIII",
-    "IIIIIIIIIIIIIIIIIIII",
-    "IIIBIIIIIIIIIBIIIIII",
-    "IIIIIIIIBIIIIIIIIIII",
-    "IIIBIIIIIIIIIBIIIIII",
-    "IIIIIIIIBIIIIIIIIIII",
-    "IIIBIIIIIIIIIBIIIIII",
-    "IIIIIIIIBIIIIIIIIIII",
-    "IIIBIIIIIIIIIBIIIIII",
-    "IIIIIIIIBIIIIIIIIIII",
-    "IIIIIIIIIIIIIIIIIIII",
-    "IIIIIIIIIIIIIIIIIIII",
-    "IIIIIIIIPPPPPIIIIIII"
+    14,
+    10
   ],
   "tileset": "interior",
+  "terrain": [
+    "WWWWWWWWWWWWWW",
+    "BBBBBBBBBBBBBB",
+    "WFFFFFFFFFFFFW",
+    "WFFFFFFFFFFFFW",
+    "WFFFFFFFFFFFFW",
+    "WFFFFFFFFFFFFW",
+    "WFFFFFFFFFFFFW",
+    "WFFFFFFFFFFFFW",
+    "WFFFFFQqFFFFFW",
+    "WWWWWWWDWWWWWW"
+  ],
   "tiles": {
-    "G": [
-      0,
-      184,
-      40
-    ],
-    "g": [
-      0,
-      184,
-      40
-    ],
-    "P": [
-      0,
-      184,
-      39
-    ],
-    "p": [
-      0,
-      184,
-      39
-    ],
     "W": [
       0,
-      184,
-      40
-    ],
-    "w": [
-      0,
-      184,
-      40
-    ],
-    "T": [
-      0,
-      178,
-      42
-    ],
-    "F": [
-      0,
-      185,
-      39
-    ],
-    "R": [
-      0,
-      178,
-      42
-    ],
-    "D": [
-      0,
-      184,
-      39
-    ],
-    "C": [
-      0,
-      180,
-      53
-    ],
-    "I": [
-      0,
-      184,
-      40
+      2,
+      33
     ],
     "B": [
       0,
-      184,
-      38
+      2,
+      34
     ],
-    "H": [
+    "F": [
       0,
-      178,
-      42
+      2,
+      32
     ],
-    "S": [
-      1,
+    "D": [
       0,
-      0
+      7,
+      29
     ],
-    "M": [
+    "Q": [
       0,
-      176,
-      42
+      3,
+      33
+    ],
+    "q": [
+      0,
+      4,
+      33
     ]
   },
+  "furniture": [
+    {
+      "cell": [
+        1,
+        2
+      ],
+      "atlas": [
+        0,
+        35
+      ],
+      "role": "étagère gauche",
+      "solid": true
+    },
+    {
+      "cell": [
+        2,
+        2
+      ],
+      "atlas": [
+        1,
+        35
+      ],
+      "role": "étagère droite",
+      "solid": true
+    },
+    {
+      "cell": [
+        1,
+        3
+      ],
+      "atlas": [
+        0,
+        36
+      ],
+      "role": "armoire basse",
+      "solid": true
+    },
+    {
+      "cell": [
+        4,
+        2
+      ],
+      "atlas": [
+        2,
+        38
+      ],
+      "role": "terminal",
+      "solid": true
+    },
+    {
+      "cell": [
+        6,
+        3
+      ],
+      "atlas": [
+        3,
+        36
+      ],
+      "role": "table de laboratoire",
+      "solid": true
+    },
+    {
+      "cell": [
+        7,
+        3
+      ],
+      "atlas": [
+        4,
+        36
+      ],
+      "role": "table de laboratoire",
+      "solid": true
+    },
+    {
+      "cell": [
+        9,
+        2
+      ],
+      "atlas": [
+        1,
+        41
+      ],
+      "role": "écran de recherche",
+      "solid": true
+    },
+    {
+      "cell": [
+        11,
+        2
+      ],
+      "atlas": [
+        4,
+        40
+      ],
+      "role": "plante",
+      "solid": true
+    },
+    {
+      "cell": [
+        11,
+        5
+      ],
+      "atlas": [
+        2,
+        39
+      ],
+      "role": "armoire",
+      "solid": true
+    },
+    {
+      "cell": [
+        4,
+        6
+      ],
+      "atlas": [
+        3,
+        35
+      ],
+      "role": "poste de travail",
+      "solid": true
+    },
+    {
+      "cell": [
+        5,
+        6
+      ],
+      "atlas": [
+        4,
+        35
+      ],
+      "role": "poste de travail",
+      "solid": true
+    }
+  ],
   "npcs": [
     {
       "name": "Voyageur",
       "cell": [
-        12,
+        9,
         6
       ],
       "dialogue": "Bienvenue dans la zone : Laboratoire du Professeur Seko."
@@ -117,17 +197,38 @@
     {
       "name": "Objet trouvé",
       "cell": [
-        8,
-        8
+        2,
+        6
       ],
       "dialogue": "Tu as trouvé un objet. (Système d'inventaire à venir.)"
     }
   ],
   "sign": {
     "cell": [
-      10,
-      5
+      3,
+      6
     ],
-    "dialogue": "Laboratoire du Professeur Seko — prenez le temps d'explorer."
+    "dialogue": "Laboratoire du Professeur Seko — prenez le temps d’explorer."
+  },
+  "spawn": [
+    7,
+    7
+  ],
+  "portals": {
+    "bourg_en_vol": {
+      "cell": [
+        7,
+        9
+      ],
+      "arrival_cell": [
+        14,
+        11
+      ],
+      "area_size": [
+        32,
+        16
+      ],
+      "arrival_facing": "down"
+    }
   }
 }

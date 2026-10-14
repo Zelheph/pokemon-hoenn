@@ -22,7 +22,8 @@ Source inspectée : `/home/zeleph/Téléchargements` (fichiers non liés ignoré
 | tilesets | `assets/tilesets/bands/band_01.png` à `band_11.png` | PNG, chacune 128×1104 px | Bandes indépendantes, chacune 8×69 cases de 16×16 px |
 | tilesets (variante) | `assets/tilesets/bands/band_01_rival_roof.png` | PNG, 128×1104 px | Copie recolorée des seules cellules de toit du stamp rival |
 | tilesets | `assets/tilesets/emerald_interior_tilesets.png` | PNG 3072×1024 px | Planches intérieures Émeraude ; grille vérifiée 192×64 cases de 16×16 px |
-| tilesets | `assets/tilesets/emerald_interior.tres` | TileSet atlas 192×64, région 16×16 px | 7 coordonnées utilisées pour sols, murs et grottes |
+| tilesets | `assets/tilesets/emerald_interior.tres` | TileSet atlas 192×64, région 16×16 px | Coordonnées sélectionnées depuis les plans intérieurs, meubles et grottes |
+| tilesets (aperçus) | `docs/atlas/interieur/bande_01.png` à `bande_24.png` | PNG 512×4096 px chacune | 24 bandes, zoom ×4, grille et coordonnées locales |
 | tilesets (placeholder) | `assets/tilesets/placeholder_sky.svg` | SVG 16×16 px | Tuile de ciel pour le Grand Ciel, absente des planches fournies |
 
 | ui | `assets/ui/bag_reference.png` | PNG 664×264 px | Référence UI sac |
@@ -42,6 +43,8 @@ La planche extérieure 1408×1104 est découpée en 11 bandes verticales indépe
 
 Les bâtiments de Bourg-en-Vol sont assemblés en stamps enregistrés dans `data/building_stamps.json`, avec chaque case référencée dans la bande correspondante, ainsi que les cellules solides, la porte et son approche. Les bandes sont des sources d’atlas TileSet séparées (source_id 10 à 20); le toit recoloré de la maison rivale utilise la source_id 30. Les aperçus ×8 annotés sont dans `docs/atlas/stamps/`. Ces trois assemblages sont des compositions à partir des tuiles fournies, pas des façades déjà présentes en un seul bloc.
 
+La planche intérieure 3072×1024 est composée de 24 bandes de 128×1024 px (8×64 cases de 16×16). `scripts/tools/slice_interior_atlas.py` produit les vues zoomées ×4, coordonnées locales comprises, dans `docs/atlas/interieur/`. La planche d’origine reste utilisée par le TileSet; les scènes référencent les coordonnées globales de la même grille, sans remplacer ces tuiles par le TileSet extérieur. La sélection des cellules TileSet se construit depuis les plans JSON d’intérieurs et de grottes.
+
 ## Taille des cases et identifiants de terrain
 
 Les deux planches sont alignées sur une grille réelle de **16×16 px** : extérieure 88×69, intérieure 192×64. `scripts/tools/build_tilesets.gd` vérifie les dimensions, crée les ressources `TileSet` atlas et sélectionne des coordonnées source pour les cases utilisées. Les coordonnées ci-dessous sont des coordonnées d’atlas (x, y), avec `source_id` 0 pour la planche et 1 pour le ciel provisoire.
@@ -56,7 +59,9 @@ Les deux planches sont alignées sur une grille réelle de **16×16 px** : exté
 | D | Sable | extérieur | 0 | (26,66) |
 | R / M | Roche / relief | extérieur | 0 | (61,40) |
 | B | Mur / bâtiment | extérieur | 0 | (48,59) |
-| I / P / B | Sol, chemin intérieur, mur | intérieur | 0 | (184,40) / (184,39) / (184,38) |
+| W / B / F / Q / D | Mur, plinthe, sol, tapis de sortie, porte | intérieur | 0 | (3,25) / (3,26) / (2,28) / (3,33) / (7,29) |
+| X / x | Hautes herbes, traversables avec Area2D de rencontre prévue | extérieur | 0 | (27,34) / (28,34) |
+| I / P / B | Sol, chemin intérieur, mur pour les anciennes salles | intérieur | 0 | (184,40) / (184,39) / (184,38) |
 | C / R / M | Sol de grotte et relief | intérieur | 0 | (180,53) / (178,42) / (176,42) |
 | S | Ciel | placeholder | 1 | (0,0) |
 

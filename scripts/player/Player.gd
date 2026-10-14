@@ -83,6 +83,20 @@ func _interact() -> void:
 		if target is Node:
 			get_node("/root/GameState").emit_signal("interaction_requested", target as Node)
 
+func block_transition(retreat_direction: Vector2i, transition_position: Vector2 = Vector2.INF) -> void:
+	# Annule le pas vers une transition fermée et replace le joueur sur sa case.
+	if transition_position != Vector2.INF:
+		var transition_cell := Vector2i(roundi(transition_position.x / TILE_SIZE - 0.5), roundi(transition_position.y / TILE_SIZE - 0.5))
+		if _current_cell == transition_cell:
+			_current_cell += retreat_direction
+	position = Vector2((_current_cell.x + 0.5) * TILE_SIZE, (_current_cell.y + 0.5) * TILE_SIZE)
+	_target_position = position
+	_moving = false
+	_step_progress = 0.0
+	if retreat_direction != Vector2i.ZERO:
+		facing = retreat_direction
+	queue_redraw()
+
 func _draw() -> void:
 	# Petit personnage pixel-art provisoire : le sens du regard et les pas changent à quatre directions.
 	var bob: int = 1 if _moving and _walk_phase == 1 else 0

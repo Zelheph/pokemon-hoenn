@@ -29,7 +29,11 @@ func _on_transition_body_entered(body: Node2D, area: Area2D) -> void:
 	if not ResourceLoader.exists(scene_path):
 		dialogue_label.text = "Je ne peux pas encore aller là."
 		dialogue_label.visible = true
-		body.position += Vector2(area.get_meta("blocked_retreat", Vector2.DOWN)) * 16.0
+		var retreat: Vector2i = area.get_meta("blocked_retreat", Vector2i.DOWN)
+		if body.has_method("block_transition"):
+			body.call("block_transition", retreat, area.global_position)
+		else:
+			body.position += Vector2(retreat) * 16.0
 		return
 	var manager: Node = get_node("/root/SceneManager")
 	manager.call("change_zone", scene_path, area.get_meta("arrival_cell"), area.get_meta("arrival_facing", Vector2i.DOWN))

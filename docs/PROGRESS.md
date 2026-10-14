@@ -53,6 +53,17 @@
 - Vues de contrôle générées dans `docs/atlas/route_101.png` et `docs/atlas/bourg_en_vol_interieur_*.png` à partir des plans et atlas utilisés par le générateur.
 - Godot 4.7.2 : `--import`, vérification syntaxique des scripts modifiés, validation des bâtiments, validation du graphe (154 zones, 322 transitions), simulation de parcours et chargement headless du projet réussis.
 
+## Reprise de la Route 101 et des trois intérieurs — terminée
+- Route 101 est une zone verticale de 30×40 cases. Le sentier de trois cases serpente entre rebords d'arbres, arbres et rochers épars; les massifs utilisent les tuiles (27,34) et (28,34) de la planche extérieure.
+- Les hautes herbes restent traversables et chaque case porte une Area2D du groupe `tall_grass_encounter`, prête à être branchée au système de rencontres de l'étape 8.
+- Les trois scènes intérieures ont été ramenées à leur plan demandé : maisons 10×8, laboratoire 14×10. Elles utilisent exclusivement `emerald_interior.tres`, avec mur, plinthe, sol uniforme, fenêtre, lit, bibliothèque, téléviseur, plante, petite table, tapis et porte visuelle depuis la planche intérieure. Les coordonnées sont documentées dans `docs/atlas/interieur/README.md`.
+- La planche intérieure est découpée en 24 bandes zoomées ×4 avec coordonnées locales. Les tuiles effectivement utilisées sont collectées depuis les plans JSON avant de construire `emerald_interior.tres`.
+- Chaque meuble a une collision; la porte de l'intérieur est sa propre Area2D, ciblant Bourg-en-Vol et ramenant à la case d'approche extérieure orienté vers le sud. Chaque porte extérieure cible son propre intérieur.
+- Les caméras intérieures restent centrées sur la pièce, avec zoom 2 et fond noir autour; elles ne suivent pas le joueur dans ces petites pièces. La Route 101 garde sa caméra de suivi et ses limites de carte.
+- Route 101 conserve sa liaison nord officielle avec Rosyères. Vergazon est reliée par la Route 117 selon `docs/WORLD.md`; un blocage en attendant Vergazon créerait une connexion non canonique.
+- `simulate_zone_travel.gd` entre et sort des trois bâtiments, vérifie les cases d'arrivée, les caméras et leurs limites, parcourt le sentier de la Route 101 et rejoint Rosyères. Aucune sortie hors carte observée.
+- Captures statiques conformes aux plans et tuiles utilisées dans `docs/atlas/route_101.png` et `docs/atlas/bourg_en_vol_interieur_*.png`.
+
 ## Étapes restantes
 - Étape 4 : sous-étapes du Pokédex complet à définir et données officielles à sourcer.
 - Étape 5 : combats et tests unitaires.

@@ -63,6 +63,20 @@ func _build_zone(data: Dictionary, plan: Dictionary) -> void:
 	root.set_script(load("res://scripts/hoenn/MapZone.gd"))
 	root.set("zone_id", StringName(str(data["id"])))
 	root.set("zone_name", str(data["name"]))
+	if str(data["kind"]) == "interior":
+		var backdrop: Polygon2D = Polygon2D.new()
+		backdrop.name = "InteriorBlackBackground"
+		var padding := Vector2(128.0, 128.0)
+		backdrop.polygon = PackedVector2Array([
+			Vector2(-padding.x, -padding.y),
+			Vector2(width * TILE_SIZE + padding.x, -padding.y),
+			Vector2(width * TILE_SIZE + padding.x, height * TILE_SIZE + padding.y),
+			Vector2(-padding.x, height * TILE_SIZE + padding.y)
+		])
+		backdrop.color = Color.BLACK
+		backdrop.z_index = -100
+		root.add_child(backdrop)
+		backdrop.owner = root
 
 	var layer: TileMapLayer = TileMapLayer.new()
 	layer.name = "Terrain"
@@ -85,7 +99,9 @@ func _build_zone(data: Dictionary, plan: Dictionary) -> void:
 			if tile_id.size() == 3:
 				layer.set_cell(Vector2i(x,y), int(tile_id[0]), Vector2i(int(tile_id[1]), int(tile_id[2])))
 			if BLOCKED.has(symbol): _add_blocker(blockers, root, Vector2i(x,y))
+			if symbol == "X" or symbol == "x": _add_encounter_area(root, Vector2i(x,y))
 	_add_building_stamps(layer, blockers, root, plan)
+	_add_furniture(layer, blockers, root, plan)
 
 	_add_actor(root, plan["sign"], "sign")
 	for value: Variant in plan["npcs"]: _add_actor(root, value, "npc")
@@ -123,10 +139,15 @@ func _build_zone(data: Dictionary, plan: Dictionary) -> void:
 	camera.limit_top = 0
 	camera.limit_right = width * TILE_SIZE
 	camera.limit_bottom = height * TILE_SIZE
-	var fit_zoom: float = maxf(480.0 / float(width * TILE_SIZE), 320.0 / float(height * TILE_SIZE))
-	fit_zoom = maxf(1.0, fit_zoom)
+	var fit_zoom: float = 1.0
+	if str(data["kind"]) == "interior":
+		fit_zoom = maxf(1.0, floorf(minf(480.0 / float(width * TILE_SIZE), 320.0 / float(height * TILE_SIZE))))
 	camera.zoom = Vector2(fit_zoom, fit_zoom)
-	player.add_child(camera)
+	if str(data["kind"]) == "interior":
+		camera.position = Vector2(width * TILE_SIZE / 2.0, height * TILE_SIZE / 2.0)
+		root.add_child(camera)
+	else:
+		player.add_child(camera)
 	camera.owner = root
 
 	var hud: CanvasLayer = CanvasLayer.new()
@@ -197,6 +218,38 @@ func _add_building_stamps(layer: TileMapLayer, blockers: StaticBody2D, root: Nod
 			var solid_data: Array = solid_value
 			_add_blocker(blockers, root, origin + Vector2i(int(solid_data[0]), int(solid_data[1])))
 
+func _add_furniture(layer: TileMapLayer, blockers: StaticBody2D, root: Node2D, plan: Dictionary) -> void:
+	for furniture_value: Variant in plan.get("furniture", []):
+		var furniture: Dictionary = furniture_value
+		var cell_data: Array = furniture.get("cell", [])
+		var atlas_data: Array = furniture.get("atlas", [])
+		if cell_data.size() != 2 or atlas_data.size() != 2:
+			push_error("Meuble invalide dans le plan %s." % plan.get("id", "?"))
+			continue
+		var cell := Vector2i(int(cell_data[0]), int(cell_data[1]))
+		var atlas_cell := Vector2i(int(atlas_data[0]), int(atlas_data[1]))
+		layer.set_cell(cell, 0, atlas_cell)
+		if bool(furniture.get("solid", true)):
+			_add_blocker(blockers, root, cell)
+
+func _add_encounter_area(root: Node2D, cell: Vector2i) -> void:
+	var area: Area2D = Area2D.new()
+	area.name = "TallGrass_%02d_%02d" % [cell.x, cell.y]
+	area.position = _cell_center(cell)
+	area.collision_layer = 0
+	area.collision_mask = 1
+	area.add_to_group("tall_grass_encounter", true)
+	area.set_meta("encounter_trigger", true)
+	area.set_meta("encounter_stage", 8)
+	var collision: CollisionShape2D = CollisionShape2D.new()
+	var shape: RectangleShape2D = RectangleShape2D.new()
+	shape.size = Vector2(TILE_SIZE, TILE_SIZE)
+	collision.shape = shape
+	area.add_child(collision)
+	root.add_child(area)
+	area.owner = root
+	collision.owner = root
+
 func _add_actor(root: Node2D, actor_data: Dictionary, kind: String) -> void:
 	var actor: Node2D = Node2D.new()
 	var actor_name: String = str(actor_data.get("name", kind.capitalize()))
@@ -253,6 +306,10 @@ func _add_transition(root: Node2D, data: Dictionary, plan: Dictionary, target_id
 			var offset_data: Array = door.get("area_offset_px", [0,0])
 			area_size = Vector2(float(size_data[0]), float(size_data[1]))
 			area_offset = Vector2(float(offset_data[0]), float(offset_data[1]))
+		elif plan.get("portals", {}).has(target_id):
+			var portal: Dictionary = plan["portals"][target_id]
+			var portal_size_data: Array = portal.get("area_size", [14,14])
+			area_size = Vector2(float(portal_size_data[0]), float(portal_size_data[1]))
 	elif plan.get("portals", {}).has(target_id):
 		var portal: Dictionary = plan["portals"][target_id]
 		var size_data: Array = portal.get("area_size", [14,14])
@@ -321,6 +378,13 @@ func _arrival_cell(target_id: String, source_id: String, edge: Dictionary) -> Ve
 			var origin_data: Array = building["position"]
 			var approach_data: Array = stamp["door"]["approach"]
 			return Vector2i(int(origin_data[0]) + int(approach_data[0]), int(origin_data[1]) + int(approach_data[1]))
+	if str(edge["kind"]) == "door" and str(target["kind"]) != "town":
+		if _plans.has(target_id):
+			var room_plan: Dictionary = _plans[target_id]
+			if room_plan.has("spawn"):
+				var room_spawn: Array = room_plan["spawn"]
+				return Vector2i(int(room_spawn[0]), int(room_spawn[1]))
+		return Vector2i(width/2,height-3)
 	if _plans.has(source_id):
 		var source_plan: Dictionary = _plans[source_id]
 		var source_portals: Dictionary = source_plan.get("portals", {})

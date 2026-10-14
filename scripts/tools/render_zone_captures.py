@@ -28,6 +28,10 @@ def render(zone_id: str, title: str) -> Path:
             source_id, sx, sy = mapping
             source = sky if source_id == 1 else atlas
             image.alpha_composite(source.crop((sx * 16, sy * 16, (sx + 1) * 16, (sy + 1) * 16)), (x * 16, y * 16))
+    for furniture in plan.get("furniture", []):
+        x, y = furniture["cell"]
+        sx, sy = furniture["atlas"]
+        image.alpha_composite(atlas.crop((sx * 16, sy * 16, (sx + 1) * 16, (sy + 1) * 16)), (x * 16, y * 16))
     if plan.get("buildings"):
         stamp_data = json.loads((ROOT / "data/building_stamps.json").read_text(encoding="utf-8"))
         stamps = {s["id"]: s for s in stamp_data["stamps"]}
@@ -42,20 +46,63 @@ def render(zone_id: str, title: str) -> Path:
                 sx, sy = tile["atlas"]
                 source = variant if variant is not None and tile["role"] == "roof" else band
                 image.alpha_composite(source.crop((sx * 16, sy * 16, (sx + 1) * 16, (sy + 1) * 16)), ((ox + dx) * 16, (oy + dy) * 16))
-    scale = 3
-    image = image.resize((image.width * scale, image.height * scale), Image.Resampling.NEAREST).convert("RGB")
+    font_path = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+    title_font = ImageFont.truetype(font_path, 15)
+    if plan["tileset"] == "interior":
+        # Vue de pièce comme dans le jeu : caméra fixe au centre et fond noir autour.
+        zoom = 2
+        room = image.resize((image.width * zoom, image.height * zoom), Image.Resampling.NEAREST).convert("RGB")
+        view = Image.new("RGB", (480, 320), "black")
+        view.paste(room, ((480 - room.width) // 2, (320 - room.height) // 2))
+        image = view
+        scale = zoom
+        offset_x, offset_y = (480 - room.width) // 2, (320 - room.height) // 2
+    else:
+        scale = 2
+        image = image.resize((image.width * scale, image.height * scale), Image.Resampling.NEAREST).convert("RGB")
+        offset_x, offset_y = 0, 0
     draw = ImageDraw.Draw(image)
-    font = ImageFont.load_default()
-    # Repère la position de départ et la porte de retour pour faciliter la vérification visuelle.
+    # Les acteurs statiques reprennent le dessin simple de WorldActor.gd.
+    def point(cell):
+        return offset_x + int((cell[0] + 0.5) * 16 * scale), offset_y + int((cell[1] + 0.5) * 16 * scale)
+
+    for sign in [plan.get("sign", {})]:
+        if sign.get("cell"):
+            cx, cy = point(sign["cell"])
+            k = scale
+            draw.rectangle((cx - 2*k, cy - 4*k, cx + 2*k, cy + 12*k), fill="#755237")
+            draw.rectangle((cx - 7*k, cy - 11*k, cx + 7*k, cy - 3*k), fill="#f0d48a")
+            draw.rectangle((cx - 5*k, cy - 9*k, cx + 5*k, cy - 5*k), fill="#855d35")
+    for npc in plan.get("npcs", []):
+        cx, cy = point(npc["cell"])
+        k = scale
+        draw.rectangle((cx - 5*k, cy - 8*k, cx + 5*k, cy), fill="#f1c59a")
+        draw.rectangle((cx - 5*k, cy - 9*k, cx + 5*k, cy - 6*k), fill="#473747")
+        draw.rectangle((cx - 6*k, cy, cx + 6*k, cy + 9*k), fill="#e9c659")
+        draw.rectangle((cx - 5*k, cy + 9*k, cx - 1*k, cy + 14*k), fill="#394056")
+        draw.rectangle((cx + 1*k, cy + 9*k, cx + 5*k, cy + 14*k), fill="#394056")
+    for item in plan.get("items", []):
+        cx, cy = point(item["cell"])
+        k = scale
+        draw.rectangle((cx - 4*k, cy - 4*k, cx + 4*k, cy + 4*k), fill="#e9c659")
+        draw.rectangle((cx - 2*k, cy - 6*k, cx + 2*k, cy + 6*k), fill="#fff1b3")
+        draw.rectangle((cx - 6*k, cy - 2*k, cx + 6*k, cy + 2*k), fill="#fff1b3")
+    # Reproduit un petit sprite lisible au point de départ indiqué par le plan.
     spawn = plan.get("spawn", [10, 11] if plan["tileset"] == "interior" else None)
     if spawn is not None:
         x, y = spawn
-        cx, cy = int((x + 0.5) * 16 * scale), int((y + 0.5) * 16 * scale)
-        draw.ellipse((cx - 10, cy - 10, cx + 10, cy + 10), fill=(218, 49, 58), outline="white", width=2)
-    bar = Image.new("RGB", (image.width, 32), (28, 32, 42))
-    ImageDraw.Draw(bar).text((8, 9), f"{title} · {size[0]} × {size[1]} tuiles · départ en rouge", fill="white", font=font)
-    result = Image.new("RGB", (image.width, image.height + 32), (28, 32, 42))
-    result.paste(bar, (0, 0)); result.paste(image, (0, 32))
+        cx, cy = offset_x + int((x + 0.5) * 16 * scale), offset_y + int((y + 0.5) * 16 * scale)
+        k = scale
+        draw.rectangle((cx - 6*k, cy - 8*k, cx + 6*k, cy + 5*k), fill="#f4c69a")
+        draw.rectangle((cx - 6*k, cy - 9*k, cx + 6*k, cy - 6*k), fill="#362a3c")
+        draw.rectangle((cx - 6*k, cy + 5*k, cx + 6*k, cy + 13*k), fill="#2878b8")
+        draw.rectangle((cx - 6*k, cy + 13*k, cx - 1*k, cy + 15*k), fill="#263448")
+        draw.rectangle((cx + 1*k, cy + 13*k, cx + 6*k, cy + 15*k), fill="#263448")
+    result = Image.new("RGB", (max(480, image.width), image.height + 32), (28, 32, 42))
+    header = ImageDraw.Draw(result)
+    caption = f"{title} · {size[0]} × {size[1]} cases"
+    header.text((8, 8), caption, fill="white", font=title_font)
+    result.paste(image, (0, 32))
     path = OUT / f"{zone_id}.png"
     result.save(path, optimize=True)
     return path

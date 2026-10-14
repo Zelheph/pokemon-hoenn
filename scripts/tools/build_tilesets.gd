@@ -9,14 +9,14 @@ func _initialize() -> void:
 		"res://assets/tilesets/emerald_exterior_tileset.png",
 		"res://assets/tilesets/emerald_exterior.tres",
 		Vector2i(88, 69),
-		[Vector2i(87,14), Vector2i(87,13), Vector2i(84,22), Vector2i(83,22), Vector2i(28,56), Vector2i(28,58), Vector2i(5,4), Vector2i(5,0), Vector2i(4,0), Vector2i(61,40), Vector2i(26,66), Vector2i(48,59)],
+		[Vector2i(87,14), Vector2i(87,13), Vector2i(84,22), Vector2i(83,22), Vector2i(28,56), Vector2i(28,58), Vector2i(5,4), Vector2i(5,0), Vector2i(4,0), Vector2i(61,40), Vector2i(26,66), Vector2i(48,59), Vector2i(27,34), Vector2i(28,34), Vector2i(31,34)],
 		true
 	)
 	var interior_ok := _build_tileset(
 		"res://assets/tilesets/emerald_interior_tilesets.png",
 		"res://assets/tilesets/emerald_interior.tres",
 		Vector2i(192, 64),
-		[Vector2i(184,40), Vector2i(184,39), Vector2i(178,42), Vector2i(185,39), Vector2i(180,53), Vector2i(184,38), Vector2i(176,42)],
+		_collect_interior_cells(),
 		false
 	)
 	if exterior_ok and interior_ok:
@@ -24,6 +24,36 @@ func _initialize() -> void:
 		quit(0)
 	else:
 		quit(1)
+
+func _collect_interior_cells() -> Array[Vector2i]:
+	var used: Dictionary = {}
+	var directory: DirAccess = DirAccess.open("res://data/maps")
+	if directory == null:
+		push_error("Dossier des plans introuvable : res://data/maps")
+		return []
+	directory.list_dir_begin()
+	var file_name: String = directory.get_next()
+	while not file_name.is_empty():
+		if file_name.ends_with(".json"):
+			var file := FileAccess.open("res://data/maps/" + file_name, FileAccess.READ)
+			if file != null:
+				var plan: Dictionary = JSON.parse_string(file.get_as_text()) as Dictionary
+				if str(plan.get("tileset", "")) == "interior":
+					for tile_value: Variant in plan.get("tiles", {}).values():
+						var tile: Array = tile_value
+						if tile.size() == 3 and int(tile[0]) == 0:
+							used[Vector2i(int(tile[1]), int(tile[2]))] = true
+					for furniture_value: Variant in plan.get("furniture", []):
+						var furniture: Dictionary = furniture_value
+						var atlas_cell: Array = furniture.get("atlas", [])
+						if atlas_cell.size() == 2:
+							used[Vector2i(int(atlas_cell[0]), int(atlas_cell[1]))] = true
+		file_name = directory.get_next()
+	directory.list_dir_end()
+	var cells: Array[Vector2i] = []
+	for cell_value: Variant in used.keys():
+		cells.append(cell_value as Vector2i)
+	return cells
 
 func _build_tileset(texture_path: String, output_path: String, grid_size: Vector2i, used_cells: Array[Vector2i], add_bands: bool) -> bool:
 	var texture := load(texture_path) as Texture2D
