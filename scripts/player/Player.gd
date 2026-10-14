@@ -16,12 +16,15 @@ func _ready() -> void:
 	var spawn_position: Vector2 = scene_manager.call("consume_spawn_position") as Vector2
 	if spawn_position != Vector2.INF:
 		position = spawn_position
+	facing = scene_manager.call("consume_spawn_facing") as Vector2i
 	_current_cell = Vector2i(roundi(position.x / TILE_SIZE - 0.5), roundi(position.y / TILE_SIZE - 0.5))
 	_target_position = position
 	get_node("/root/GameState").set("player_position", position)
 	queue_redraw()
 
 func _physics_process(delta: float) -> void:
+	if bool(get_node("/root/SceneManager").call("is_changing_zone")):
+		return
 	if _moving:
 		var remaining: Vector2 = _target_position - position
 		var step_speed: float = RUN_SPEED if Input.is_action_pressed("run") else WALK_SPEED

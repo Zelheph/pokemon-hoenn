@@ -25,5 +25,11 @@ func _on_interaction_requested(target: Node) -> void:
 func _on_transition_body_entered(body: Node2D, area: Area2D) -> void:
 	if body.name != "Player" or not area.has_meta("target_scene"):
 		return
+	var scene_path: String = str(area.get_meta("target_scene"))
+	if not ResourceLoader.exists(scene_path):
+		dialogue_label.text = "Je ne peux pas encore aller là."
+		dialogue_label.visible = true
+		body.position += Vector2(area.get_meta("blocked_retreat", Vector2.DOWN)) * 16.0
+		return
 	var manager: Node = get_node("/root/SceneManager")
-	manager.call("change_zone", str(area.get_meta("target_scene")), area.get_meta("arrival_cell"))
+	manager.call("change_zone", scene_path, area.get_meta("arrival_cell"), area.get_meta("arrival_facing", Vector2i.DOWN))

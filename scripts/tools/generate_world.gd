@@ -119,6 +119,13 @@ func _build_zone(data: Dictionary, plan: Dictionary) -> void:
 	player.owner = root
 	var camera: Camera2D = Camera2D.new()
 	camera.name = "Camera2D"
+	camera.limit_left = 0
+	camera.limit_top = 0
+	camera.limit_right = width * TILE_SIZE
+	camera.limit_bottom = height * TILE_SIZE
+	var fit_zoom: float = maxf(480.0 / float(width * TILE_SIZE), 320.0 / float(height * TILE_SIZE))
+	fit_zoom = maxf(1.0, fit_zoom)
+	camera.zoom = Vector2(fit_zoom, fit_zoom)
 	player.add_child(camera)
 	camera.owner = root
 
@@ -231,6 +238,8 @@ func _add_actor(root: Node2D, actor_data: Dictionary, kind: String) -> void:
 func _add_transition(root: Node2D, data: Dictionary, plan: Dictionary, target_id: String, edge: Dictionary, is_a: bool) -> void:
 	var here: Vector2i = _portal_cell(str(data["id"]), target_id, edge, plan)
 	var arrival: Vector2i = _arrival_cell(target_id, str(data["id"]), edge)
+	var width: int = int(plan["size"][0])
+	var height: int = int(plan["size"][1])
 	var area: Area2D = Area2D.new()
 	area.name = "Transition_" + target_id
 	var area_size := Vector2(14,14)
@@ -249,6 +258,9 @@ func _add_transition(root: Node2D, data: Dictionary, plan: Dictionary, target_id
 		var size_data: Array = portal.get("area_size", [14,14])
 		area_size = Vector2(float(size_data[0]), float(size_data[1]))
 	area.position = _cell_center(here) + area_offset
+	var arrival_facing: Vector2i = _arrival_facing(plan, target_id, str(edge["kind"]))
+	area.set_meta("arrival_facing", arrival_facing)
+	area.set_meta("blocked_retreat", _inward_direction(here, width, height))
 	area.collision_layer = 0
 	area.collision_mask = 1
 	area.add_to_group("zone_transition", true)
@@ -309,13 +321,21 @@ func _arrival_cell(target_id: String, source_id: String, edge: Dictionary) -> Ve
 			var origin_data: Array = building["position"]
 			var approach_data: Array = stamp["door"]["approach"]
 			return Vector2i(int(origin_data[0]) + int(approach_data[0]), int(origin_data[1]) + int(approach_data[1]))
+	if _plans.has(source_id):
+		var source_plan: Dictionary = _plans[source_id]
+		var source_portals: Dictionary = source_plan.get("portals", {})
+		if source_portals.has(target_id):
+			var source_portal: Dictionary = source_portals[target_id]
+			if source_portal.has("arrival_cell"):
+				var arrival_data: Array = source_portal["arrival_cell"]
+				return Vector2i(int(arrival_data[0]), int(arrival_data[1]))
 	if _plans.has(target_id):
 		var target_plan: Dictionary = _plans[target_id]
-		var portals: Dictionary = target_plan.get("portals", {})
-		if portals.has(source_id):
-			var portal: Dictionary = portals[source_id]
-			if portal.has("arrival_cell"):
-				var arrival_data: Array = portal["arrival_cell"]
+		var target_portals: Dictionary = target_plan.get("portals", {})
+		if target_portals.has(source_id):
+			var reciprocal_portal: Dictionary = target_portals[source_id]
+			if reciprocal_portal.has("cell"):
+				var arrival_data: Array = reciprocal_portal["cell"]
 				return Vector2i(int(arrival_data[0]), int(arrival_data[1]))
 	if str(edge["kind"]) == "door":
 		if str(target["kind"]) != "town": return Vector2i(width/2,height-3)
@@ -353,6 +373,24 @@ func _building_for_interior(plan: Dictionary, interior_id: String) -> Dictionary
 		if str(building.get("interior_id", "")) == interior_id:
 			return building
 	return {}
+
+func _arrival_facing(plan: Dictionary, target_id: String, edge_kind: String) -> Vector2i:
+	var portals: Dictionary = plan.get("portals", {})
+	if portals.has(target_id):
+		var portal: Dictionary = portals[target_id]
+		match str(portal.get("arrival_facing", "down")):
+			"up": return Vector2i.UP
+			"down": return Vector2i.DOWN
+			"left": return Vector2i.LEFT
+			"right": return Vector2i.RIGHT
+	return Vector2i.DOWN if edge_kind == "door" else Vector2i.UP
+
+func _inward_direction(cell: Vector2i, width: int, height: int) -> Vector2i:
+	if cell.x == 0: return Vector2i.RIGHT
+	if cell.x == width - 1: return Vector2i.LEFT
+	if cell.y == 0: return Vector2i.DOWN
+	if cell.y == height - 1: return Vector2i.UP
+	return Vector2i.DOWN
 
 func _cell_center(cell: Vector2i) -> Vector2:
 	return Vector2((cell.x+0.5)*TILE_SIZE,(cell.y+0.5)*TILE_SIZE)

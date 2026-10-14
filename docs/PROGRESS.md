@@ -45,6 +45,14 @@
 - Vérifications terminées avec Godot 4.7.2 : import headless, contrôle syntaxique des scripts, validation des 154 scènes/322 transitions et chargement du projet sans erreur.
 - Crédit ajouté dans `docs/CREDITS.md`. La maison du héros et celle du rival sont des stamps composites; les grands blocs officiels de Centres, boutiques et arènes sont réservés à un catalogue ultérieur.
 
+## Bourg-en-Vol et Route 101 — connexions jouables
+- Le joueur démarre en Bourg-en-Vol devant la maison du héros. Les trois portes extérieures chargent leurs scènes d'intérieur avec fondu; chaque intérieur a une porte de retour vers la case d'approche extérieure et le joueur revient orienté vers le sud.
+- Route 101 est générée depuis son plan JSON et les tuiles du TileSet Émeraude. La sortie nord de Bourg-en-Vol est raccordée à sa sortie sud, et le retour réciproque arrive en Bourg-en-Vol orienté vers le sud. Les zones utilisent des limites de caméra ajustées à leurs dimensions.
+- Si une Area2D de transition vise une scène absente, elle affiche « Je ne peux pas encore aller là. » et repousse le joueur à l'intérieur de la carte.
+- `scripts/tools/simulate_zone_travel.gd` simule les déplacements du point de départ aux trois intérieurs, puis jusqu'à Route 101 et au retour en Bourg-en-Vol. Validation réussie, y compris les cases d'arrivée, l'orientation et les limites de carte.
+- Vues de contrôle générées dans `docs/atlas/route_101.png` et `docs/atlas/bourg_en_vol_interieur_*.png` à partir des plans et atlas utilisés par le générateur.
+- Godot 4.7.2 : `--import`, vérification syntaxique des scripts modifiés, validation des bâtiments, validation du graphe (154 zones, 322 transitions), simulation de parcours et chargement headless du projet réussis.
+
 ## Étapes restantes
 - Étape 4 : sous-étapes du Pokédex complet à définir et données officielles à sourcer.
 - Étape 5 : combats et tests unitaires.

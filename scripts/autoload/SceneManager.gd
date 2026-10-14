@@ -8,6 +8,7 @@ const TILE_SIZE: float = 16.0
 var _overlay: ColorRect
 var _changing_zone: bool = false
 var _pending_spawn: Vector2 = Vector2.INF
+var _pending_facing: Vector2i = Vector2i.DOWN
 
 func _ready() -> void:
 	var canvas: CanvasLayer = CanvasLayer.new()
@@ -22,11 +23,12 @@ func _ready() -> void:
 	_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	canvas.add_child(_overlay)
 
-func change_zone(scene_path: String, arrival_cell: Vector2i) -> void:
+func change_zone(scene_path: String, arrival_cell: Vector2i, arrival_facing: Vector2i = Vector2i.DOWN) -> void:
 	if _changing_zone or not ResourceLoader.exists(scene_path):
 		return
 	_changing_zone = true
 	_pending_spawn = Vector2((arrival_cell.x + 0.5) * TILE_SIZE, (arrival_cell.y + 0.5) * TILE_SIZE)
+	_pending_facing = arrival_facing
 	_overlay.visible = true
 	var fade_out: Tween = create_tween()
 	fade_out.tween_property(_overlay, "color:a", 1.0, FADE_SECONDS)
@@ -49,3 +51,11 @@ func consume_spawn_position() -> Vector2:
 	var result: Vector2 = _pending_spawn
 	_pending_spawn = Vector2.INF
 	return result
+
+func consume_spawn_facing() -> Vector2i:
+	var result: Vector2i = _pending_facing
+	_pending_facing = Vector2i.DOWN
+	return result
+
+func is_changing_zone() -> bool:
+	return _changing_zone
